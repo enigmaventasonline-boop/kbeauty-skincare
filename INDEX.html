@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Korean Skincare — Enigma Store Chile</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#FAF7F4;--blush:#F2E8E1;--rose:#D4A89A;--deep:#2C2420;
+  --text:#4A3F3A;--muted:#8C7D78;--white:#fff;
+  --gold:#C9A030;--gold-l:#E8C97A;--sage:#8FA89A;--wa:#25D366;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(250,247,244,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(212,168,154,.12)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--deep);text-decoration:none;line-height:1}
+.logo small{display:block;font-size:8px;letter-spacing:.3em;color:var(--muted);font-weight:300;text-align:center}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--rose)}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav-shop{background:var(--deep);color:var(--white);padding:9px 20px;border-radius:30px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .25s}
+.nav-shop:hover{background:var(--rose)}
+.cart-trigger{position:relative;background:none;border:2px solid var(--deep);color:var(--deep);padding:8px 18px;border-radius:30px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .25s;display:flex;align-items:center;gap:7px}
+.cart-trigger:hover{background:var(--deep);color:var(--white)}
+.cart-badge{background:var(--rose);color:#fff;border-radius:50%;width:17px;height:17px;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;position:absolute;top:-7px;right:-7px;transition:transform .2s}
+.cart-badge.pop{transform:scale(1.5)}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(128deg,#F5EDE6 0%,#EDE0D4 42%,#DECCC0 100%);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:110px 40px 60px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,154,.18) 0%,transparent 70%);pointer-events:none}
+.hero-left{z-index:2;animation:fadeUp .8s .1s ease both}
+.hero-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.65);backdrop-filter:blur(8px);border:1px solid rgba(212,168,154,.3);padding:5px 15px;border-radius:30px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--rose);margin-bottom:18px}
+h1.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(62px,7.5vw,108px);font-weight:700;line-height:.93;color:var(--deep);letter-spacing:-.02em;margin-bottom:14px}
+h1.hero-title em{font-style:italic}
+.badge-row{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.badge-gold{width:76px;height:76px;border-radius:50%;background:conic-gradient(var(--gold) 0deg,var(--gold-l) 60deg,var(--gold) 120deg,#9A7010 180deg,var(--gold) 240deg,var(--gold-l) 300deg,var(--gold) 360deg);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(180,140,20,.38);position:relative;flex-shrink:0}
+.badge-gold::before{content:'';position:absolute;inset:7px;border-radius:50%;background:linear-gradient(135deg,#B08010 0%,#DEB030 50%,#906010 100%)}
+.badge-gold span{position:relative;z-index:2;color:#fff;font-family:'DM Sans',sans-serif;line-height:1}
+.badge-pct{font-size:17px;font-weight:800}
+.badge-word{font-size:6px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.badge-copy{font-size:13px;color:var(--muted);line-height:1.6;font-weight:300}
+.hero-sub{font-size:14px;line-height:1.8;color:var(--muted);max-width:370px;margin-bottom:30px;font-weight:300}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--deep);color:var(--white);padding:14px 30px;border-radius:40px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:all .3s;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;display:inline-block}
+.btn-primary:hover{background:var(--rose);transform:translateY(-2px);box-shadow:0 10px 26px rgba(212,168,154,.4)}
+.btn-ghost{border:1.5px solid var(--deep);color:var(--deep);padding:13px 28px;border-radius:40px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;font-weight:400;transition:all .3s;display:inline-block}
+.btn-ghost:hover{background:var(--deep);color:var(--white)}
+
+/* hero visual */
+.hero-right{position:relative;z-index:2;display:flex;justify-content:center;animation:fadeUp .8s .3s ease both}
+.hero-img{width:400px;height:500px;border-radius:200px 200px 170px 170px;overflow:hidden;box-shadow:0 40px 80px rgba(44,36,32,.15);background:linear-gradient(160deg,#E8D5C8,#C4A090)}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:top}
+.fc{position:absolute;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-radius:14px;padding:11px 15px;box-shadow:0 8px 28px rgba(44,36,32,.1);border:1px solid rgba(255,255,255,.9)}
+.fc-1{bottom:56px;right:-8px;animation:float 3s ease-in-out infinite}
+.fc-1 .fb{background:var(--rose);color:#fff;font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:2px 9px;border-radius:20px;display:inline-block;margin-bottom:3px}
+.fc-1 .ft{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--deep)}
+.fc-1 .fs{font-size:9px;color:var(--muted)}
+.fc-2{top:72px;left:-14px;display:flex;align-items:center;gap:9px;animation:float 3s 1.5s ease-in-out infinite}
+.g-dot{width:8px;height:8px;border-radius:50%;background:var(--sage)}
+.g-title{font-size:11px;color:var(--text)}
+.g-sub{font-size:9px;color:var(--muted)}
+
+/* BRANDS */
+.brands{padding:44px 40px;background:var(--white);border-bottom:1px solid var(--blush);text-align:center}
+.brands-label{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.brands-row{display:flex;justify-content:center;align-items:center;gap:36px;flex-wrap:wrap}
+.bi{opacity:.55;transition:opacity .25s;cursor:default}
+.bi:hover{opacity:1}
+.bn{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--deep)}
+.bn.it{font-style:italic;letter-spacing:.04em;font-size:20px}
+.bn.sm{font-size:11px;letter-spacing:.26em}
+.bs{font-size:8px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+.dv{width:1px;height:30px;background:rgba(44,36,32,.08)}
+
+/* SECTION COMMON */
+.sh{text-align:center;margin-bottom:44px}
+.st{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);display:block;margin-bottom:9px}
+.stitle{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3.8vw,50px);font-weight:600;color:var(--deep);line-height:1.08}
+.stitle em{font-style:italic;font-weight:400}
+.ssub{font-size:13px;color:var(--muted);margin-top:9px;font-weight:300;line-height:1.7}
+
+/* FILTERS */
+.tabs{display:flex;justify-content:center;gap:7px;margin-bottom:40px;flex-wrap:wrap}
+.tab{padding:7px 18px;border-radius:30px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border:1px solid rgba(44,36,32,.14);background:transparent;color:var(--text);transition:all .22s;font-family:'DM Sans',sans-serif}
+.tab.active,.tab:hover{background:var(--deep);color:var(--white);border-color:var(--deep)}
+
+/* PRODUCTS */
+.products-sec{padding:90px 40px;background:var(--cream)}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1100px;margin:0 auto}
+.pc{background:var(--white);border-radius:18px;overflow:hidden;transition:transform .3s,box-shadow .3s;position:relative;cursor:pointer}
+.pc:hover{transform:translateY(-5px);box-shadow:0 16px 44px rgba(44,36,32,.1)}
+.pimg{height:220px;overflow:hidden;background:var(--blush);position:relative;display:flex;align-items:center;justify-content:center}
+.pimg img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.pc:hover .pimg img{transform:scale(1.05)}
+.pbadge{position:absolute;top:10px;left:10px;font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:20px;color:#fff;font-weight:500}
+.b-sale{background:var(--rose)}.b-new{background:var(--sage)}.b-hot{background:var(--gold)}
+.pinfo{padding:16px 18px 18px}
+.pbrand{font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.pname{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:500;color:var(--deep);margin-bottom:5px;line-height:1.2}
+.pfoot{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.pprice{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--deep)}
+.pprice .old{font-size:11px;color:var(--muted);text-decoration:line-through;margin-right:4px;font-family:'DM Sans',sans-serif;font-weight:300}
+.addbtn{width:34px;height:34px;border-radius:50%;background:var(--deep);color:var(--white);border:none;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .25s;line-height:1;flex-shrink:0}
+.addbtn:hover{background:var(--rose);transform:scale(1.12)}
+.addbtn.done{background:var(--sage)}
+
+/* VIEW MORE */
+.view-more-wrap{text-align:center;margin-top:40px}
+
+/* FEATURED RUTINA */
+.rutina-sec{display:grid;grid-template-columns:1fr 1fr;min-height:500px;margin:0 40px 80px;border-radius:22px;overflow:hidden;box-shadow:0 18px 56px rgba(44,36,32,.1)}
+.rv{background:linear-gradient(150deg,#DEC8BE,#C4A090);position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center}
+.rv img{width:100%;height:100%;object-fit:cover;object-position:top;position:absolute;inset:0}
+.skin-glow{position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(255,240,220,.32) 0%,transparent 70%)}
+.rc{background:var(--deep);color:var(--white);padding:56px 48px;display:flex;flex-direction:column;justify-content:center}
+.rc .st{color:var(--rose);text-align:left}
+.rc h2{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,3.2vw,50px);font-weight:600;line-height:1.08;margin-bottom:12px}
+.rc h2 em{font-style:italic;color:var(--rose);font-weight:400}
+.rc p{font-size:13px;line-height:1.8;color:rgba(255,255,255,.5);font-weight:300;margin-bottom:28px}
+.steps{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.step{display:flex;align-items:center;gap:12px;padding:11px 14px;background:rgba(255,255,255,.05);border-radius:10px;border:1px solid rgba(255,255,255,.07);transition:background .2s}
+.step:hover{background:rgba(255,255,255,.09)}
+.snum{width:28px;height:28px;border-radius:50%;border:1px solid rgba(212,168,154,.35);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--rose);flex-shrink:0}
+.sname{font-size:12px;color:var(--white)}
+.sbrand{font-size:9px;color:rgba(255,255,255,.32)}
+.sico{font-size:16px;margin-left:auto}
+
+/* BENEFITS */
+.ben-sec{padding:88px 40px;background:var(--blush)}
+.bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1100px;margin:44px auto 0}
+.bcard{background:var(--white);border-radius:16px;padding:28px 22px;text-align:center;transition:transform .3s,box-shadow .3s}
+.bcard:hover{transform:translateY(-4px);box-shadow:0 10px 32px rgba(44,36,32,.08)}
+.bico{font-size:30px;margin-bottom:12px}
+.btitle{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;color:var(--deep);margin-bottom:7px}
+.bdesc{font-size:11px;color:var(--muted);line-height:1.7;font-weight:300}
+
+/* NEWSLETTER */
+.nl-sec{padding:88px 40px;background:var(--deep);text-align:center;position:relative;overflow:hidden}
+.nl-sec::before{content:'';position:absolute;top:-150px;left:-150px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,154,.06) 0%,transparent 70%)}
+.nl-inner{position:relative;z-index:2}
+.nl-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3.8vw,54px);font-weight:600;color:var(--white);margin-bottom:10px;line-height:1.08}
+.nl-inner h2 em{font-style:italic;color:var(--rose);font-weight:400}
+.nl-inner p{font-size:13px;color:rgba(255,255,255,.42);font-weight:300;margin-bottom:32px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.7}
+.nlf{display:flex;gap:9px;max-width:420px;margin:0 auto 12px}
+.nlf input{flex:1;padding:13px 20px;border-radius:40px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.06);color:var(--white);font-size:13px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s}
+.nlf input::placeholder{color:rgba(255,255,255,.26)}
+.nlf input:focus{border-color:var(--rose)}
+.nlf button{padding:13px 22px;background:var(--rose);color:#fff;border:none;border-radius:40px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .25s;white-space:nowrap}
+.nlf button:hover{background:var(--gold)}
+.nl-disc{font-size:10px;color:rgba(255,255,255,.18);letter-spacing:.04em}
+
+/* FOOTER */
+footer{background:#1A1210;color:rgba(255,255,255,.42);padding:48px 40px 26px}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;margin-bottom:36px}
+.flogo{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.82);text-decoration:none;display:block;margin-bottom:10px}
+.flogo small{display:block;font-size:8px;letter-spacing:.28em;font-weight:300;color:rgba(255,255,255,.3)}
+.fdesc{font-size:11px;line-height:1.8;color:rgba(255,255,255,.3);font-weight:300;max-width:220px}
+.ftitle{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px}
+.flinks{list-style:none;display:flex;flex-direction:column;gap:8px}
+.flinks a{font-size:11px;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s}
+.flinks a:hover{color:var(--rose)}
+.fbot{border-top:1px solid rgba(255,255,255,.05);padding-top:22px;display:flex;justify-content:space-between;align-items:center;font-size:10px;flex-wrap:wrap;gap:6px}
+.fbot a{color:var(--rose);text-decoration:none}
+
+/* CART DRAWER */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.42);z-index:300;opacity:0;pointer-events:none;transition:opacity .3s}
+.overlay.open{opacity:1;pointer-events:all}
+.drawer{position:fixed;top:0;right:-440px;width:420px;max-width:96vw;height:100vh;background:var(--white);z-index:400;display:flex;flex-direction:column;box-shadow:-18px 0 56px rgba(0,0,0,.14);transition:right .35s cubic-bezier(.4,0,.2,1)}
+.drawer.open{right:0}
+.dhead{padding:22px 22px 18px;border-bottom:1px solid var(--blush);display:flex;justify-content:space-between;align-items:center}
+.dhead h3{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--deep)}
+.dclose{background:none;border:none;font-size:20px;cursor:pointer;color:var(--muted);transition:color .2s;padding:3px}
+.dclose:hover{color:var(--deep)}
+.ditems{flex:1;overflow-y:auto;padding:18px 20px;display:flex;flex-direction:column;gap:14px}
+.dempty{text-align:center;padding:50px 16px}
+.dempty .ei{font-size:44px;margin-bottom:12px}
+.dempty p{font-size:13px;color:var(--muted)}
+.ditem{display:flex;gap:12px;padding:12px;background:var(--cream);border-radius:12px}
+.ditem-img{width:68px;height:68px;border-radius:9px;overflow:hidden;background:var(--blush);flex-shrink:0}
+.ditem-img img{width:100%;height:100%;object-fit:cover}
+.ditem-info{flex:1;min-width:0}
+.ditem-brand{font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ditem-name{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--deep);margin:2px 0 7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dctrl{display:flex;align-items:center;gap:8px}
+.qb{width:24px;height:24px;border-radius:50%;border:1px solid rgba(44,36,32,.18);background:#fff;cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.qb:hover{background:var(--deep);color:#fff;border-color:var(--deep)}
+.qn{font-size:13px;font-weight:500;color:var(--deep);min-width:18px;text-align:center}
+.drm{background:none;border:none;cursor:pointer;color:var(--muted);font-size:14px;padding:3px;transition:color .2s;margin-left:2px}
+.drm:hover{color:var(--rose)}
+.ditem-price{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--deep);align-self:center;white-space:nowrap;margin-left:auto}
+.dfoot{padding:18px 20px;border-top:1px solid var(--blush)}
+.dtotal-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.dtotal-label{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.dtotal-amt{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--deep)}
+.wa-btn{width:100%;padding:16px;background:var(--wa);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:9px;transition:all .3s;letter-spacing:.02em}
+.wa-btn:hover{background:#1ebe57;transform:translateY(-2px);box-shadow:0 10px 26px rgba(37,211,102,.32)}
+.wa-btn:disabled{background:#ccc;cursor:not-allowed;transform:none;box-shadow:none}
+.wa-btn svg{width:20px;height:20px}
+.dnote{font-size:10px;color:var(--muted);text-align:center;margin-top:9px;line-height:1.5}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:26px;right:26px;z-index:150;width:54px;height:54px;border-radius:50%;background:var(--wa);color:#fff;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 22px rgba(37,211,102,.42);transition:all .3s;animation:float 3s ease-in-out infinite}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 8px 28px rgba(37,211,102,.52)}
+.wa-float svg{width:27px;height:27px}
+
+/* ANIMS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:13px 18px}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;padding:96px 18px 48px;text-align:center}
+  .hero-right{display:none}
+  .hero-btns{justify-content:center}
+  .badge-row{justify-content:center}
+  .pgrid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .rutina-sec{grid-template-columns:1fr;margin:0 18px 56px}
+  .rv{height:240px}
+  .bgrid{grid-template-columns:repeat(2,1fr)}
+  .fg{grid-template-columns:1fr 1fr;gap:28px}
+  .products-sec,.ben-sec,.nl-sec,.brands{padding:60px 18px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <ul class="nav-links">
+    <li><a href="#">Inicio</a></li>
+    <li><a href="#productos">Productos</a></li>
+    <li><a href="#rutina">Rutina</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+  </ul>
+  <a href="https://enigmastore.cl" class="logo">Enigma Store<small>K-Beauty Chile</small></a>
+  <div class="nav-right">
+    <a href="https://enigmastore.cl/collections/belleza" class="nav-shop" target="_blank">Tienda completa</a>
+    <button class="cart-trigger" onclick="toggleCart()">
+      🛒 Pedido
+      <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">✦ Importado directo de Corea del Sur</div>
+    <h1 class="hero-title">Best Korean<br><em>Skincare</em></h1>
+    <div class="badge-row">
+      <div class="badge-gold">
+        <span class="badge-pct">100%</span>
+        <span class="badge-word">ORIGINAL</span>
+      </div>
+      <p class="badge-copy">Productos certificados,<br>importados directo desde Corea.<br>Envío a todo Chile 🇨🇱</p>
+    </div>
+    <p class="hero-sub">K-Beauty con ingredientes naturales que hidratan, iluminan y revelan tu luminosidad natural. Fórmulas probadas para todo tipo de piel.</p>
+    <div class="hero-btns">
+      <a href="#productos" class="btn-primary">Ver productos</a>
+      <a href="#rutina" class="btn-ghost">Mi rutina K-Beauty</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Modelo K-Beauty skin glow">
+    </div>
+    <div class="fc fc-1">
+      <div class="fb">Oferta especial</div>
+      <div class="ft">Hasta −26% off</div>
+      <div class="fs">Productos seleccionados</div>
+    </div>
+    <div class="fc fc-2">
+      <div class="g-dot"></div>
+      <div><div class="g-title">Skin Glow Garantizado</div><div class="g-sub">Fórmulas K-Beauty</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section class="brands">
+  <div class="brands-label">Marcas oficiales disponibles en Enigma Store</div>
+  <div class="brands-row">
+    <div class="bi"><div class="bn sm">SKIN1004</div><div class="bs">The Untouched Nature</div></div>
+    <div class="dv"></div>
+    <div class="bi"><div class="bn it">Dr.Althea</div><div class="bs">Derma K-Beauty</div></div>
+    <div class="dv"></div>
+    <div class="bi"><div class="bn">celimax</div><div class="bs">Noni Extract</div></div>
+    <div class="dv"></div>
+    <div class="bi"><div class="bn" style="font-size:15px;letter-spacing:.06em">Medicube</div><div class="bs">Advanced Skincare</div></div>
+    <div class="dv"></div>
+    <div class="bi"><div class="bn" style="font-size:14px">Beauty of Joseon</div><div class="bs">Traditional K-Beauty</div></div>
+    <div class="dv"></div>
+    <div class="bi"><div class="bn">Mixsoon</div><div class="bs">Bean Fermented</div></div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section class="products-sec" id="productos">
+  <div class="sh reveal">
+    <span class="st">Selección K-Beauty · Enigma Store</span>
+    <h2 class="stitle">Elige tus productos y<br><em>arma tu pedido</em></h2>
+    <p class="ssub">Agrega al carrito y envíanos tu pedido por WhatsApp — te contactamos para confirmar 🛒</p>
+  </div>
+  <div class="tabs reveal">
+    <button class="tab active" onclick="filterProds('all',this)">Todos</button>
+    <button class="tab" onclick="filterProds('serum',this)">Sérum</button>
+    <button class="tab" onclick="filterProds('tonico',this)">Tónico</button>
+    <button class="tab" onclick="filterProds('hidratante',this)">Hidratante</button>
+    <button class="tab" onclick="filterProds('limpieza',this)">Limpieza</button>
+    <button class="tab" onclick="filterProds('solar',this)">Solar</button>
+    <button class="tab" onclick="filterProds('kit',this)">Kits</button>
+  </div>
+  <div class="pgrid reveal" id="pgrid"></div>
+  <div class="view-more-wrap reveal">
+    <a href="https://enigmastore.cl/collections/belleza" target="_blank" class="btn-ghost" style="margin-top:8px">Ver los 57 productos →</a>
+  </div>
+</section>
+
+<!-- RUTINA -->
+<section id="rutina">
+  <div class="rutina-sec reveal">
+    <div class="rv">
+      <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=700&q=80" alt="Modelo coreana skin glow K-Beauty">
+      <div class="skin-glow"></div>
+    </div>
+    <div class="rc">
+      <span class="st">Rutina K-Beauty</span>
+      <h2>Tu <em>glow</em><br>en 4 pasos</h2>
+      <p>La rutina coreana nutre cada capa de tu piel. Con nuestras marcas, resultados visibles desde la primera semana.</p>
+      <div class="steps">
+        <div class="step"><div class="snum">1</div><div><div class="sname">Limpieza Doble</div><div class="sbrand">Celimax · Noni Bubble Cleanser</div></div><div class="sico">🧴</div></div>
+        <div class="step"><div class="snum">2</div><div><div class="sname">Tónico Hidratante</div><div class="sbrand">SKIN1004 · Centella Toning Toner</div></div><div class="sico">💧</div></div>
+        <div class="step"><div class="snum">3</div><div><div class="sname">Sérum / Esencia</div><div class="sbrand">Celimax · Retinol Shot Serum</div></div><div class="sico">✨</div></div>
+        <div class="step"><div class="snum">4</div><div><div class="sname">Hidratante Barrier</div><div class="sbrand">Dr Althea · 345 Relief Cream</div></div><div class="sico">🌿</div></div>
+      </div>
+      <button class="btn-primary" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Armar mi rutina</button>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="ben-sec" id="nosotros">
+  <div class="sh reveal">
+    <span class="st">¿Por qué Enigma Store?</span>
+    <h2 class="stitle">Calidad que <em>se siente</em></h2>
+  </div>
+  <div class="bgrid reveal">
+    <div class="bcard"><div class="bico">💧</div><div class="btitle">Hidratación Profunda</div><div class="bdesc">Fórmulas K-Beauty que penetran hasta las capas más profundas para una hidratación duradera.</div></div>
+    <div class="bcard"><div class="bico">🌿</div><div class="btitle">Ingredientes Naturales</div><div class="bdesc">Centella Asiática, Noni, Bean Fermentado y más — ingredientes coreanos con resultados comprobados.</div></div>
+    <div class="bcard"><div class="bico">✦</div><div class="btitle">100% Original</div><div class="bdesc">Importados directamente desde Corea del Sur. Certificados y auténticos, sin intermediarios.</div></div>
+    <div class="bcard"><div class="bico">🚚</div><div class="btitle">Envío a Todo Chile</div><div class="bdesc">Despacho rápido a Santiago y regiones. También visítanos en Dardignac 461, Recoleta.</div></div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="nl-sec">
+  <div class="nl-inner">
+    <span class="st">Únete al mundo K-Beauty</span>
+    <h2>Eleva tu skincare con<br><em>Enigma Store</em></h2>
+    <p>Suscríbete y recibe un 10% de descuento en tu primera compra + tips de rutinas coreanas directo en tu correo.</p>
+    <div class="nlf">
+      <input type="email" placeholder="Tu correo electrónico" id="nlEmail">
+      <button onclick="subscribeNL()">Quiero mi 10%</button>
+    </div>
+    <div class="nl-disc">Sin spam. Solo lo mejor del K-Beauty para ti.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fg">
+    <div>
+      <a href="https://enigmastore.cl" class="flogo">Enigma Store<small>K-Beauty Chile</small></a>
+      <p class="fdesc">Tu tienda K-Beauty en Chile. Productos originales importados desde Corea del Sur con envío a todo el país.</p>
+    </div>
+    <div>
+      <div class="ftitle">Marcas</div>
+      <ul class="flinks">
+        <li><a href="https://enigmastore.cl/collections/celimax" target="_blank">Celimax</a></li>
+        <li><a href="https://enigmastore.cl/collections/mixsoon" target="_blank">Mixsoon</a></li>
+        <li><a href="https://enigmastore.cl/collections/skin1004" target="_blank">Skin1004</a></li>
+        <li><a href="https://enigmastore.cl/collections/dr-althea" target="_blank">Dr Althea</a></li>
+        <li><a href="https://enigmastore.cl/collections/medicube" target="_blank">Medicube</a></li>
+        <li><a href="https://enigmastore.cl/collections/beauty-of-joseon" target="_blank">Beauty of Joseon</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="ftitle">Contacto</div>
+      <ul class="flinks">
+        <li><a href="https://wa.me/56928775107">WhatsApp +56 9 2877 5107</a></li>
+        <li><a href="mailto:ventas@enigmastore.cl">ventas@enigmastore.cl</a></li>
+        <li><a href="https://enigmastore.cl/pages/politicas-de-envio" target="_blank">Política de envíos</a></li>
+        <li><a href="https://enigmastore.cl/pages/contact" target="_blank">Contacto</a></li>
+        <li><a href="#">📍 Dardignac 461, Recoleta</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© 2025 Enigma Store Chile SpA · RUT 77.397.268-0</span>
+    <a href="https://enigmastore.cl">www.enigmastore.cl</a>
+  </div>
+</footer>
+
+<!-- OVERLAY + DRAWER -->
+<div class="overlay" id="overlay" onclick="toggleCart()"></div>
+<div class="drawer" id="drawer">
+  <div class="dhead">
+    <h3>🛒 Mi Pedido</h3>
+    <button class="dclose" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="ditems" id="ditems">
+    <div class="dempty"><div class="ei">🌿</div><p>Tu carrito está vacío.<br>¡Agrega productos para armar tu rutina!</p></div>
+  </div>
+  <div class="dfoot" id="dfoot" style="display:none">
+    <div class="dtotal-row">
+      <span class="dtotal-label">Total estimado</span>
+      <span class="dtotal-amt" id="dtotal">$0</span>
+    </div>
+    <button class="wa-btn" onclick="sendWA()">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Enviar pedido por WhatsApp
+    </button>
+    <p class="dnote">Te contactamos para confirmar disponibilidad, pago y envío 🌿</p>
+  </div>
+</div>
+
+<!-- WA FLOAT -->
+<button class="wa-float" onclick="window.open('https://wa.me/56928775107','_blank')" title="Escríbenos">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</button>
+
+<script>
+// ── PRODUCTOS REALES DE ENIGMA STORE ──
+const PRODUCTS = [
+  {id:1,name:'PORE+DARK SPOT Brightening Serum 30ml',brand:'Celimax',price:21990,old:26990,cat:'serum',badge:'sale',bl:'−18%',img:'https://enigmastore.cl/cdn/shop/files/CELIMAXPORE_DARKSPOT.png?crop=center&height=600&v=1777051955&width=600',url:'https://enigmastore.cl/collections/belleza/products/celimax-the-vita-a-retinol-shot-tightening-serum-30ml-copia'},
+  {id:2,name:'The Vita A Retinol Shot Tightening Serum 30ml',brand:'Celimax',price:23990,old:29990,cat:'serum',badge:'sale',bl:'−20%',img:'https://enigmastore.cl/cdn/shop/files/celimax_retinol_botella_original.png?crop=center&height=600&v=1777049883&width=600',url:'https://enigmastore.cl/collections/belleza/products/celimax-the-vita-a-retinol-shot-tightening-serum-30ml'},
+  {id:3,name:'The Vita-A Retinal Shot Tightening Booster 15ml',brand:'Celimax',price:22990,old:24990,cat:'serum',badge:'sale',bl:'−8%',img:'https://enigmastore.cl/cdn/shop/files/1_066ba8b7-236c-4a60-9a58-9d35c943c437.png?crop=center&height=600&v=1777049025&width=600',url:'https://enigmastore.cl/collections/belleza/products/the-vita-a-retinal-shot-tightening-booster-15ml'},
+  {id:4,name:'The Real Noni Moisture Balancing Toner 150ml',brand:'Celimax',price:22990,old:29990,cat:'tonico',badge:'sale',bl:'−23%',img:'https://enigmastore.cl/cdn/shop/files/1_808ee928-a6f6-44aa-be09-5bf2bb0733b0.png?crop=center&height=600&v=1777046835&width=600',url:'https://enigmastore.cl/collections/belleza/products/celimax-the-real-noni-moisture-balancing-toner-150ml'},
+  {id:5,name:'The Real Noni Acne Bubble Cleanser 155ml',brand:'Celimax',price:18990,old:24990,cat:'limpieza',badge:'sale',bl:'−24%',img:'https://enigmastore.cl/cdn/shop/files/1_cd12f495-0e2c-496d-827d-b7aed89b6d0a.png?crop=center&height=600&v=1777047072&width=600',url:'https://enigmastore.cl/collections/belleza/products/celimax-the-real-noni-acne-bubble-cleanser-155ml'},
+  {id:6,name:'The Real Noni Starter Kit',brand:'Celimax',price:19990,old:24990,cat:'kit',badge:'hot',bl:'Kit',img:'https://enigmastore.cl/cdn/shop/files/1_89414885-28fb-41ae-b166-670de52a5e0b.png?crop=center&height=600&v=1777046464&width=600',url:'https://enigmastore.cl/collections/belleza/products/celimax-the-real-noni-starter-kit'},
+  {id:7,name:'Oil Control Mattifying Sun Stick 19g',brand:'Celimax',price:19990,old:24990,cat:'solar',badge:'sale',bl:'−20%',img:'https://enigmastore.cl/cdn/shop/files/1_a407e500-3049-4637-8151-5ec683a90995.png?crop=center&height=600&v=1777048769&width=600',url:'https://enigmastore.cl/collections/belleza/products/celimax-oil-control-mattifying-sun-stick-19g'},
+  {id:8,name:'345 Relief Cream Mist 60ml',brand:'Dr Althea',price:13990,old:16990,cat:'hidratante',badge:'sale',bl:'−17%',img:'https://enigmastore.cl/cdn/shop/files/1_246efeea-1d9b-4a6f-842f-a9dae503e5d7.png?crop=center&height=600&v=1776374364&width=600',url:'https://enigmastore.cl/collections/belleza/products/dr-althea-345-relief-cream-mist-60ml'},
+  {id:9,name:'345 Relief Cream',brand:'Dr Althea',price:33990,old:36900,cat:'hidratante',badge:'sale',bl:'−7%',img:'https://enigmastore.cl/cdn/shop/files/1_e67b28b4-197d-444d-b177-a0c9397bb2d4.png?crop=center&height=600&v=1776374046&width=600',url:'https://enigmastore.cl/collections/belleza/products/dr-althea-345-relief-cream'},
+  {id:10,name:'147 Barrier Cream 50ml',brand:'Dr Althea',price:33990,old:36900,cat:'hidratante',badge:'',bl:'',img:'https://enigmastore.cl/cdn/shop/files/1_e7aeae51-7fbc-4113-b783-884955d0c40f.png?crop=center&height=600&v=1776373789&width=600',url:'https://enigmastore.cl/collections/belleza/products/dr-althea-147-barrier-cream-50ml'},
+  {id:11,name:'Vitamin C Boosting Serum 30ml',brand:'Dr Althea',price:25990,old:28900,cat:'serum',badge:'sale',bl:'−10%',img:'https://enigmastore.cl/cdn/shop/files/1_ca10b9fb-9706-4b6f-8690-5ef079a5e451.png?crop=center&height=600&v=1776358402&width=600',url:'https://enigmastore.cl/collections/belleza/products/dr-althea-boosting-vitamin-c-serum-30ml'},
+  {id:12,name:'Aqua Glowing Sunscreen 45ml',brand:'Dr Althea',price:22990,old:24990,cat:'solar',badge:'sale',bl:'−8%',img:'https://enigmastore.cl/cdn/shop/files/1_cd1dec06-7fe1-43e4-aab8-9c890e406333.png?crop=center&height=600&v=1776356042&width=600',url:'https://enigmastore.cl/collections/belleza/products/dr-althea-aqua-glowing-sunscreen-45ml'},
+  {id:13,name:'Hyalu-Cica Water-Fit Sun Serum 50ml',brand:'SKIN1004',price:23990,old:25990,cat:'solar',badge:'sale',bl:'−7%',img:'https://enigmastore.cl/cdn/shop/files/1_ad25a448-546c-49e5-a557-99a3eb4b2ec5.png?crop=center&height=600&v=1776281538&width=600',url:'https://enigmastore.cl/collections/belleza/products/skin1004-hyalu-cica-water-fit-sun-serum-50ml'},
+  {id:14,name:'Hyalu-Cica First Ampoule 100ml',brand:'SKIN1004',price:26990,old:29990,cat:'serum',badge:'sale',bl:'−10%',img:'https://enigmastore.cl/cdn/shop/files/1_1b41907b-7749-445e-b0b1-93ed527def79.png?crop=center&height=600&v=1776275512&width=600',url:'https://enigmastore.cl/collections/belleza/products/skin1004-hyalu-cica-first-ampoule-100ml'},
+  {id:15,name:'Madagascar Centella Toning Toner 210ml',brand:'SKIN1004',price:23990,old:26990,cat:'tonico',badge:'sale',bl:'−11%',img:'https://enigmastore.cl/cdn/shop/files/1_bfb20fd2-c467-418b-8f16-96f71992edba.png?crop=center&height=600&v=1776202646&width=600',url:'https://enigmastore.cl/collections/belleza/products/skin1004-madagascar-centella-toning-toner'},
+  {id:16,name:'Madagascar Centella Travel Kit',brand:'SKIN1004',price:32990,old:44900,cat:'kit',badge:'hot',bl:'−26%',img:'https://enigmastore.cl/cdn/shop/files/1_d7a7b654-0b2e-46e9-a336-abdcdb9e0383.png?crop=center&height=600&v=1776200805&width=600',url:'https://enigmastore.cl/collections/belleza/products/skin1004-madagascar-centella-travel-kit'},
+  {id:17,name:'Collagen Night Wrapping Mask 75ml',brand:'Medicube',price:40990,old:47990,cat:'hidratante',badge:'sale',bl:'−14%',img:'https://enigmastore.cl/cdn/shop/files/1_e19e9f1f-4964-41d9-86a0-52067b9bd62e.png?crop=center&height=600&v=1776375055&width=600',url:'https://enigmastore.cl/collections/belleza/products/medicube-collagen-night-wrapping-mask-75-ml'},
+  {id:18,name:'Relief Sun Aqua-Fresh: Rice + B5 50ml',brand:'Beauty of Joseon',price:21990,old:24990,cat:'solar',badge:'sale',bl:'−12%',img:'https://enigmastore.cl/cdn/shop/files/4_b9225f21-3053-4bdf-b318-29badc8c0a14.png?crop=center&height=600&v=1776355583&width=600',url:'https://enigmastore.cl/collections/belleza/products/beauty-of-joseon-relief-sun-aqua-fresh-rice-b5-50ml'},
+  {id:19,name:'The Madeca Cream Time Reverse 50ml',brand:'Centellian 24',price:27980,old:33990,cat:'hidratante',badge:'sale',bl:'−17%',img:'https://enigmastore.cl/cdn/shop/files/1_51c817b5-3a1b-4cd4-8131-a1bc7a460fc0.png?crop=center&height=600&v=1776356530&width=600',url:'https://enigmastore.cl/collections/belleza/products/centellian-24-the-madeca-cream-time-reverse-50ml'},
+  {id:20,name:'Glass Skin Suitcase',brand:'Mixsoon',price:55990,old:58990,cat:'kit',badge:'new',bl:'Nuevo',img:'https://enigmastore.cl/cdn/shop/files/1_c60d5a0b-e4c2-43d2-9873-8d3960fc94a8.png?crop=center&height=600&v=1776198064&width=600',url:'https://enigmastore.cl/collections/belleza/products/mixsoon-mixsoon-glass-skin-suitcase'},
+];
+
+const WA_NUM = '56928775107';
+let cart = [];
+
+function fmt(n){return '$'+n.toLocaleString('es-CL')}
+
+function renderProds(filter='all'){
+  const grid=document.getElementById('pgrid');
+  const list=filter==='all'?PRODUCTS:PRODUCTS.filter(p=>p.cat===filter);
+  grid.innerHTML=list.map(p=>`
+    <div class="pc">
+      <div class="pimg" onclick="window.open('${p.url}','_blank')">
+        <img src="${p.img}" alt="${p.name}" loading="lazy">
+        ${p.badge?`<span class="pbadge b-${p.badge}">${p.bl}</span>`:''}
+      </div>
+      <div class="pinfo">
+        <div class="pbrand">${p.brand}</div>
+        <div class="pname">${p.name}</div>
+        <div class="pfoot">
+          <div class="pprice">${p.old?`<span class="old">${fmt(p.old)}</span>`:''}${fmt(p.price)}</div>
+          <button class="addbtn" id="ab${p.id}" onclick="addToCart(${p.id})" title="Agregar al pedido">+</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterProds(cat,btn){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  renderProds(cat);
+}
+
+function addToCart(id){
+  const p=PRODUCTS.find(x=>x.id===id);
+  const ex=cart.find(x=>x.id===id);
+  if(ex)ex.qty++;
+  else cart.push({...p,qty:1});
+  updateCartUI();
+  const btn=document.getElementById('ab'+id);
+  if(btn){btn.textContent='✓';btn.classList.add('done');setTimeout(()=>{btn.textContent='+';btn.classList.remove('done')},900)}
+  if(!document.getElementById('drawer').classList.contains('open'))toggleCart();
+  const b=document.getElementById('cartBadge');
+  b.classList.add('pop');setTimeout(()=>b.classList.remove('pop'),300);
+}
+
+function removeItem(id){cart=cart.filter(x=>x.id!==id);updateCartUI()}
+function changeQty(id,d){
+  const it=cart.find(x=>x.id===id);
+  if(!it)return;
+  it.qty+=d;
+  if(it.qty<=0)removeItem(id);
+  else updateCartUI();
+}
+
+function updateCartUI(){
+  const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const count=cart.reduce((s,i)=>s+i.qty,0);
+  document.getElementById('cartBadge').textContent=count;
+  const items=document.getElementById('ditems');
+  const foot=document.getElementById('dfoot');
+  if(cart.length===0){
+    items.innerHTML='<div class="dempty"><div class="ei">🌿</div><p>Tu carrito está vacío.<br>¡Agrega productos para armar tu rutina!</p></div>';
+    foot.style.display='none';
+  } else {
+    items.innerHTML=cart.map(i=>`
+      <div class="ditem">
+        <div class="ditem-img"><img src="${i.img}" alt="${i.name}" loading="lazy"></div>
+        <div class="ditem-info">
+          <div class="ditem-brand">${i.brand}</div>
+          <div class="ditem-name">${i.name}</div>
+          <div class="dctrl">
+            <button class="qb" onclick="changeQty(${i.id},-1)">−</button>
+            <span class="qn">${i.qty}</span>
+            <button class="qb" onclick="changeQty(${i.id},1)">+</button>
+            <button class="drm" onclick="removeItem(${i.id})">🗑</button>
+          </div>
+        </div>
+        <div class="ditem-price">${fmt(i.price*i.qty)}</div>
+      </div>
+    `).join('');
+    foot.style.display='block';
+    document.getElementById('dtotal').textContent=fmt(total);
+  }
+}
+
+function toggleCart(){
+  document.getElementById('drawer').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+}
+
+function sendWA(){
+  if(!cart.length)return;
+  const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  let msg='¡Hola Enigma Store! 👋 Me gustaría hacer el siguiente pedido:\n\n';
+  cart.forEach(i=>{
+    msg+=`• ${i.qty}x ${i.brand} - ${i.name}\n`;
+    msg+=`  Precio: ${fmt(i.price*i.qty)}\n\n`;
+  });
+  msg+=`━━━━━━━━━━━━━━\n💰 *TOTAL: ${fmt(total)}*\n\n`;
+  msg+='Por favor, ¿me pueden confirmar disponibilidad y coordinar el pago y envío? 🌿\n¡Gracias!';
+  window.open(`https://wa.me/${WA_NUM}?text=${encodeURIComponent(msg)}`,'_blank');
+}
+
+function subscribeNL(){
+  const input=document.getElementById('nlEmail');
+  if(input.value.includes('@')){
+    input.value='';input.placeholder='✓ ¡Listo! Revisa tu correo';
+    input.style.borderColor='#8FA89A';
+  }
+}
+
+// Scroll reveal
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80)});
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+
+// Init
+renderProds();
+</script>
+</body>
+</html>
