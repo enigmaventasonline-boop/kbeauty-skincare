@@ -201,11 +201,15 @@ footer{background:#1A1210;color:rgba(255,255,255,.42);padding:48px 40px 26px}
 .dtotal-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
 .dtotal-label{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
 .dtotal-amt{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--deep)}
-.wa-btn{width:100%;padding:16px;background:var(--deep);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:9px;transition:all .3s;letter-spacing:.02em}
+.wa-btn{width:100%;padding:16px;background:var(--deep);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:9px;transition:all .3s cubic-bezier(.34,1.56,.64,1);letter-spacing:.02em}
 .wa-btn:hover{background:var(--rose);transform:translateY(-2px);box-shadow:0 10px 26px rgba(212,168,154,.32)}
 .wa-btn:disabled{background:#ccc;cursor:not-allowed;transform:none;box-shadow:none}
 .wa-btn svg{width:20px;height:20px}
 .wa-btn-secondary{font-size:12px;padding:12px 16px;opacity:.85}
+/* Botón Ir a Pago — negro → verde al interactuar */
+.shopify-btn{background:#1a1a1a !important;color:#fff;transition:all .35s cubic-bezier(.34,1.56,.64,1) !important}
+.shopify-btn:hover{background:#22c55e !important;transform:scale(1.03) translateY(-1px) !important;box-shadow:0 12px 30px rgba(34,197,94,.35) !important;color:#fff}
+.shopify-btn:active{background:#16a34a !important;transform:scale(1.05) !important;box-shadow:0 6px 20px rgba(34,197,94,.4) !important}
 .dnote{font-size:10px;color:var(--muted);text-align:center;margin-top:9px;line-height:1.5}
 .payment-methods{margin-top:14px;padding-top:12px;border-top:1px solid var(--border)}
 .payment-label{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-align:center;display:flex;align-items:center;justify-content:center;gap:5px;margin-bottom:8px}
