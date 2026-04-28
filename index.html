@@ -206,10 +206,36 @@ footer{background:#1A1210;color:rgba(255,255,255,.42);padding:48px 40px 26px}
 .wa-btn:disabled{background:#ccc;cursor:not-allowed;transform:none;box-shadow:none}
 .wa-btn svg{width:20px;height:20px}
 .wa-btn-secondary{font-size:12px;padding:12px 16px;opacity:.85}
-/* Botón Ir a Pago — negro → verde al interactuar */
-.shopify-btn{background:#1a1a1a !important;color:#fff;transition:all .35s cubic-bezier(.34,1.56,.64,1) !important}
-.shopify-btn:hover{background:#22c55e !important;transform:scale(1.03) translateY(-1px) !important;box-shadow:0 12px 30px rgba(34,197,94,.35) !important;color:#fff}
-.shopify-btn:active{background:#16a34a !important;transform:scale(1.05) !important;box-shadow:0 6px 20px rgba(34,197,94,.4) !important}
+/* Botón Ir a Pago — efecto negro que se expande al pasar cursor */
+.shopify-btn{
+  position:relative;
+  overflow:hidden;
+  background:var(--rose) !important;
+  color:#fff;
+  transition:box-shadow .3s ease, transform .25s ease !important;
+  z-index:1;
+}
+.shopify-btn::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:#1a1a1a;
+  transform:scaleX(0);
+  transform-origin:left center;
+  transition:transform .38s cubic-bezier(.4,0,.2,1);
+  z-index:-1;
+}
+.shopify-btn:hover{
+  color:#fff;
+  transform:translateY(-2px) !important;
+  box-shadow:0 12px 30px rgba(26,26,26,.28) !important;
+}
+.shopify-btn:hover::before{transform:scaleX(1)}
+.shopify-btn:active{
+  transform:translateY(0) scale(.98) !important;
+  box-shadow:0 6px 18px rgba(26,26,26,.22) !important;
+}
+.shopify-btn svg{position:relative;z-index:2}
 .dnote{font-size:10px;color:var(--muted);text-align:center;margin-top:9px;line-height:1.5}
 .payment-methods{margin-top:14px;padding-top:12px;border-top:1px solid var(--border)}
 .payment-label{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-align:center;display:flex;align-items:center;justify-content:center;gap:5px;margin-bottom:8px}
