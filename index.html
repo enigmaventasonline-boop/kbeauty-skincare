@@ -8,9 +8,9 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --cream:#FAF7F4;--blush:#F2E8E1;--rose:#D4A89A;--deep:#2C2420;
-  --text:#4A3F3A;--muted:#8C7D78;--white:#fff;
-  --gold:#C9A030;--gold-l:#E8C97A;--sage:#8FA89A;--wa:#25D366;
+  --cream:#FFEFCD;--blush:#F5E6D3;--rose:#E09132;--deep:#424530;
+  --text:#5E5347;--muted:#A58E74;--white:#fff;
+  --gold:#E09132;--gold-l:#FFEFCD;--sage:#A58E74;--wa:#25D366;
 }
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
@@ -107,8 +107,8 @@ h1.hero-title em{font-style:italic}
 .pbrand{font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
 .pname{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:500;color:var(--deep);margin-bottom:5px;line-height:1.2}
 .pfoot{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
-.pprice{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--deep)}
-.pprice .old{font-size:11px;color:var(--muted);text-decoration:line-through;margin-right:4px;font-family:'DM Sans',sans-serif;font-weight:300}
+.pprice{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--deep);font-weight:700}
+.pprice .old{font-size:11px;color:var(--muted);text-decoration:line-through;margin-right:4px;font-family:'DM Sans',sans-serif;font-weight:400}
 .addbtn{width:34px;height:34px;border-radius:50%;background:var(--deep);color:var(--white);border:none;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .25s;line-height:1;flex-shrink:0}
 .addbtn:hover{background:var(--rose);transform:scale(1.12)}
 .addbtn.done{background:var(--sage)}
@@ -133,6 +133,33 @@ h1.hero-title em{font-style:italic}
 .sname{font-size:12px;color:var(--white)}
 .sbrand{font-size:9px;color:rgba(255,255,255,.32)}
 .sico{font-size:16px;margin-left:auto}
+
+/* FORMULARIO RUTINA PERSONALIZADA */
+.rutina-form{margin-top:18px;padding:16px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.09);border-radius:14px}
+.rf-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--white);margin-bottom:5px}
+.rf-desc{font-size:11px!important;line-height:1.55!important;color:rgba(255,255,255,.46)!important;margin-bottom:12px!important}
+.rf-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.rf-input{width:100%;padding:11px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.07);color:var(--white);font-size:12px;font-family:'DM Sans',sans-serif;outline:none}
+.rf-input::placeholder{color:rgba(255,255,255,.36)}
+.rf-input:focus{border-color:var(--rose);background:rgba(255,255,255,.1)}
+.rf-input option{color:#2C2420;background:#fff}
+.rf-btn{margin-top:10px;width:100%;justify-content:center}
+.routine-result{margin-top:14px;display:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:14px}
+.routine-result.open{display:block}
+.rr-head{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--white);margin-bottom:5px}
+.rr-copy{font-size:11px;color:rgba(255,255,255,.5);line-height:1.55;margin-bottom:12px}
+.rr-list{display:grid;grid-template-columns:1fr;gap:8px}
+.rr-item{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08);border-radius:11px;padding:8px}
+.rr-item img{width:48px;height:48px;border-radius:9px;object-fit:cover;background:var(--blush);flex-shrink:0}
+.rr-info{flex:1;min-width:0}
+.rr-step{font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--rose);margin-bottom:2px}
+.rr-name{font-size:11px;color:var(--white);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rr-price{font-size:11px;color:rgba(255,255,255,.58);margin-top:2px}
+.rr-add{border:none;background:var(--rose);color:#fff;border-radius:20px;padding:7px 10px;font-size:10px;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all .2s;white-space:nowrap}
+.rr-add:hover{transform:translateY(-1px);background:#c97c25}
+.rr-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.rr-actions .btn-primary{padding:11px 16px;font-size:10px}
+@media(max-width:900px){.rf-grid{grid-template-columns:1fr}.rutina-form{margin-top:14px}.rr-add{padding:8px 11px}}
 
 /* BENEFITS */
 .ben-sec{padding:88px 40px;background:var(--blush)}
@@ -206,10 +233,10 @@ footer{background:#1A1210;color:rgba(255,255,255,.42);padding:48px 40px 26px}
 .wa-btn:disabled{background:#ccc;cursor:not-allowed;transform:none;box-shadow:none}
 .wa-btn svg{width:20px;height:20px}
 .wa-btn-secondary{font-size:12px;padding:12px 16px;opacity:.85}
-/* Botón Ir a Pago — negro → verde al interactuar */
+/* Botón Ir a Pago — negro → Apricot al interactuar */
 .shopify-btn{background:#1a1a1a !important;color:#fff;transition:all .35s cubic-bezier(.34,1.56,.64,1) !important}
-.shopify-btn:hover{background:#22c55e !important;transform:scale(1.03) translateY(-1px) !important;box-shadow:0 12px 30px rgba(34,197,94,.35) !important;color:#fff}
-.shopify-btn:active{background:#16a34a !important;transform:scale(1.05) !important;box-shadow:0 6px 20px rgba(34,197,94,.4) !important}
+.shopify-btn:hover{background:#E09132 !important;transform:scale(1.03) translateY(-1px) !important;box-shadow:0 12px 30px rgba(224,145,50,.35) !important;color:#fff}
+.shopify-btn:active{background:#C97C25 !important;transform:scale(1.05) !important;box-shadow:0 6px 20px rgba(224,145,50,.4) !important}
 .dnote{font-size:10px;color:var(--muted);text-align:center;margin-top:9px;line-height:1.5}
 .payment-methods{margin-top:14px;padding-top:12px;border-top:1px solid var(--border)}
 .payment-label{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-align:center;display:flex;align-items:center;justify-content:center;gap:5px;margin-bottom:8px}
@@ -252,8 +279,8 @@ footer{background:#1A1210;color:rgba(255,255,255,.42);padding:48px 40px 26px}
 .popup-body{padding:24px}
 .popup-brand{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
 .popup-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--deep);margin-bottom:10px;line-height:1.2}
-.popup-price{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--deep);margin-bottom:16px}
-.popup-price .old{font-size:16px;color:var(--muted);text-decoration:line-through;margin-right:8px;font-family:'DM Sans',sans-serif;font-weight:300}
+.popup-price{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--deep);margin-bottom:16px;font-weight:700}
+.popup-price .old{font-size:16px;color:var(--muted);text-decoration:line-through;margin-right:8px;font-family:'DM Sans',sans-serif;font-weight:400}
 .popup-stars{margin:6px 0 14px}
 .stars-row{display:flex;align-items:center;gap:4px}
 .star{font-size:16px;line-height:1}
@@ -267,6 +294,323 @@ footer{background:#1A1210;color:rgba(255,255,255,.42);padding:48px 40px 26px}
 .popup-add:hover{background:var(--rose)}
 .popup-close{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.9);border:none;border-radius:50%;width:34px;height:34px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
 .popup-close:hover{background:var(--deep);color:#fff}
+
+/* =========================
+   HOVER MARCAS PREMIUM SAFE
+   Solo efecto visual: no toca estructura, scripts ni layout
+   ========================= */
+.brands .bi{
+  transition: transform .25s ease, opacity .25s ease;
+  transform-origin: center;
+}
+.brands .bi:hover{
+  transform: scale(1.08) translateY(-2px);
+  opacity:1;
+}
+.brands .bn{
+  transition: font-weight .25s ease, color .25s ease, letter-spacing .25s ease;
+}
+.brands .bi:hover .bn{
+  font-weight:700;
+  color:var(--deep);
+  letter-spacing:.18em;
+}
+.brands .bs{
+  transition: color .25s ease;
+}
+.brands .bi:hover .bs{
+  color:var(--rose);
+}
+
+
+/* =========================
+   HERO PROFESIONAL · SAFE OVERRIDE
+   ========================= */
+.hero-pro{
+  min-height:100vh;
+  grid-template-columns:minmax(0,1fr) minmax(360px,560px);
+  gap:34px;
+  padding:120px 54px 72px;
+  background:
+    radial-gradient(circle at 80% 16%, rgba(224,145,50,.18), transparent 34%),
+    radial-gradient(circle at 18% 82%, rgba(165,142,116,.20), transparent 36%),
+    linear-gradient(135deg,#FFEFCD 0%,#F5E6D3 48%,#FFFFFF 100%);
+}
+.hero-pro::before{
+  content:'';
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(66,69,48,.08);
+  border-radius:32px;
+  pointer-events:none;
+}
+.hero-pro::after{
+  background:radial-gradient(circle,rgba(224,145,50,.16) 0%,transparent 68%);
+}
+.hero-pro-copy{max-width:630px;position:relative;z-index:3}
+.hero-pro .hero-tag{
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(224,145,50,.26);
+  color:var(--rose);
+  box-shadow:0 10px 30px rgba(66,69,48,.06);
+}
+.hero-pro .hero-title{
+  font-size:clamp(52px,6.6vw,92px);
+  line-height:.94;
+  max-width:720px;
+}
+.hero-pro .hero-title em{color:var(--rose);font-weight:400}
+.hero-pro .hero-sub{max-width:500px;color:rgba(66,69,48,.72);font-size:15px;margin-bottom:22px}
+.hero-stats{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  max-width:680px;
+  margin:0 0 18px;
+}
+.hero-stat{
+  background:rgba(255,255,255,.66);
+  border:1px solid rgba(66,69,48,.10);
+  border-radius:18px;
+  padding:14px 15px;
+  box-shadow:0 12px 34px rgba(66,69,48,.06);
+}
+.hero-stat strong{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;
+  line-height:1;
+  color:var(--deep);
+  font-weight:700;
+}
+.hero-stat span{
+  display:block;
+  margin-top:5px;
+  font-size:10px;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.hero-seals{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 26px}
+.hero-seal{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(66,69,48,.08);
+  color:var(--deep);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.02em;
+}
+.hero-seal span{
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--deep);
+  color:#fff;
+  font-size:11px;
+}
+.hero-pro .btn-primary{background:var(--rose);box-shadow:0 14px 30px rgba(224,145,50,.26)}
+.hero-pro .btn-primary:hover{background:var(--deep);box-shadow:0 14px 30px rgba(66,69,48,.24)}
+.hero-pro .btn-ghost{background:rgba(255,255,255,.48);backdrop-filter:blur(10px)}
+.hero-pro-visual{min-height:560px;align-items:center;position:relative}
+.hero-product-card{
+  width:min(520px,100%);
+  height:560px;
+  border-radius:34px;
+  background:linear-gradient(145deg,rgba(255,255,255,.82),rgba(255,255,255,.38));
+  border:1px solid rgba(255,255,255,.72);
+  box-shadow:0 30px 80px rgba(66,69,48,.16);
+  overflow:hidden;
+  position:relative;
+}
+.hero-product-card::after{
+  content:'';
+  position:absolute;
+  inset:auto 28px 22px;
+  height:90px;
+  border-radius:50%;
+  background:rgba(66,69,48,.12);
+  filter:blur(28px);
+  z-index:0;
+}
+.hero-product-card img{
+  position:relative;
+  z-index:1;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center bottom;
+  padding:24px;
+  filter:drop-shadow(0 24px 34px rgba(66,69,48,.18));
+}
+.hero-floating-card{
+  position:absolute;
+  z-index:4;
+  background:rgba(255,255,255,.90);
+  border:1px solid rgba(255,255,255,.86);
+  box-shadow:0 18px 48px rgba(66,69,48,.14);
+  backdrop-filter:blur(14px);
+  border-radius:18px;
+  padding:14px 16px;
+}
+.hero-card-top{top:72px;left:-18px}
+.hero-card-bottom{bottom:68px;right:-14px;display:flex;align-items:center;gap:12px}
+.hero-card-kicker{font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);font-weight:700;margin-bottom:4px}
+.hero-card-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--deep);line-height:1}
+.hero-card-sub{font-size:10px;color:var(--muted);margin-top:5px}
+.hero-mini-chart{display:flex;align-items:end;gap:4px;width:34px;height:34px;padding:5px;border-radius:10px;background:rgba(224,145,50,.12)}
+.hero-mini-chart span{display:block;width:7px;border-radius:8px;background:var(--rose)}
+@media(max-width:900px){
+  .hero-pro{grid-template-columns:1fr;padding:96px 18px 54px;text-align:center;gap:18px}
+  .hero-pro::before{inset:8px;border-radius:24px}
+  .hero-pro .hero-sub{margin-left:auto;margin-right:auto}
+  .hero-stats{grid-template-columns:1fr 1fr;gap:7px;margin-left:auto;margin-right:auto}
+  .hero-stat{padding:10px 8px;border-radius:14px}
+  .hero-stat strong{font-size:23px}
+  .hero-stat span{font-size:8px}
+  .hero-seals{justify-content:center}
+  .hero-pro .hero-right{display:flex;min-height:auto;margin-top:20px}
+  .hero-product-card{height:360px;border-radius:26px}
+  .hero-card-top{top:18px;left:8px;text-align:left}
+  .hero-card-bottom{bottom:18px;right:8px;text-align:left}
+}
+@media(max-width:520px){
+  .hero-stats{grid-template-columns:1fr}
+  .hero-floating-card{display:none}
+  .hero-product-card{height:320px}
+}
+
+
+/* AJUSTE SEGURO: HERO VISUAL PC MÁS GRANDE */
+@media (min-width:901px){
+  .hero-pro{grid-template-columns:0.92fr 1.08fr;gap:36px;}
+  .hero-pro-visual{min-height:650px;justify-content:center;}
+  .hero-product-card{width:min(660px,100%);height:650px;}
+  .hero-product-card img{padding:10px;}
+  .hero-card-top{top:86px;left:-26px;}
+  .hero-card-bottom{bottom:86px;right:-22px;}
+}
+
+
+
+/* =========================
+   HERO PREMIUM +20% · SAFE OVERRIDE
+   ========================= */
+@media (min-width:901px){
+  .hero-pro{
+    grid-template-columns:0.86fr 1.14fr;
+    gap:30px;
+    padding-right:38px;
+  }
+  .hero-pro-visual{
+    min-height:720px;
+    justify-content:center;
+    align-items:center;
+    overflow:visible;
+  }
+  .hero-product-card{
+    width:min(792px,100%);
+    height:780px;
+    border-radius:38px;
+    background:linear-gradient(145deg,rgba(255,255,255,.86),rgba(255,255,255,.44));
+    box-shadow:0 36px 90px rgba(66,69,48,.18);
+    overflow:hidden;
+  }
+  .hero-product-card img{
+    padding:0;
+    transform:scale(1.04) translateY(12px);
+    filter:drop-shadow(0 34px 58px rgba(66,69,48,.20));
+  }
+  .hero-pro-visual::before{
+    content:'';
+    position:absolute;
+    width:520px;
+    height:520px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(255,239,205,.70) 0%,rgba(224,145,50,.18) 38%,transparent 72%);
+    z-index:0;
+    pointer-events:none;
+  }
+  .hero-card-top{top:92px;left:-34px;}
+  .hero-card-bottom{bottom:92px;right:-28px;}
+}
+
+
+
+/* =========================
+   FIX HERO PC: CENTRAR VISUAL Y QUITAR ESPACIO SUPERIOR
+   ========================= */
+@media (min-width:901px){
+  .hero-pro{
+    min-height:calc(100vh - 56px);
+    padding-top:70px !important;
+    padding-bottom:34px !important;
+    align-items:center;
+  }
+
+  .hero-pro-visual{
+    min-height:640px !important;
+    align-items:center !important;
+    justify-content:center !important;
+  }
+
+  .hero-product-card{
+    height:640px !important;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .hero-product-card img{
+    object-position:center center !important;
+    transform:scale(1.13) translateY(-26px) !important;
+  }
+
+  .hero-card-top{
+    top:58px !important;
+  }
+
+  .hero-card-bottom{
+    bottom:54px !important;
+  }
+}
+
+
+
+/* =========================
+   REVIEWS + REFERENCIAS DE USO
+   ========================= */
+.reviews-sec{padding:88px 40px;background:linear-gradient(180deg,var(--cream) 0%,var(--blush) 100%)}
+.reviews-wrap{max-width:1120px;margin:0 auto}
+.trust-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 auto 46px;max-width:900px}
+.trust-pill{background:rgba(255,255,255,.75);border:1px solid rgba(165,142,116,.22);border-radius:16px;padding:16px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 8px 24px rgba(66,69,48,.06)}
+.trust-ico{width:34px;height:34px;border-radius:50%;background:rgba(224,145,50,.12);display:flex;align-items:center;justify-content:center;color:var(--rose);font-size:17px;flex-shrink:0}
+.trust-title{font-size:12px;font-weight:700;color:var(--deep);letter-spacing:.02em}
+.trust-sub{font-size:10px;color:var(--muted);margin-top:2px;line-height:1.4}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.review-card{background:var(--white);border-radius:18px;padding:22px;box-shadow:0 14px 38px rgba(66,69,48,.08);border:1px solid rgba(165,142,116,.14);transition:transform .28s ease,box-shadow .28s ease}
+.review-card:hover{transform:translateY(-4px);box-shadow:0 18px 48px rgba(66,69,48,.12)}
+.review-stars{color:#E09132;font-size:14px;letter-spacing:.08em;margin-bottom:10px}
+.review-text{font-size:13px;line-height:1.75;color:var(--text);font-weight:300;margin-bottom:16px}
+.review-product{display:inline-flex;align-items:center;gap:6px;background:rgba(224,145,50,.10);color:var(--deep);border-radius:999px;padding:6px 10px;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:14px}
+.review-person{display:flex;align-items:center;gap:10px;border-top:1px solid rgba(165,142,116,.16);padding-top:14px}
+.review-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--muted));color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.review-name{font-size:12px;font-weight:700;color:var(--deep)}
+.review-meta{font-size:10px;color:var(--muted);margin-top:1px}
+.use-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+.use-card{background:rgba(255,255,255,.64);border:1px solid rgba(165,142,116,.18);border-radius:16px;padding:18px;text-align:left;transition:all .25s ease}
+.use-card:hover{background:#fff;transform:translateY(-3px)}
+.use-num{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--rose);font-weight:700;margin-bottom:8px}
+.use-title{font-size:13px;font-weight:700;color:var(--deep);margin-bottom:6px}
+.use-desc{font-size:11px;line-height:1.6;color:var(--muted);font-weight:300}
+@media(max-width:900px){.reviews-sec{padding:60px 18px}.trust-strip,.review-grid,.use-grid{grid-template-columns:1fr}.trust-strip{margin-bottom:34px}.review-grid{gap:14px}}
+
 </style>
 </head>
 <body>
@@ -289,35 +633,60 @@ footer{background:#1A1210;color:rgba(255,255,255,.42);padding:48px 40px 26px}
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-left">
-    <div class="hero-tag">✦ Importado directo de Corea del Sur</div>
-    <h1 class="hero-title">Best Korean<br><em>Skincare</em></h1>
-    <div class="badge-row">
-      <div class="badge-gold">
-        <span class="badge-pct">100%</span>
-        <span class="badge-word">ORIGINAL</span>
+<section class="hero hero-pro">
+  <div class="hero-left hero-pro-copy">
+    <div class="hero-tag">✦ K-Beauty original · Importado desde Corea</div>
+    <h1 class="hero-title">Skincare coreano<br><em>para una piel glow</em></h1>
+    <p class="hero-sub">Rutinas coreanas seleccionadas para hidratar, iluminar y fortalecer la barrera de tu piel con productos originales disponibles en Enigma Store Chile.</p>
+
+    <div class="hero-stats" aria-label="Beneficios y estadísticas de confianza">
+      <div class="hero-stat">
+        <strong class="count" data-target="3200" data-prefix="+">0</strong>
+        <span>clientes felices</span>
       </div>
-      <p class="badge-copy">Productos certificados,<br>importados directo desde Corea.<br>Envío a todo Chile 🇨🇱</p>
+      <div class="hero-stat">
+        <strong>100%</strong>
+        <span>productos originales</span>
+      </div>
+      <div class="hero-stat">
+        <strong>Todo Chile</strong>
+        <span>despacho seguro</span>
+      </div>
     </div>
-    <p class="hero-sub">K-Beauty con ingredientes naturales que hidratan, iluminan y revelan tu luminosidad natural. Fórmulas probadas para todo tipo de piel.</p>
+
+    <div class="hero-seals" aria-label="Sellos de garantía">
+      <div class="hero-seal"><span>✓</span> Compra segura</div>
+      <div class="hero-seal"><span>✓</span> Envío a todo Chile</div>
+      <div class="hero-seal"><span>✓</span> Asesoría de rutina</div>
+    </div>
+
     <div class="hero-btns">
       <a href="#productos" class="btn-primary">Ver productos</a>
-      <a href="#rutina" class="btn-ghost">Mi rutina K-Beauty</a>
+      <a href="#rutina" class="btn-ghost">Crear mi rutina</a>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="hero-img">
-      <img src="https://cdn.shopify.com/s/files/1/0609/5496/8134/files/Diseno_sin_titulo_10_04faa3a9-4967-425c-96e2-faf3b5170915.png?v=1777242200" alt="Modelo K-Beauty skin glow">
+
+  <div class="hero-right hero-pro-visual">
+    <div class="hero-img hero-product-card">
+      <img src="https://cdn.shopify.com/s/files/1/0609/5496/8134/files/SKIncare_Coreano_original.png?v=1777427752" alt="Skincare coreano original Enigma Store">
     </div>
-    <div class="fc fc-1">
-      <div class="fb">Oferta especial</div>
-      <div class="ft">Hasta −26% off</div>
-      <div class="fs">Productos seleccionados</div>
+
+    <div class="hero-floating-card hero-card-top">
+      <div class="hero-card-kicker">Garantía</div>
+      <div class="hero-card-title">Productos originales</div>
+      <div class="hero-card-sub">Selección K-Beauty importada</div>
     </div>
-    <div class="fc fc-2">
-      <div class="g-dot"></div>
-      <div><div class="g-title">Skin Glow Garantizado</div><div class="g-sub">Fórmulas K-Beauty</div></div>
+
+    <div class="hero-floating-card hero-card-bottom">
+      <div class="hero-mini-chart">
+        <span style="height:42%"></span>
+        <span style="height:68%"></span>
+        <span style="height:88%"></span>
+      </div>
+      <div>
+        <div class="hero-card-title">+ Glow visible</div>
+        <div class="hero-card-sub">Rutinas por tipo de piel</div>
+      </div>
     </div>
   </div>
 </section>
@@ -374,28 +743,91 @@ footer{background:#1A1210;color:rgba(255,255,255,.42);padding:48px 40px 26px}
       <span class="st">Rutina K-Beauty</span>
       <h2>Tu <em>glow</em><br>en 4 pasos</h2>
       <p>La rutina coreana nutre cada capa de tu piel. Con nuestras marcas, resultados visibles desde la primera semana.</p>
-      <div class="steps">
-        <div class="step"><div class="snum">1</div><div><div class="sname">Limpieza Doble</div><div class="sbrand">Celimax · Noni Bubble Cleanser</div></div><div class="sico">🧴</div></div>
-        <div class="step"><div class="snum">2</div><div><div class="sname">Tónico Hidratante</div><div class="sbrand">SKIN1004 · Centella Toning Toner</div></div><div class="sico">💧</div></div>
-        <div class="step"><div class="snum">3</div><div><div class="sname">Sérum / Esencia</div><div class="sbrand">Celimax · Retinol Shot Serum</div></div><div class="sico">✨</div></div>
-        <div class="step"><div class="snum">4</div><div><div class="sname">Hidratante Barrier</div><div class="sbrand">Dr Althea · 345 Relief Cream</div></div><div class="sico">🌿</div></div>
+      <div class="rutina-form">
+        <div class="rf-title">Recomienda mi rutina</div>
+        <p class="rf-desc">Completa tus datos y te mostraremos productos recomendados de la tienda para una rutina simple de 4 pasos.</p>
+        <div class="rf-grid">
+          <input id="clientName" class="rf-input" type="text" placeholder="Nombre">
+          <select id="skinType" class="rf-input">
+            <option value="">Tipo de piel</option>
+            <option value="grasa">Grasa</option>
+            <option value="seca">Seca</option>
+            <option value="mixta">Mixta</option>
+            <option value="sensible">Sensible</option>
+            <option value="acne">Acneica</option>
+            <option value="manchas">Manchas / tono apagado</option>
+          </select>
+          <select id="ageRange" class="rf-input">
+            <option value="">Edad</option>
+            <option value="18-25">18-25</option>
+            <option value="26-35">26-35</option>
+            <option value="36-45">36-45</option>
+            <option value="45+">45+</option>
+          </select>
+          <select id="skinGoal" class="rf-input">
+            <option value="">Objetivo principal</option>
+            <option value="hidratacion">Hidratación</option>
+            <option value="glow">Glow / luminosidad</option>
+            <option value="poros">Poros / textura</option>
+            <option value="calma">Calmar irritación</option>
+            <option value="antiage">Firmeza / líneas finas</option>
+          </select>
+        </div>
+        <button class="btn-primary rf-btn" onclick="getRoutine()">Ver productos recomendados</button>
+        <div id="resultadoRutina" class="routine-result"></div>
       </div>
+
       <button class="btn-primary" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Armar mi rutina</button>
     </div>
   </div>
 </section>
 
-<!-- BENEFITS -->
-<section class="ben-sec" id="nosotros">
-  <div class="sh reveal">
-    <span class="st">¿Por qué Enigma Store?</span>
-    <h2 class="stitle">Calidad que <em>se siente</em></h2>
-  </div>
-  <div class="bgrid reveal">
-    <div class="bcard"><div class="bico">💧</div><div class="btitle">Hidratación Profunda</div><div class="bdesc">Fórmulas K-Beauty que penetran hasta las capas más profundas para una hidratación duradera.</div></div>
-    <div class="bcard"><div class="bico">🌿</div><div class="btitle">Ingredientes Naturales</div><div class="bdesc">Centella Asiática, Noni, Bean Fermentado y más — ingredientes coreanos con resultados comprobados.</div></div>
-    <div class="bcard"><div class="bico">✦</div><div class="btitle">100% Original</div><div class="bdesc">Importados directamente desde Corea del Sur. Certificados y auténticos, sin intermediarios.</div></div>
-    <div class="bcard"><div class="bico">🚚</div><div class="btitle">Envío a Todo Chile</div><div class="bdesc">Despacho rápido a Santiago y regiones. También visítanos en Dardignac 461, Recoleta.</div></div>
+<!-- BENEFITS eliminado: se reemplaza por reviews y referencias de uso -->
+
+<!-- REVIEWS + REFERENCIAS DE USO -->
+<section class="reviews-sec" id="reviews">
+  <div class="reviews-wrap">
+    <div class="sh reveal">
+      <span class="st">Confianza real · Uso diario</span>
+      <h2 class="stitle">Rutinas que se adaptan<br><em>a cada piel</em></h2>
+      <p class="ssub">Referencias de uso para orientar mejor la compra: hidratación, manchas, piel sensible y control de brillo.</p>
+    </div>
+
+    <div class="trust-strip reveal">
+      <div class="trust-pill"><div class="trust-ico">✓</div><div><div class="trust-title">Compra segura</div><div class="trust-sub">Pedido online con atención por WhatsApp.</div></div></div>
+      <div class="trust-pill"><div class="trust-ico">✦</div><div><div class="trust-title">Productos originales</div><div class="trust-sub">K-Beauty seleccionado para tu rutina.</div></div></div>
+      <div class="trust-pill"><div class="trust-ico">🚚</div><div><div class="trust-title">Despacho a todo Chile</div><div class="trust-sub">Envíos a Santiago y regiones.</div></div></div>
+    </div>
+
+    <div class="review-grid reveal">
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-product">SKIN1004 · Madagascar Centella Ampoule 100ml</div>
+        <p class="review-text">“Lo incorporé después de la limpieza y se siente liviano. Me ayudó a dejar la piel más calmada y cómoda durante el día.”</p>
+        <div class="review-person"><div class="review-avatar">CS</div><div><div class="review-name">Camila S.</div><div class="review-meta">Cliente verificada · Piel sensible</div></div></div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-product">CELIMAX · PORE+DARK SPOT Brightening Serum 30ml</div>
+        <p class="review-text">“Lo uso en mi rutina de noche para manchas y textura. La piel queda con mejor apariencia y un glow más uniforme.”</p>
+        <div class="review-person"><div class="review-avatar">GL</div><div><div class="review-name">Gabriela L.</div><div class="review-meta">Cliente verificada · Manchas y glow</div></div></div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-product">Dr Althea · 345 Relief Cream</div>
+        <p class="review-text">“La aplico como último paso de la rutina. Me deja la piel hidratada, sin sensación pesada y con mejor confort.”</p>
+        <div class="review-person"><div class="review-avatar">HB</div><div><div class="review-name">Hernán B.</div><div class="review-meta">Cliente verificado · Hidratación y barrera</div></div></div>
+      </article>
+    </div>
+
+    <div class="use-grid reveal">
+      <div class="use-card"><div class="use-num">01</div><div class="use-title">Piel grasa</div><div class="use-desc">Limpieza suave, control de brillo, sérum ligero y protector solar mate.</div></div>
+      <div class="use-card"><div class="use-num">02</div><div class="use-title">Piel seca</div><div class="use-desc">Tónico hidratante, sérum humectante y crema nutritiva para sellar.</div></div>
+      <div class="use-card"><div class="use-num">03</div><div class="use-title">Piel sensible</div><div class="use-desc">Centella, fórmulas calmantes y crema barrera para reducir incomodidad.</div></div>
+      <div class="use-card"><div class="use-num">04</div><div class="use-title">Manchas / glow</div><div class="use-desc">Rutina enfocada en luminosidad, tono uniforme y textura más suave.</div></div>
+    </div>
   </div>
 </section>
 
@@ -586,6 +1018,108 @@ const WA_NUM = '56928775107';
 let cart = [];
 
 function fmt(n){return '$'+n.toLocaleString('es-CL')}
+
+function escapeHtml(str){
+  return String(str || '').replace(/[&<>'"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c];
+  });
+}
+
+function getRoutine(){
+  const nameRaw = document.getElementById('clientName') ? document.getElementById('clientName').value.trim() : '';
+  const skin = document.getElementById('skinType') ? document.getElementById('skinType').value : '';
+  const age = document.getElementById('ageRange') ? document.getElementById('ageRange').value : '';
+  const goal = document.getElementById('skinGoal') ? document.getElementById('skinGoal').value : '';
+  const result = document.getElementById('resultadoRutina');
+  if(!result) return;
+
+  const clientName = nameRaw ? escapeHtml(nameRaw) : 'Hola';
+
+  if(!skin){
+    result.classList.add('open');
+    result.innerHTML = '<div class="rr-head">Completa tu tipo de piel</div><div class="rr-copy">Selecciona tu tipo de piel para mostrar productos recomendados de la tienda.</div>';
+    return;
+  }
+
+  const routines = {
+    grasa: {
+      title:'Rutina para piel grasa',
+      copy:'Enfocada en limpieza, control de sebo, poros y protección ligera.',
+      ids:[5,27,29,4],
+      steps:['Limpieza','Sérum poros','Hidratante ligera','Protección solar']
+    },
+    seca: {
+      title:'Rutina para piel seca',
+      copy:'Enfocada en hidratación, nutrición y refuerzo de barrera cutánea.',
+      ids:[25,21,12,8],
+      steps:['Limpieza suave','Ampoule hidratante','Crema barrera','Mascarilla nocturna']
+    },
+    mixta: {
+      title:'Rutina para piel mixta',
+      copy:'Balance entre hidratación ligera, luminosidad y textura uniforme.',
+      ids:[25,24,13,11],
+      steps:['Limpieza balanceada','Tónico','Sérum glow','Crema calmante']
+    },
+    sensible: {
+      title:'Rutina para piel sensible',
+      copy:'Pensada para calmar, hidratar y proteger la barrera de la piel.',
+      ids:[25,24,51,11],
+      steps:['Limpieza suave','Tónico calmante','Centella','Crema alivio']
+    },
+    acne: {
+      title:'Rutina para piel acneica',
+      copy:'Enfocada en limpieza, control de sebo, manchas post-acné y textura.',
+      ids:[5,6,1,29],
+      steps:['Limpieza antiacné','Tónico Noni','Sérum manchas','Gel hidratante']
+    },
+    manchas: {
+      title:'Rutina para manchas y tono apagado',
+      copy:'Enfocada en luminosidad, tono uniforme e hidratación diaria.',
+      ids:[33,32,34,18],
+      steps:['Limpieza iluminadora','Tónico glow','Ampoule brightening','Protección solar']
+    }
+  };
+
+  const routine = routines[skin];
+  const selected = routine.ids.map(id => PRODUCTS.find(p => p.id === id)).filter(Boolean);
+  const extra = age || goal ? `<div class="rr-copy">Perfil: ${age ? 'Edad '+escapeHtml(age) : ''}${age && goal ? ' · ' : ''}${goal ? 'Objetivo '+escapeHtml(goal) : ''}</div>` : '';
+
+  result.classList.add('open');
+  result.innerHTML = `
+    <div class="rr-head">${clientName}, estos son los productos recomendados de la tienda</div>
+    <div class="rr-copy"><strong>${routine.title}</strong><br>${routine.copy}</div>
+    ${extra}
+    <div class="rr-list">
+      ${selected.map((p,idx)=>`
+        <div class="rr-item">
+          <img src="${p.img}" alt="${escapeHtml(p.name)}" loading="lazy">
+          <div class="rr-info">
+            <div class="rr-step">Paso ${idx+1} · ${routine.steps[idx] || p.cat}</div>
+            <div class="rr-name">${escapeHtml(p.name)}</div>
+            <div class="rr-price">${fmt(p.price)}</div>
+          </div>
+          <button class="rr-add" onclick="addToCart(${p.id})">Agregar</button>
+        </div>
+      `).join('')}
+    </div>
+    <div class="rr-actions">
+      <button class="btn-primary" onclick="addRoutineToCart([${selected.map(p=>p.id).join(',')}])">Agregar rutina completa</button>
+      <button class="btn-primary" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Ver catálogo</button>
+    </div>
+  `;
+}
+
+function addRoutineToCart(ids){
+  ids.forEach(id=>{
+    const p = PRODUCTS.find(x=>x.id===id);
+    if(!p) return;
+    const ex = cart.find(x=>x.id===id);
+    if(ex) ex.qty++;
+    else cart.push({...p, qty:1});
+  });
+  updateCartUI();
+  toggleCart();
+}
 
 var currentPopupId = null;
 
@@ -889,9 +1423,34 @@ const obs=new IntersectionObserver((entries)=>{
 },{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
 
+// Contador animado para estadísticas del hero
+function initHeroCounters(){
+  const counters=document.querySelectorAll('.count[data-target]');
+  counters.forEach(counter=>{
+    if(counter.dataset.done==='1') return;
+    counter.dataset.done='1';
+    const target=Number(counter.getAttribute('data-target'))||0;
+    const prefix=counter.getAttribute('data-prefix')||'';
+    let current=0;
+    const steps=60;
+    const increment=target/steps;
+    const update=()=>{
+      current+=increment;
+      if(current<target){
+        counter.textContent=prefix+Math.ceil(current).toLocaleString('es-CL');
+        setTimeout(update,20);
+      }else{
+        counter.textContent=prefix+target.toLocaleString('es-CL');
+      }
+    };
+    update();
+  });
+}
+
 // Init
 document.addEventListener('DOMContentLoaded', function() {
   renderProds('all');
+  initHeroCounters();
 });
 </script>
 </body>
