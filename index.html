@@ -239,6 +239,122 @@ nav{
 
 @keyframes fadeSlide{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
+/* ─── FEATURED PRODUCTS ─── */
+.featured-sec{
+  background:var(--white);
+  padding:52px 0 48px;
+  border-bottom:1px solid rgba(196,185,168,.18);
+  overflow:hidden;
+}
+.featured-head{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  padding:0 40px;margin-bottom:28px;
+}
+.featured-head-left{}
+.featured-eyebrow{
+  font-size:9px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--rose);display:block;margin-bottom:8px;font-weight:500;
+}
+.featured-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(24px,3vw,38px);font-weight:400;
+  color:var(--ink);line-height:1.04;
+}
+.featured-title em{font-style:italic}
+.featured-link{
+  font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--stone);text-decoration:none;
+  border-bottom:1px solid rgba(107,104,96,.3);
+  padding-bottom:2px;transition:color .2s,border-color .2s;
+  white-space:nowrap;
+}
+.featured-link:hover{color:var(--ink);border-color:var(--ink)}
+
+/* Track scroll */
+.featured-track-wrap{
+  position:relative;
+  padding:0 40px;
+}
+.featured-track-wrap::after{
+  content:'';position:absolute;top:0;right:0;bottom:0;
+  width:80px;
+  background:linear-gradient(to left,var(--white),transparent);
+  pointer-events:none;z-index:2;
+}
+.featured-track{
+  display:flex;gap:12px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  padding-bottom:4px;
+}
+.featured-track::-webkit-scrollbar{display:none}
+
+/* Card individual */
+.fc-item{
+  flex:0 0 220px;
+  scroll-snap-align:start;
+  background:var(--cream);
+  border-radius:16px;
+  overflow:hidden;
+  transition:transform .3s cubic-bezier(.16,1,.3,1);
+  cursor:pointer;
+}
+.fc-item:hover{transform:translateY(-3px)}
+.fc-img{
+  height:200px;background:var(--petal);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;position:relative;
+}
+.fc-img img{
+  width:100%;height:100%;object-fit:contain;
+  padding:12px;
+  transition:transform .5s cubic-bezier(.25,.46,.45,.94);
+}
+.fc-item:hover .fc-img img{transform:scale(1.06)}
+.fc-badge{
+  position:absolute;top:10px;left:10px;
+  font-size:8px;letter-spacing:.1em;text-transform:uppercase;
+  padding:3px 9px;border-radius:20px;font-weight:600;color:#fff;
+}
+.fc-badge.top{background:var(--rose)}
+.fc-badge.new{background:var(--sage)}
+.fc-body{padding:14px 14px 16px}
+.fc-brand{font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);margin-bottom:3px;font-weight:500}
+.fc-name{font-family:'Playfair Display',serif;font-size:13px;font-weight:400;color:var(--ink);line-height:1.3;margin-bottom:8px}
+.fc-foot{display:flex;justify-content:space-between;align-items:center}
+.fc-price{font-size:13px;font-weight:500;color:var(--ink)}
+.fc-price .old{font-size:10px;color:var(--stone);text-decoration:line-through;margin-right:4px;font-weight:400}
+.fc-btn{
+  width:30px;height:30px;border-radius:50%;
+  background:var(--ink);color:#fff;border:none;
+  cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;
+  transition:all .22s;flex-shrink:0;-webkit-tap-highlight-color:transparent;
+}
+.fc-btn:hover{background:var(--rose);transform:scale(1.1)}
+.fc-btn.done{background:var(--sage)}
+
+/* Dots navegación */
+.featured-dots{
+  display:flex;justify-content:center;gap:6px;margin-top:20px;
+}
+.featured-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:rgba(107,104,96,.25);border:none;cursor:pointer;
+  padding:0;transition:all .25s;
+}
+.featured-dot.on{background:var(--ink);width:18px;border-radius:3px}
+
+/* Mobile */
+@media(max-width:900px){
+  .featured-head{padding:0 16px;margin-bottom:20px}
+  .featured-track-wrap{padding:0 16px}
+  .fc-item{flex:0 0 160px}
+  .fc-img{height:160px}
+  .featured-sec{padding:36px 0 32px}
+}
+
 /* ─── TRUST BAR ─── */
 .trust-bar{
   background:var(--white);border-bottom:1px solid rgba(196,185,168,.2);
@@ -913,10 +1029,12 @@ nav{
   content:'';position:absolute;inset:0;
   background:var(--ink);border-radius:40px;
   transform:scale(0);transition:transform .25s cubic-bezier(.34,1.26,.64,1);
-  z-index:0;
+  z-index:0;pointer-events:none;
 }
 .filter-btn.on::before,.filter-btn:hover::before{transform:scale(1)}
-.filter-btn span,.filter-btn{position:relative;z-index:1}
+.filter-btn{position:relative;z-index:1;color:inherit}
+.filter-btn.on{color:#fff}
+.filter-btn:hover{color:#fff}
 
 /* ── Carrito vacío — emoji flota ── */
 .d-empty .ei{
@@ -1045,7 +1163,14 @@ nav{
 
   .reviews-sec{padding:52px 16px}
   .trust-pills{grid-template-columns:1fr;gap:8px;margin-bottom:32px}
-  .review-grid{grid-template-columns:1fr;gap:12px}
+  .review-grid{grid-template-columns:1fr;gap:16px}
+  .rev-card{padding:20px}
+  .rev-stars{font-size:16px;margin-bottom:10px}
+  .rev-product{font-size:11px;padding:5px 14px;margin-bottom:10px}
+  .rev-text{font-size:15px;line-height:1.75;margin-bottom:14px}
+  .rev-name{font-size:14px}
+  .rev-meta{font-size:12px}
+  .rev-avatar{width:38px;height:38px;font-size:13px}
   .use-grid{grid-template-columns:1fr 1fr;gap:9px}
 
   footer{padding:40px 20px 22px;padding-bottom:80px}
@@ -1174,6 +1299,21 @@ nav{
     <div class="trust-text"><strong>Asesoría gratis</strong>Rutina personalizada por WhatsApp</div>
   </div>
 </div>
+
+<!-- FEATURED PRODUCTS -->
+<section class="featured-sec reveal">
+  <div class="featured-head">
+    <div class="featured-head-left">
+      <span class="featured-eyebrow">selección enigma</span>
+      <h2 class="featured-title">los más <em>queridos</em></h2>
+    </div>
+    <a href="#productos" class="featured-link">ver todos →</a>
+  </div>
+  <div class="featured-track-wrap">
+    <div class="featured-track" id="featuredTrack"></div>
+  </div>
+  <div class="featured-dots" id="featuredDots"></div>
+</section>
 
 <!-- BRANDS MARQUEE -->
 <section class="brands-sec">
@@ -1561,13 +1701,23 @@ const CATS=[{k:'all',l:'Todos'},{k:'serum',l:'Sérum'},{k:'tonico',l:'Tónico'},
 
 function renderFilters(){
   document.getElementById('filtersContainer').innerHTML=CATS.map((c,i)=>
-    `<button class="filter-btn${i===0?' on':''}" onclick="filterProds('${c.k}',this)">${c.l}</button>`
+    `<button class="filter-btn${i===0?' on':''}" onclick="filterProds('${c.k}',this)" data-cat="${c.k}">${c.l}</button>`
   ).join('');
 }
 function filterProds(cat,btn){
+  /* Asegura que siempre tomamos el button aunque el click venga de un pseudo-elemento */
+  const realBtn = btn.closest('.filter-btn') || btn;
   document.querySelectorAll('.filter-btn').forEach(t=>t.classList.remove('on'));
-  btn.classList.add('on');
-  renderProds(cat==='all'?PRODUCTS:PRODUCTS.filter(p=>p.cat===cat));
+  realBtn.classList.add('on');
+  const filtered = cat==='all' ? PRODUCTS : PRODUCTS.filter(p=>p.cat===cat);
+  renderProds(filtered);
+  /* Reinicia stagger de cards */
+  setTimeout(()=>{
+    document.querySelectorAll('.pc').forEach((c,i)=>{
+      c.style.opacity='0';c.style.transform='translateY(16px)';
+      setTimeout(()=>{c.style.opacity='1';c.style.transform='translateY(0)';c.style.transition='opacity .35s ease, transform .35s ease'},i*35);
+    });
+  },10);
 }
 function filterByBrand(brand){
   renderProds(PRODUCTS.filter(p=>p.brand.toLowerCase()===brand.toLowerCase()));
@@ -1788,10 +1938,72 @@ document.addEventListener('keydown',e=>{
   }
 });
 
+/* ── FEATURED PRODUCTS ── */
+const FEATURED_IDS = [1, 50, 21, 18, 39, 2, 45, 16, 27, 34];
+const FEATURED_BADGES = {1:'top', 50:'top', 21:'top', 18:'new', 39:'new', 2:'top', 45:'new', 16:'top', 27:'top', 34:'new'};
+
+function renderFeatured(){
+  const track = document.getElementById('featuredTrack');
+  const dotsEl = document.getElementById('featuredDots');
+  if(!track) return;
+
+  const list = FEATURED_IDS.map(id => PRODUCTS.find(p => p.id === id)).filter(Boolean);
+
+  track.innerHTML = list.map(p => {
+    const badge = FEATURED_BADGES[p.id];
+    return `
+      <div class="fc-item" onclick="openPopup(${p.id})">
+        <div class="fc-img">
+          <img src="${p.img}" alt="${esc(p.name)}" loading="lazy" decoding="async">
+          ${badge ? `<span class="fc-badge ${badge}">${badge === 'top' ? '★ top' : 'nuevo'}</span>` : ''}
+        </div>
+        <div class="fc-body">
+          <div class="fc-brand">${p.brand}</div>
+          <div class="fc-name">${esc(p.name)}</div>
+          <div class="fc-foot">
+            <div class="fc-price">${p.old ? `<span class="old">${fmt(p.old)}</span>` : ''}${fmt(p.price)}</div>
+            <button class="fc-btn" id="fcb${p.id}" onclick="event.stopPropagation();fcAdd(${p.id},this)" aria-label="Agregar">+</button>
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+
+  /* Dots */
+  const visible = Math.floor(track.offsetWidth / 220) || 1;
+  const pages = Math.ceil(list.length / visible);
+  dotsEl.innerHTML = Array.from({length: pages}, (_,i) =>
+    `<button class="featured-dot${i===0?' on':''}" onclick="featuredGoTo(${i})" aria-label="Página ${i+1}"></button>`
+  ).join('');
+
+  /* Actualizar dot activo al scrollear */
+  track.addEventListener('scroll', () => {
+    const idx = Math.round(track.scrollLeft / (track.scrollWidth / list.length));
+    const page = Math.floor(idx / visible);
+    dotsEl.querySelectorAll('.featured-dot').forEach((d,i) => d.classList.toggle('on', i === page));
+  }, {passive:true});
+}
+
+function featuredGoTo(page){
+  const track = document.getElementById('featuredTrack');
+  const cardW = track.querySelector('.fc-item')?.offsetWidth + 12 || 232;
+  const visible = Math.floor(track.offsetWidth / cardW) || 1;
+  track.scrollTo({left: page * visible * cardW, behavior:'smooth'});
+}
+
+function fcAdd(id, btnEl){
+  const p = PRODUCTS.find(x => x.id === id); if(!p) return;
+  const ex = cart.find(x => x.id === id);
+  if(ex) ex.qty++; else cart.push({...p, qty:1});
+  updateCartUI();
+  if(btnEl){ btnEl.textContent='✓'; btnEl.classList.add('done'); setTimeout(()=>{btnEl.textContent='+';btnEl.classList.remove('done')},900) }
+  flyToCart(p.img, btnEl);
+}
+
 /* ── INIT ── */
 document.addEventListener('DOMContentLoaded',()=>{
   renderFilters();
   renderProds(PRODUCTS);
+  renderFeatured();
   initCounters();
 
   /* Scroll reveal — todos los tipos */
