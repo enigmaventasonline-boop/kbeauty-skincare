@@ -1425,7 +1425,7 @@ nav{
       <div class="coupon-code" id="klCouponCode">BESTORE</div>
       <div class="coupon-label">código de descuento · primera compra</div>
     </div>
-    <button class="copy-btn" onclick="copyCoupon()">📋 copiar código</button>
+    <button class="copy-btn" onclick="goToCheckoutWithCoupon()">🛍️ usar mi descuento ahora →</button>
     <p style="font-size:11px;color:var(--stone);margin-top:10px">Revisa tu correo: también te enviamos el cupón.</p>
   </div>
 </section>
@@ -1659,14 +1659,15 @@ function showKlaviyoSuccess(email){
     document.getElementById('klSuccessName').textContent=name.charAt(0).toUpperCase()+name.slice(1);
   },300);
 }
-function copyCoupon(){
-  const code=document.getElementById('klCouponCode').textContent;
-  navigator.clipboard.writeText(code).then(()=>{
-    const btn=document.querySelector('.copy-btn');btn.textContent='✓ copiado';setTimeout(()=>btn.textContent='📋 copiar código',2000);
-  }).catch(()=>{
-    const ta=document.createElement('textarea');ta.value=code;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();
-    const btn=document.querySelector('.copy-btn');btn.textContent='✓ copiado';setTimeout(()=>btn.textContent='📋 copiar código',2000);
-  });
+function goToCheckoutWithCoupon(){
+  /* Si tiene productos en el carrito, aplica cupón + lleva al cart */
+  if(cart.length){
+    const items=cart.map(i=>`${i.vid}:${i.qty}`).join(',');
+    window.open(`https://enigmastore.cl/discount/${KL_COUPON}?redirect=/cart/${items}`,'_blank');
+  } else {
+    /* Si no tiene productos, lleva a la tienda con cupón aplicado */
+    window.open(`https://enigmastore.cl/discount/${KL_COUPON}`,'_blank');
+  }
 }
 
 /* ── UTILS ── */
