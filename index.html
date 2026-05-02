@@ -1,660 +1,1237 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CL">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Best Korean Skincare — Enigma Store Chile</title>
-<!-- Preconnect fonts para reducir bloqueo de render -->
+<title>K-Beauty Chile — Skincare Coreano Original | Enigma Store</title>
+
+<!-- SEO -->
+<meta name="description" content="Skincare coreano original en Chile. Celimax, Mixsoon, SKIN1004, Dr Althea, Beauty of Joseon y más. Importado desde Corea · Despacho a todo Chile · Compra segura.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://skincare.enigmastore.cl/">
+
+<!-- Open Graph — redes sociales -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://skincare.enigmastore.cl/">
+<meta property="og:title" content="K-Beauty Chile — Skincare Coreano Original | Enigma Store">
+<meta property="og:description" content="Rutinas coreanas seleccionadas para hidratar, iluminar y fortalecer tu piel. Productos originales con despacho a todo Chile.">
+<meta property="og:image" content="https://cdn.shopify.com/s/files/1/0609/5496/8134/files/SKINCARE_CELIMAX_CHILE.png?v=1777687987">
+<meta property="og:locale" content="es_CL">
+<meta property="og:site_name" content="Enigma Store Chile">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="K-Beauty Chile — Skincare Coreano Original | Enigma Store">
+<meta name="twitter:description" content="Rutinas coreanas seleccionadas para hidratar, iluminar y fortalecer tu piel. Despacho a todo Chile.">
+<meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0609/5496/8134/files/SKINCARE_CELIMAX_CHILE.png?v=1777687987">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
 
 <style>
-/* ── RESET & TOKENS ── */
+/* ─── RESET & TOKENS ─── */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --cream:#FFEFCD;--blush:#F5E6D3;--rose:#E09132;--deep:#424530;
-  --text:#5E5347;--muted:#A58E74;--white:#fff;
-  --gold:#E09132;--gold-l:#FFEFCD;--sage:#A58E74;--wa:#25D366;
-  --radius-card:16px;
+  --ink:#1a1a18;
+  --ink2:#2e2e2a;
+  --stone:#6b6860;
+  --sand:#c4b9a8;
+  --petal:#f0e8de;
+  --cream:#faf7f4;
+  --white:#ffffff;
+  --blush:#ecddd2;
+  --rose:#b8734a;
+  --sage:#7a8c72;
+  --wa:#25D366;
+  --r:16px;
+  --nav:60px;
 }
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',system-ui,sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Jost',system-ui,sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(250,247,244,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(212,168,154,.14)}
-.logo{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--deep);text-decoration:none;line-height:1}
-.logo small{display:block;font-size:7px;letter-spacing:.3em;color:var(--muted);font-weight:300;text-align:center}
-.nav-links{display:flex;gap:22px;list-style:none}
-.nav-links a{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);text-decoration:none;transition:color .2s}
-.nav-links a:hover{color:var(--rose)}
-.nav-right{display:flex;align-items:center;gap:10px}
-.cart-trigger{position:relative;background:none;border:2px solid var(--deep);color:var(--deep);padding:8px 16px;border-radius:30px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .25s;display:flex;align-items:center;gap:7px}
-.cart-trigger:hover{background:var(--deep);color:var(--white)}
-.cart-badge{background:var(--rose);color:#fff;border-radius:50%;width:17px;height:17px;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;position:absolute;top:-7px;right:-7px;transition:transform .2s}
-.cart-badge.pop{transform:scale(1.5)}
-.fly-img{position:fixed;border-radius:50%;object-fit:cover;pointer-events:none;z-index:9999;box-shadow:0 4px 20px rgba(44,36,32,.3)}
-.cart-trigger.bounce{animation:cartBounce .5s cubic-bezier(.36,.07,.19,.97) both}
-@keyframes cartBounce{0%,100%{transform:scale(1)}20%{transform:scale(1.08)}50%{transform:scale(.97)}80%{transform:scale(1.03)}}
+/* ─── ANNOUNCE BAR ─── */
+.announce{
+  background:var(--ink);color:rgba(255,255,255,.82);
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  text-align:center;padding:9px 16px;
+  display:flex;align-items:center;justify-content:center;gap:16px;
+}
+.announce a{color:var(--sand);text-decoration:underline;text-underline-offset:2px}
 
-/* ── MOBILE STICKY BAR ── */
-.mobile-sticky-bar{
-  display:none;           /* oculto en desktop */
-  position:fixed;
+/* ─── NAV ─── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(250,247,244,.97);backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(196,185,168,.25);
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  padding:0 32px;height:var(--nav);
+}
+.nav-left{display:flex;gap:28px;align-items:center}
+.nav-link{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);text-decoration:none;transition:color .2s;font-weight:500}
+.nav-link:hover{color:var(--ink)}
+.logo{text-align:center;text-decoration:none;display:block}
+.logo-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;letter-spacing:.06em;color:var(--ink);line-height:1;display:block}
+.logo-sub{font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:var(--stone);font-weight:400;display:block;margin-top:2px}
+.nav-right{display:flex;justify-content:flex-end;align-items:center;gap:14px}
+.nav-icon-btn{background:none;border:none;cursor:pointer;color:var(--ink);display:flex;align-items:center;gap:7px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-family:'Jost',sans-serif;font-weight:500;padding:6px 0;position:relative;-webkit-tap-highlight-color:transparent}
+.nav-icon-btn:hover{color:var(--stone)}
+.cart-badge{
+  background:var(--ink);color:#fff;border-radius:50%;
+  width:16px;height:16px;font-size:9px;font-weight:600;
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:transform .2s;
+}
+.cart-badge.pop{animation:popBadge .35s ease both}
+@keyframes popBadge{0%{transform:scale(1)}50%{transform:scale(1.6)}100%{transform:scale(1)}}
+
+/* ─── MOBILE STICKY BAR ─── */
+.mobile-sticky{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:190;
+  background:var(--ink);padding:12px 16px;
+  padding-bottom:max(12px,env(safe-area-inset-bottom));
+  transform:translateY(110%);transition:transform .35s cubic-bezier(.4,0,.2,1);
+  box-shadow:0 -6px 30px rgba(26,26,24,.2);
+}
+.mobile-sticky.show{transform:translateY(0)}
+.msb-btn{
+  width:100%;background:var(--rose);color:#fff;border:none;border-radius:10px;
+  padding:14px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  cursor:pointer;font-family:'Jost',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;
+}
+
+/* ─── HERO (Rhode-style: full-screen image + overlaid text) ─── */
+.hero{
+  position:relative;
+  width:100%;
+  height:100svh;
+  min-height:600px;
+  overflow:hidden;
+  background:var(--blush);
+}
+
+/* Background image fills the entire hero */
+.hero-bg{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center 20%;
+  z-index:0;
+}
+/* Mobile: imagen vertical */
+@media(max-width:900px){
+  .hero-bg{object-position:center top}
+  .hero-bg.desktop{display:none}
+  .hero-bg.mobile{display:block}
+}
+/* Desktop: oculta la mobile */
+@media(min-width:901px){
+  .hero-bg.mobile{display:none}
+  .hero-bg.desktop{display:block}
+}
+
+/* Subtle gradient so text stays readable */
+.hero-scrim{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(
+    to bottom,
+    rgba(26,26,24,.08) 0%,
+    rgba(26,26,24,.0) 40%,
+    rgba(26,26,24,.38) 80%,
+    rgba(26,26,24,.62) 100%
+  );
+}
+
+/* All text content — bottom left, like Rhode */
+.hero-text{
+  position:absolute;
   bottom:0;left:0;right:0;
-  z-index:190;
-  background:var(--deep);
-  padding:12px 16px 16px;
-  gap:10px;
-  box-shadow:0 -6px 24px rgba(44,36,32,.18);
-  padding-bottom:max(16px, env(safe-area-inset-bottom));
-  transform:translateY(110%);   /* empieza fuera de pantalla */
-  transition:transform .35s cubic-bezier(.4,0,.2,1);
+  z-index:2;
+  padding:0 52px 52px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:32px;
+  animation:fadeSlide .9s .1s ease both;
 }
-.mobile-sticky-bar.visible{
-  transform:translateY(0);      /* entra al agregar producto */
-}
-.msb-cart{
-  flex:1;background:var(--rose);color:#fff;border:none;border-radius:12px;
-  padding:14px;font-size:14px;font-weight:700;letter-spacing:.04em;
-  cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;
-  transition:background .2s;
-}
-.msb-cart:hover{background:#c97c25}
 
-/* ── HERO ── */
-.hero{min-height:100vh;background:linear-gradient(128deg,#F5EDE6 0%,#EDE0D4 42%,#DECCC0 100%);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:110px 40px 60px;position:relative;overflow:hidden}
-.hero::after{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,154,.18) 0%,transparent 70%);pointer-events:none}
-.hero-left{z-index:2;animation:fadeUp .8s .1s ease both}
-.hero-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.65);backdrop-filter:blur(8px);border:1px solid rgba(212,168,154,.3);padding:5px 15px;border-radius:30px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--rose);margin-bottom:18px}
-h1.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,7vw,108px);font-weight:700;line-height:.93;color:var(--deep);letter-spacing:-.02em;margin-bottom:14px}
-h1.hero-title em{font-style:italic;color:var(--rose)}
-.hero-sub{font-size:14px;line-height:1.8;color:var(--muted);max-width:370px;margin-bottom:22px;font-weight:300}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
-.hero-stat{background:rgba(255,255,255,.66);border:1px solid rgba(66,69,48,.10);border-radius:14px;padding:12px 14px}
-.hero-stat strong{display:block;font-family:'Cormorant Garamond',serif;font-size:26px;line-height:1;color:var(--deep);font-weight:700}
-.hero-stat span{display:block;margin-top:4px;font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
-.hero-seals{display:flex;flex-wrap:nowrap;gap:6px;margin-bottom:24px;align-items:center}
-.hero-seal{display:inline-flex;align-items:center;gap:5px;padding:5px 9px;border-radius:999px;background:rgba(66,69,48,.08);color:var(--deep);font-size:10px;font-weight:600;white-space:nowrap}
-.hero-seal span{width:15px;height:15px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:var(--deep);color:#fff;font-size:9px;flex-shrink:0}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn-primary{background:var(--deep);color:var(--white);padding:14px 28px;border-radius:40px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;font-weight:600;transition:all .3s;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;display:inline-block}
-.btn-primary:hover{background:var(--rose);transform:translateY(-2px);box-shadow:0 10px 26px rgba(212,168,154,.4)}
-.btn-ghost{border:1.5px solid var(--deep);color:var(--deep);padding:13px 26px;border-radius:40px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;font-weight:400;transition:all .3s;display:inline-block}
-.btn-ghost:hover{background:var(--deep);color:var(--white)}
-.hero-right{position:relative;z-index:2;display:flex;justify-content:center;animation:fadeUp .8s .3s ease both}
-.hero-product-card{width:min(520px,100%);height:560px;border-radius:30px;background:linear-gradient(145deg,rgba(255,255,255,.82),rgba(255,255,255,.38));border:1px solid rgba(255,255,255,.72);box-shadow:0 30px 80px rgba(66,69,48,.16);overflow:hidden;position:relative}
-.hero-product-card img{width:100%;height:100%;object-fit:contain;object-position:center bottom;padding:20px;filter:drop-shadow(0 24px 34px rgba(66,69,48,.18))}
-.hero-floating-card{position:absolute;z-index:4;background:rgba(255,255,255,.92);border:1px solid rgba(255,255,255,.86);box-shadow:0 18px 48px rgba(66,69,48,.14);backdrop-filter:blur(14px);border-radius:16px;padding:12px 15px}
-.hero-card-top{top:70px;left:-18px}
-.hero-card-bottom{bottom:66px;right:-14px;display:flex;align-items:center;gap:10px}
-.hero-card-kicker{font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);font-weight:700;margin-bottom:3px}
-.hero-card-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--deep);line-height:1}
-.hero-card-sub{font-size:10px;color:var(--muted);margin-top:4px}
-.hero-mini-chart{display:flex;align-items:end;gap:3px;width:32px;height:32px;padding:5px;border-radius:9px;background:rgba(224,145,50,.12)}
-.hero-mini-chart span{display:block;width:6px;border-radius:6px;background:var(--rose)}
+.hero-left{max-width:560px}
 
-/* ── BRANDS MARQUEE ── */
-.brands{padding:28px 0;background:var(--white);border-bottom:1px solid var(--blush);overflow:hidden}
-.brands-label{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;text-align:center}
-.brands-track-wrap{position:relative;overflow:hidden;width:100%}
-/* fade edges */
-.brands-track-wrap::before,
-.brands-track-wrap::after{
-  content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none;
+.hero-eyebrow{
+  font-size:10px;letter-spacing:.28em;text-transform:uppercase;
+  color:rgba(255,255,255,.7);font-weight:400;margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
 }
-.brands-track-wrap::before{left:0;background:linear-gradient(to right,var(--white),transparent)}
-.brands-track-wrap::after{right:0;background:linear-gradient(to left,var(--white),transparent)}
-.brands-track{
-  display:flex;align-items:center;gap:0;
-  width:max-content;
-  animation:brandScroll 28s linear infinite;
+.hero-eyebrow::before{
+  content:'';display:block;width:22px;height:1px;
+  background:rgba(255,255,255,.4);
 }
-.brands-track:hover{animation-play-state:paused}
-@keyframes brandScroll{
-  0%{transform:translateX(0)}
-  100%{transform:translateX(-50%)}
+
+.hero-h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(48px,6vw,90px);
+  font-weight:400;line-height:.95;
+  color:#fff;letter-spacing:-.02em;
+  margin-bottom:24px;
 }
-.brand-item{
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  padding:0 32px;cursor:pointer;opacity:.55;transition:opacity .25s;
-  border-right:1px solid rgba(44,36,32,.07);white-space:nowrap;
+.hero-h1 em{font-style:italic;color:var(--blush)}
+
+.hero-body{
+  font-size:13px;line-height:1.8;
+  color:rgba(255,255,255,.72);
+  max-width:380px;margin-bottom:28px;font-weight:300;
 }
-.brand-item:hover{opacity:1}
-.brand-item:last-child{border-right:none}
-.bn{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--deep);transition:color .2s}
-.brand-item:hover .bn{color:var(--rose)}
-.bn.it{font-style:italic;letter-spacing:.04em;font-size:19px}
-.bn.sm{font-size:11px;letter-spacing:.26em}
-.bs{font-size:8px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-top:2px}
 
-/* ── SECTION COMMON ── */
-.sh{text-align:center;margin-bottom:40px}
-.st{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);display:block;margin-bottom:9px}
-.stitle{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.8vw,50px);font-weight:600;color:var(--deep);line-height:1.08}
-.stitle em{font-style:italic;font-weight:400}
-.ssub{font-size:13px;color:var(--muted);margin-top:9px;font-weight:300;line-height:1.7}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
 
-/* ── FILTERS ── */
-.tabs{display:flex;justify-content:center;gap:7px;margin-bottom:36px;flex-wrap:wrap;padding:0 4px}
-.tab{padding:8px 16px;border-radius:30px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border:1px solid rgba(44,36,32,.14);background:transparent;color:var(--text);transition:all .22s;font-family:'DM Sans',sans-serif;-webkit-tap-highlight-color:transparent}
-.tab.active,.tab:hover{background:var(--deep);color:var(--white);border-color:var(--deep)}
+/* Hero right — stats pill, bottom right */
+.hero-right{
+  flex-shrink:0;
+  display:flex;flex-direction:column;align-items:flex-end;gap:10px;
+  padding-bottom:4px;
+}
+.hero-pill{
+  background:rgba(255,255,255,.14);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;
+  padding:10px 20px;
+  display:flex;align-items:center;gap:14px;
+  white-space:nowrap;
+}
+.hp-divider{width:1px;height:22px;background:rgba(255,255,255,.2)}
+.hp-item{text-align:center}
+.hp-num{
+  font-family:'Playfair Display',serif;font-size:20px;
+  font-weight:400;color:#fff;line-height:1;
+  display:block;
+}
+.hp-num em{font-style:italic}
+.hp-label{
+  font-size:8px;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);margin-top:2px;display:block;
+}
 
-/* ── PRODUCTS ── */
-.products-sec{padding:80px 24px;background:var(--cream)}
-.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1100px;margin:0 auto}
-.pc{background:var(--white);border-radius:var(--radius-card);overflow:hidden;transition:transform .3s,box-shadow .3s;position:relative;cursor:pointer}
-.pc:hover{transform:translateY(-5px);box-shadow:0 16px 44px rgba(44,36,32,.1)}
-.pimg{height:200px;overflow:hidden;background:var(--blush);position:relative;display:flex;align-items:center;justify-content:center}
-.pimg img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.pc:hover .pimg img{transform:scale(1.05)}
-.pbadge{position:absolute;top:8px;left:8px;font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:20px;color:#fff;font-weight:600}
-.b-sale{background:var(--rose)}.b-new{background:var(--sage)}.b-hot{background:var(--gold)}
-.pinfo{padding:14px 16px 16px}
-.pbrand{font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
-.pname{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:500;color:var(--deep);margin-bottom:5px;line-height:1.2}
-.pfoot{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
-.pprice{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--deep);font-weight:700}
-.pprice .old{font-size:10px;color:var(--muted);text-decoration:line-through;margin-right:4px;font-family:'DM Sans',sans-serif;font-weight:400}
-.addbtn{width:34px;height:34px;border-radius:50%;background:var(--deep);color:var(--white);border:none;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .25s;flex-shrink:0;-webkit-tap-highlight-color:transparent}
-.addbtn:hover{background:var(--rose);transform:scale(1.12)}
-.addbtn:active{transform:scale(.95)}
-.addbtn.done{background:var(--sage)}
-.view-more-wrap{text-align:center;margin-top:36px}
+/* Buttons — white filled + white ghost for hero */
+.btn-dark{
+  background:var(--ink);color:#fff;padding:13px 26px;border-radius:40px;
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
+  font-weight:500;transition:all .25s;border:none;cursor:pointer;font-family:'Jost',sans-serif;
+  display:inline-block;
+}
+.btn-dark:hover{background:var(--rose);transform:translateY(-1px)}
+.btn-outline{
+  border:1.5px solid var(--ink2);color:var(--ink2);padding:12px 24px;border-radius:40px;
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
+  font-weight:400;transition:all .25s;display:inline-block;
+}
+.btn-outline:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 
-/* ── RUTINA ── */
-.rutina-sec{display:grid;grid-template-columns:1fr 1fr;min-height:500px;margin:0 24px 80px;border-radius:22px;overflow:hidden;box-shadow:0 18px 56px rgba(44,36,32,.1)}
-.rv{background:linear-gradient(150deg,#DEC8BE,#C4A090);position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center}
-.rv img{width:100%;height:100%;object-fit:cover;object-position:top;position:absolute;inset:0}
-.rc{background:var(--deep);color:var(--white);padding:48px 40px;display:flex;flex-direction:column;justify-content:center}
-.rc .st{color:var(--rose);text-align:left}
-.rc h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.2vw,48px);font-weight:600;line-height:1.08;margin-bottom:10px}
-.rc h2 em{font-style:italic;color:var(--rose);font-weight:400}
-.rc p{font-size:13px;line-height:1.8;color:rgba(255,255,255,.5);font-weight:300;margin-bottom:24px}
-.rutina-form{margin-top:16px;padding:16px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.09);border-radius:14px}
-.rf-title{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--white);margin-bottom:4px}
-.rf-desc{font-size:11px!important;line-height:1.55!important;color:rgba(255,255,255,.46)!important;margin-bottom:12px!important}
-.rf-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.rf-input{width:100%;padding:11px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.07);color:var(--white);font-size:12px;font-family:'DM Sans',sans-serif;outline:none;-webkit-appearance:none}
-.rf-input::placeholder{color:rgba(255,255,255,.36)}
+/* Hero-specific button overrides */
+.hero .btn-dark{
+  background:#fff;color:var(--ink);
+}
+.hero .btn-dark:hover{background:var(--blush);transform:translateY(-1px)}
+.hero .btn-outline{
+  border-color:rgba(255,255,255,.6);color:#fff;
+}
+.hero .btn-outline:hover{background:rgba(255,255,255,.15);border-color:#fff}
+
+@keyframes fadeSlide{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+/* ─── TRUST BAR ─── */
+.trust-bar{
+  background:var(--white);border-bottom:1px solid rgba(196,185,168,.2);
+  display:flex;align-items:center;justify-content:center;
+  gap:0;overflow:hidden;
+}
+.trust-item{
+  flex:1;display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 20px;border-right:1px solid rgba(196,185,168,.2);
+}
+.trust-item:last-child{border-right:none}
+.trust-icon{font-size:16px;flex-shrink:0}
+.trust-text{font-size:11px;letter-spacing:.06em;color:var(--stone);font-weight:400}
+.trust-text strong{display:block;color:var(--ink);font-weight:600;margin-bottom:1px}
+
+/* ─── BRANDS MARQUEE ─── */
+.brands-sec{padding:32px 0;background:var(--cream);overflow:hidden;border-bottom:1px solid rgba(196,185,168,.18)}
+.brands-label{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--sand);text-align:center;margin-bottom:18px}
+.marquee-wrap{position:relative;overflow:hidden}
+.marquee-wrap::before,.marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.marquee-wrap::before{left:0;background:linear-gradient(to right,var(--cream),transparent)}
+.marquee-wrap::after{right:0;background:linear-gradient(to left,var(--cream),transparent)}
+.marquee-track{display:flex;align-items:center;width:max-content;animation:marquee 30s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.brand-chip{
+  padding:0 36px;border-right:1px solid rgba(196,185,168,.22);
+  display:flex;flex-direction:column;align-items:center;cursor:pointer;
+  opacity:.5;transition:opacity .25s;white-space:nowrap;
+}
+.brand-chip:hover{opacity:1}
+.bc-name{font-family:'Playfair Display',serif;font-size:17px;letter-spacing:.06em;color:var(--ink);transition:color .2s}
+.bc-name.sm{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+.bc-name.it{font-style:italic}
+.brand-chip:hover .bc-name{color:var(--rose)}
+.bc-sub{font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-top:2px}
+
+/* ─── SECTION SHELL ─── */
+.sec{padding:80px 40px}
+.sec-head{text-align:center;margin-bottom:52px}
+.sec-eyebrow{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--rose);display:block;margin-bottom:12px;font-weight:500}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,54px);font-weight:400;color:var(--ink);line-height:1.04}
+.sec-title em{font-style:italic;font-weight:400}
+.sec-sub{font-size:13px;color:var(--stone);margin-top:12px;font-weight:300;line-height:1.8;max-width:480px;margin-left:auto;margin-right:auto}
+
+/* ─── FILTERS ─── */
+.filters{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-bottom:40px;padding:0 8px}
+.filter-btn{
+  padding:8px 18px;border-radius:40px;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;cursor:pointer;border:1px solid rgba(107,104,96,.22);
+  background:transparent;color:var(--stone);transition:all .2s;
+  font-family:'Jost',sans-serif;font-weight:500;-webkit-tap-highlight-color:transparent;
+}
+.filter-btn:hover{border-color:var(--ink);color:var(--ink)}
+.filter-btn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* ─── PRODUCT GRID ─── */
+.products-sec{background:var(--cream)}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;max-width:1200px;margin:0 auto}
+
+/* Rhode-style product card */
+.pc{
+  background:var(--white);position:relative;overflow:hidden;cursor:pointer;
+  transition:transform .35s cubic-bezier(.16,1,.3,1),
+             box-shadow .35s cubic-bezier(.16,1,.3,1);
+  opacity:0;
+  transform:translateY(16px);
+}
+.pc:hover{transform:translateY(-2px)}
+.pimg-wrap{
+  aspect-ratio:1/1;overflow:hidden;background:var(--petal);
+  position:relative;display:flex;align-items:center;justify-content:center;
+}
+.pimg-wrap img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .55s cubic-bezier(.25,.46,.45,.94);
+}
+.pc:hover .pimg-wrap img{transform:scale(1.07)}
+
+/* Badge */
+.pbadge{
+  position:absolute;top:12px;left:12px;
+  font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  padding:3px 10px;border-radius:20px;font-weight:600;color:#fff;z-index:2;
+}
+.b-sale{background:var(--rose)}
+.b-new{background:var(--sage)}
+.b-hot{background:var(--ink)}
+
+/* Hover overlay CTA */
+.pc-overlay{
+  position:absolute;inset:0;background:rgba(26,26,24,.0);
+  display:flex;align-items:flex-end;justify-content:center;
+  padding-bottom:16px;opacity:0;transition:all .3s;z-index:3;
+}
+.pc:hover .pc-overlay{opacity:1;background:rgba(26,26,24,.08)}
+.overlay-btn{
+  background:var(--white);color:var(--ink);border:none;
+  padding:10px 20px;border-radius:40px;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;font-family:'Jost',sans-serif;font-weight:600;
+  cursor:pointer;transform:translateY(8px);transition:transform .3s;
+  -webkit-tap-highlight-color:transparent;
+}
+.pc:hover .overlay-btn{transform:translateY(0)}
+
+.pinfo{padding:14px 14px 18px}
+.pbrand{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);margin-bottom:4px;font-weight:500}
+.pname{font-family:'Playfair Display',serif;font-size:14px;font-weight:400;color:var(--ink);line-height:1.3;margin-bottom:8px}
+.pfoot{display:flex;justify-content:space-between;align-items:center}
+.pprice{font-size:13px;color:var(--ink);font-weight:500}
+.pprice .old{font-size:11px;color:var(--stone);text-decoration:line-through;margin-right:5px;font-weight:400}
+.add-btn{
+  width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;
+  border:none;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;
+  transition:all .22s;flex-shrink:0;-webkit-tap-highlight-color:transparent;line-height:1;
+}
+.add-btn:hover{background:var(--rose);transform:scale(1.1)}
+.add-btn.done{background:var(--sage)}
+
+.view-more{text-align:center;margin-top:48px}
+
+/* ─── EDITORIAL STRIP ─── */
+.editorial{
+  display:grid;grid-template-columns:1fr 1fr;
+  background:var(--ink);overflow:hidden;
+  margin:0;min-height:480px;
+}
+.ed-visual{position:relative;overflow:hidden;background:var(--blush)}
+.ed-visual img{width:100%;height:100%;object-fit:cover}
+.ed-content{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:72px 64px;color:#fff;
+}
+.ed-eyebrow{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--sand);margin-bottom:20px;font-weight:400}
+.ed-title{font-family:'Playfair Display',serif;font-size:clamp(32px,3.5vw,52px);font-weight:400;line-height:1.06;margin-bottom:16px;color:#fff}
+.ed-title em{font-style:italic;color:var(--sand)}
+.ed-body{font-size:13px;line-height:1.85;color:rgba(255,255,255,.5);font-weight:300;margin-bottom:32px;max-width:360px}
+
+/* Routine form */
+.rf-wrap{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px}
+.rf-title{font-family:'Playfair Display',serif;font-size:19px;color:#fff;margin-bottom:4px;font-weight:400}
+.rf-desc{font-size:11px;color:rgba(255,255,255,.42);margin-bottom:14px;line-height:1.6;font-weight:300}
+.rf-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.rf-input{
+  width:100%;padding:10px 12px;border-radius:8px;
+  border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.07);
+  color:#fff;font-size:12px;font-family:'Jost',sans-serif;outline:none;
+  -webkit-appearance:none;transition:border-color .2s;
+}
+.rf-input::placeholder{color:rgba(255,255,255,.3)}
 .rf-input:focus{border-color:var(--rose)}
-.rf-input option{color:#2C2420;background:#fff}
-.rf-btn{margin-top:10px;width:100%;justify-content:center}
-.routine-result{margin-top:14px;display:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:14px}
+.rf-input option{color:var(--ink);background:#fff}
+.rf-btn{width:100%;justify-content:center;margin-top:0}
+.routine-result{margin-top:14px;display:none;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px}
 .routine-result.open{display:block}
-.rr-head{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--white);margin-bottom:5px}
-.rr-copy{font-size:11px;color:rgba(255,255,255,.5);line-height:1.55;margin-bottom:12px}
+.rr-head{font-family:'Playfair Display',serif;font-size:16px;color:#fff;margin-bottom:5px;font-weight:400}
+.rr-copy{font-size:11px;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:12px;font-weight:300}
 .rr-list{display:grid;gap:8px}
-.rr-item{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08);border-radius:11px;padding:8px}
-.rr-item img{width:46px;height:46px;border-radius:9px;object-fit:cover;background:var(--blush);flex-shrink:0}
+.rr-item{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:8px}
+.rr-item img{width:44px;height:44px;border-radius:8px;object-fit:cover;background:var(--blush);flex-shrink:0}
 .rr-info{flex:1;min-width:0}
 .rr-step{font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--rose);margin-bottom:2px}
-.rr-name{font-size:11px;color:var(--white);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.rr-price{font-size:11px;color:rgba(255,255,255,.58);margin-top:1px}
-.rr-add{border:none;background:var(--rose);color:#fff;border-radius:20px;padding:7px 10px;font-size:10px;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all .2s;white-space:nowrap}
-.rr-add:hover{background:#c97c25}
+.rr-name{font-size:11px;color:#fff;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rr-price{font-size:11px;color:rgba(255,255,255,.5)}
+.rr-add{border:none;background:var(--rose);color:#fff;border-radius:20px;padding:7px 11px;font-size:10px;font-family:'Jost',sans-serif;cursor:pointer;transition:all .2s;white-space:nowrap;font-weight:500}
+.rr-add:hover{background:#9e5f39}
 .rr-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
-.rr-actions .btn-primary{padding:11px 16px;font-size:10px}
+.rr-actions .btn-dark{padding:10px 16px;font-size:10px}
 
-/* ── NEWSLETTER + KLAVIYO ── */
-.nl-sec{padding:80px 24px;background:var(--deep);text-align:center;position:relative;overflow:hidden}
-.nl-sec::before{content:'';position:absolute;top:-150px;left:-150px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,154,.06) 0%,transparent 70%)}
-.nl-inner{position:relative;z-index:2}
-.nl-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.8vw,52px);font-weight:600;color:var(--white);margin-bottom:8px;line-height:1.08}
-.nl-inner h2 em{font-style:italic;color:var(--rose);font-weight:400}
-.nl-inner p{font-size:13px;color:rgba(255,255,255,.42);font-weight:300;margin-bottom:28px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.7}
-/* Badge de descuento */
-.nl-discount-badge{display:inline-flex;align-items:center;gap:8px;background:var(--rose);color:#fff;border-radius:999px;padding:8px 18px;font-size:13px;font-weight:700;letter-spacing:.04em;margin-bottom:18px;box-shadow:0 8px 24px rgba(224,145,50,.38)}
-.nl-discount-badge .pct{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700}
-/* Formulario Klaviyo */
-.kl-form{max-width:440px;margin:0 auto}
-.kl-form-fields{display:flex;gap:9px;margin-bottom:10px}
-.kl-form-fields input{flex:1;padding:14px 18px;border-radius:40px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.07);color:var(--white);font-size:13px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;-webkit-appearance:none}
-.kl-form-fields input::placeholder{color:rgba(255,255,255,.32)}
-.kl-form-fields input:focus{border-color:var(--rose)}
-.kl-submit{padding:14px 22px;background:var(--rose);color:#fff;border:none;border-radius:40px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .25s;white-space:nowrap;font-weight:600}
-.kl-submit:hover{background:#c97c25;transform:translateY(-1px)}
-.kl-submit:disabled{background:#666;cursor:not-allowed;transform:none}
-.kl-privacy{font-size:10px;color:rgba(255,255,255,.22);letter-spacing:.04em}
-/* Estado de éxito */
-.kl-success{display:none;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:24px;margin-top:12px}
-.kl-success-icon{font-size:36px;margin-bottom:10px}
-.kl-success h3{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--white);margin-bottom:6px;font-weight:600}
-.kl-success p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.6}
-.kl-coupon-box{margin-top:14px;background:rgba(224,145,50,.15);border:1.5px dashed var(--rose);border-radius:12px;padding:14px 18px;display:inline-block}
-.kl-coupon-code{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--rose);letter-spacing:.14em}
-.kl-coupon-label{font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.12em;text-transform:uppercase;margin-top:2px}
-.kl-copy-btn{margin-top:10px;background:var(--rose);color:#fff;border:none;border-radius:30px;padding:9px 18px;font-size:11px;font-family:'DM Sans',sans-serif;cursor:pointer;letter-spacing:.06em;transition:all .2s}
-.kl-copy-btn:hover{background:#c97c25}
+/* ─── NEWSLETTER ─── */
+.nl-sec{
+  background:var(--petal);padding:90px 40px;
+  text-align:center;position:relative;overflow:hidden;
+}
+.nl-sec::before{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(184,115,74,.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.nl-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--rose);color:#fff;border-radius:999px;
+  padding:7px 18px;font-size:12px;font-weight:600;
+  letter-spacing:.05em;margin-bottom:22px;
+}
+.nl-badge .pct{font-family:'Playfair Display',serif;font-size:20px}
+.nl-title{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,56px);font-weight:400;color:var(--ink);line-height:1.04;margin-bottom:10px}
+.nl-title em{font-style:italic}
+.nl-sub{font-size:13px;color:var(--stone);margin-bottom:36px;font-weight:300;line-height:1.7;max-width:420px;margin-left:auto;margin-right:auto}
+.kl-form{max-width:440px;margin:0 auto;position:relative;z-index:2}
+.kl-fields{display:flex;gap:8px}
+.kl-fields input{
+  flex:1;padding:14px 20px;border-radius:40px;
+  border:1.5px solid rgba(107,104,96,.22);background:var(--white);
+  color:var(--ink);font-size:13px;font-family:'Jost',sans-serif;
+  outline:none;transition:border-color .2s;-webkit-appearance:none;
+}
+.kl-fields input::placeholder{color:var(--stone)}
+.kl-fields input:focus{border-color:var(--ink)}
+.kl-submit{
+  padding:14px 22px;background:var(--ink);color:#fff;border:none;border-radius:40px;
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;
+  font-family:'Jost',sans-serif;font-weight:600;transition:all .25s;white-space:nowrap;
+}
+.kl-submit:hover{background:var(--rose);transform:translateY(-1px)}
+.kl-submit:disabled{background:var(--stone);cursor:not-allowed;transform:none}
+.kl-note{font-size:10px;color:var(--stone);margin-top:10px;letter-spacing:.04em}
+.kl-success{display:none;background:var(--white);border:1px solid rgba(196,185,168,.35);border-radius:18px;padding:28px;margin-top:14px}
+.kl-success-icon{font-size:34px;margin-bottom:10px}
+.kl-success h3{font-family:'Playfair Display',serif;font-size:24px;color:var(--ink);margin-bottom:6px;font-weight:400}
+.kl-success p{font-size:13px;color:var(--stone);line-height:1.6;font-weight:300}
+.coupon-box{margin-top:16px;background:var(--petal);border:1.5px dashed var(--rose);border-radius:12px;padding:14px 18px;display:inline-block}
+.coupon-code{font-family:'Playfair Display',serif;font-size:30px;font-weight:500;color:var(--rose);letter-spacing:.16em}
+.coupon-label{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);margin-top:2px}
+.copy-btn{margin-top:12px;background:var(--ink);color:#fff;border:none;border-radius:30px;padding:9px 18px;font-size:11px;font-family:'Jost',sans-serif;cursor:pointer;letter-spacing:.06em;transition:all .2s;font-weight:500}
+.copy-btn:hover{background:var(--rose)}
 
-/* ── REVIEWS ── */
-.reviews-sec{padding:80px 24px;background:linear-gradient(180deg,var(--cream) 0%,var(--blush) 100%)}
-.reviews-wrap{max-width:1100px;margin:0 auto}
-.trust-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 auto 40px;max-width:900px}
-.trust-pill{background:rgba(255,255,255,.75);border:1px solid rgba(165,142,116,.22);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 24px rgba(66,69,48,.06)}
-.trust-ico{width:32px;height:32px;border-radius:50%;background:rgba(224,145,50,.12);display:flex;align-items:center;justify-content:center;color:var(--rose);font-size:16px;flex-shrink:0}
-.trust-title{font-size:12px;font-weight:700;color:var(--deep)}
-.trust-sub{font-size:10px;color:var(--muted);margin-top:2px;line-height:1.4}
-.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
-.review-card{background:var(--white);border-radius:16px;padding:20px;box-shadow:0 14px 38px rgba(66,69,48,.08);border:1px solid rgba(165,142,116,.14);transition:transform .28s ease}
-.review-card:hover{transform:translateY(-4px)}
-.review-stars{color:#E09132;font-size:14px;letter-spacing:.06em;margin-bottom:10px}
-.review-text{font-size:13px;line-height:1.75;color:var(--text);font-weight:300;margin-bottom:14px}
-.review-product{display:inline-flex;align-items:center;gap:6px;background:rgba(224,145,50,.10);color:var(--deep);border-radius:999px;padding:5px 10px;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px}
-.review-person{display:flex;align-items:center;gap:10px;border-top:1px solid rgba(165,142,116,.16);padding-top:12px}
-.review-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--muted));color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
-.review-name{font-size:12px;font-weight:700;color:var(--deep)}
-.review-meta{font-size:10px;color:var(--muted)}
-.use-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
-.use-card{background:rgba(255,255,255,.64);border:1px solid rgba(165,142,116,.18);border-radius:14px;padding:16px;transition:all .25s ease}
-.use-card:hover{background:#fff;transform:translateY(-3px)}
-.use-num{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--rose);font-weight:700;margin-bottom:6px}
-.use-title{font-size:13px;font-weight:700;color:var(--deep);margin-bottom:4px}
-.use-desc{font-size:11px;line-height:1.6;color:var(--muted);font-weight:300}
+/* ─── REVIEWS ─── */
+.reviews-sec{background:var(--white);padding:80px 40px}
+.trust-pills{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:860px;margin:0 auto 48px}
+.t-pill{
+  background:var(--cream);border:1px solid rgba(196,185,168,.28);
+  border-radius:14px;padding:18px 20px;
+  display:flex;align-items:flex-start;gap:12px;
+}
+.t-ico{
+  width:34px;height:34px;border-radius:50%;background:var(--petal);
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;flex-shrink:0;color:var(--rose);
+}
+.t-title{font-size:12px;font-weight:600;color:var(--ink);margin-bottom:3px}
+.t-body{font-size:11px;color:var(--stone);line-height:1.5;font-weight:300}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto}
+.rev-card{
+  background:var(--cream);border-radius:16px;padding:24px;
+  border:1px solid rgba(196,185,168,.2);transition:transform .28s;
+}
+.rev-card:hover{transform:translateY(-3px)}
+.rev-stars{color:var(--rose);font-size:13px;letter-spacing:.04em;margin-bottom:12px}
+.rev-product{
+  display:inline-block;background:var(--petal);color:var(--ink);
+  border-radius:999px;padding:4px 12px;font-size:9px;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;
+}
+.rev-text{font-size:13px;line-height:1.8;color:var(--stone);margin-bottom:16px;font-weight:300}
+.rev-person{display:flex;align-items:center;gap:10px;border-top:1px solid rgba(196,185,168,.25);padding-top:14px}
+.rev-avatar{
+  width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--sand));
+  color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;
+}
+.rev-name{font-size:12px;font-weight:600;color:var(--ink)}
+.rev-meta{font-size:10px;color:var(--stone)}
+.use-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:1000px;margin:28px auto 0}
+.use-card{
+  background:var(--cream);border:1px solid rgba(196,185,168,.22);
+  border-radius:14px;padding:18px;transition:all .25s;
+}
+.use-card:hover{background:var(--petal);transform:translateY(-2px)}
+.use-num{font-family:'Playfair Display',serif;font-size:20px;color:var(--rose);font-weight:400;margin-bottom:8px}
+.use-t{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.use-d{font-size:11px;color:var(--stone);line-height:1.65;font-weight:300}
 
-/* ── FOOTER ── */
-footer{background:#1A1210;color:rgba(255,255,255,.42);padding:44px 24px 26px}
-.fg{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:30px}
-.flogo{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.82);text-decoration:none;display:block;margin-bottom:9px}
-.flogo small{display:block;font-size:8px;letter-spacing:.28em;font-weight:300;color:rgba(255,255,255,.3)}
-.fdesc{font-size:11px;line-height:1.8;color:rgba(255,255,255,.3);font-weight:300;max-width:220px}
-.ftitle{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:12px}
-.flinks{list-style:none;display:flex;flex-direction:column;gap:7px}
-.flinks a{font-size:11px;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s}
-.flinks a:hover{color:var(--rose)}
-.fbot{border-top:1px solid rgba(255,255,255,.05);padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:10px;flex-wrap:wrap;gap:6px}
-.fbot a{color:var(--rose);text-decoration:none}
+/* ─── FOOTER ─── */
+footer{background:var(--ink);color:rgba(255,255,255,.45);padding:56px 40px 28px}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px}
+.f-logo{font-family:'Playfair Display',serif;font-size:18px;font-weight:400;letter-spacing:.06em;color:rgba(255,255,255,.88);text-decoration:none;display:block;margin-bottom:10px}
+.f-desc{font-size:11px;line-height:1.85;color:rgba(255,255,255,.3);font-weight:300;max-width:230px}
+.f-col-title{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:14px;font-weight:400}
+.f-links{list-style:none;display:flex;flex-direction:column;gap:8px}
+.f-links a{font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s}
+.f-links a:hover{color:rgba(255,255,255,.8)}
+.f-bot{
+  border-top:1px solid rgba(255,255,255,.07);padding-top:22px;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:10px;letter-spacing:.05em;flex-wrap:wrap;gap:8px;
+}
+.f-bot a{color:var(--sand);text-decoration:none}
 
-/* ── CART DRAWER ── */
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.42);z-index:300;opacity:0;pointer-events:none;transition:opacity .3s}
+/* ─── OVERLAY + DRAWER ─── */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.38);z-index:300;opacity:0;pointer-events:none;transition:opacity .3s}
 .overlay.open{opacity:1;pointer-events:all}
-.drawer{position:fixed;top:0;right:-440px;width:420px;max-width:96vw;height:100vh;background:var(--white);z-index:400;display:flex;flex-direction:column;box-shadow:-18px 0 56px rgba(0,0,0,.14);transition:right .35s cubic-bezier(.4,0,.2,1)}
+.drawer{
+  position:fixed;top:0;right:-440px;width:400px;max-width:96vw;height:100vh;
+  background:var(--white);z-index:400;display:flex;flex-direction:column;
+  box-shadow:-20px 0 60px rgba(0,0,0,.12);transition:right .35s cubic-bezier(.4,0,.2,1);
+}
 .drawer.open{right:0}
-.dhead{padding:20px 20px 16px;border-bottom:1px solid var(--blush);display:flex;justify-content:space-between;align-items:center}
-.dhead h3{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--deep)}
-.dclose{background:none;border:none;font-size:20px;cursor:pointer;color:var(--muted);transition:color .2s;padding:6px;border-radius:8px;-webkit-tap-highlight-color:transparent}
-.dclose:hover{color:var(--deep)}
-.ditems{flex:1;overflow-y:auto;padding:16px 18px;display:flex;flex-direction:column;gap:12px;-webkit-overflow-scrolling:touch}
-.dempty{text-align:center;padding:48px 16px}
-.dempty .ei{font-size:42px;margin-bottom:12px}
-.dempty p{font-size:13px;color:var(--muted)}
-.ditem{display:flex;gap:12px;padding:12px;background:var(--cream);border-radius:12px}
-.ditem-img{width:66px;height:66px;border-radius:9px;overflow:hidden;background:var(--blush);flex-shrink:0}
-.ditem-img img{width:100%;height:100%;object-fit:cover}
-.ditem-info{flex:1;min-width:0}
-.ditem-brand{font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.ditem-name{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--deep);margin:2px 0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.dctrl{display:flex;align-items:center;gap:7px}
-.qb{width:26px;height:26px;border-radius:50%;border:1px solid rgba(44,36,32,.18);background:#fff;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .2s;-webkit-tap-highlight-color:transparent}
-.qb:hover{background:var(--deep);color:#fff;border-color:var(--deep)}
-.qn{font-size:13px;font-weight:600;color:var(--deep);min-width:18px;text-align:center}
-.drm{background:none;border:none;cursor:pointer;color:var(--muted);font-size:16px;padding:4px;-webkit-tap-highlight-color:transparent}
-.drm:hover{color:var(--rose)}
-.ditem-price{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--deep);align-self:center;white-space:nowrap;margin-left:auto}
-.dfoot{padding:16px 18px;border-top:1px solid var(--blush)}
-.dtotal-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.dtotal-label{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
-.dtotal-amt{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--deep)}
-.wa-btn{width:100%;padding:15px;background:var(--deep);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .3s;letter-spacing:.02em;-webkit-tap-highlight-color:transparent}
-.wa-btn:hover{transform:translateY(-2px)}
-.shopify-btn{background:#1a1a1a;transition:background .35s}
-.shopify-btn:hover{background:var(--rose)}
-.wa-btn-secondary{font-size:12px;padding:12px 16px;opacity:.9;margin-top:8px;background:var(--wa)}
-.wa-btn-secondary:hover{background:#20b955}
-.dnote{font-size:10px;color:var(--muted);text-align:center;margin-top:9px;line-height:1.5}
-.payment-methods{margin-top:12px;padding-top:11px;border-top:1px solid var(--blush)}
-.payment-label{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-align:center;display:flex;align-items:center;justify-content:center;gap:5px;margin-bottom:7px}
-.payment-logos{display:flex;align-items:center;justify-content:center;gap:5px;flex-wrap:wrap}
+.d-head{
+  padding:20px 22px 16px;border-bottom:1px solid rgba(196,185,168,.2);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.d-head h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:var(--ink)}
+.d-close{background:none;border:none;font-size:20px;cursor:pointer;color:var(--stone);transition:color .2s;padding:6px;-webkit-tap-highlight-color:transparent}
+.d-close:hover{color:var(--ink)}
+.d-items{flex:1;overflow-y:auto;padding:16px 18px;display:flex;flex-direction:column;gap:12px;-webkit-overflow-scrolling:touch}
+.d-empty{text-align:center;padding:52px 16px}
+.d-empty .ei{font-size:40px;margin-bottom:12px}
+.d-empty p{font-size:13px;color:var(--stone);line-height:1.6;font-weight:300}
+.d-item{display:flex;gap:12px;padding:12px;background:var(--cream);border-radius:12px}
+.d-item-img{width:64px;height:64px;border-radius:8px;overflow:hidden;background:var(--petal);flex-shrink:0}
+.d-item-img img{width:100%;height:100%;object-fit:cover}
+.d-item-info{flex:1;min-width:0}
+.d-brand{font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone)}
+.d-name{font-family:'Playfair Display',serif;font-size:13px;color:var(--ink);margin:2px 0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:400}
+.d-ctrl{display:flex;align-items:center;gap:7px}
+.qb{width:26px;height:26px;border-radius:50%;border:1px solid rgba(107,104,96,.22);background:#fff;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .2s;-webkit-tap-highlight-color:transparent}
+.qb:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.qn{font-size:13px;font-weight:600;color:var(--ink);min-width:18px;text-align:center}
+.d-rm{background:none;border:none;cursor:pointer;color:var(--stone);font-size:16px;padding:4px;-webkit-tap-highlight-color:transparent}
+.d-rm:hover{color:var(--rose)}
+.d-price{font-family:'Playfair Display',serif;font-size:15px;color:var(--ink);align-self:center;white-space:nowrap;margin-left:auto}
+.d-foot{padding:16px 18px;border-top:1px solid rgba(196,185,168,.2)}
+.d-total-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.d-total-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone)}
+.d-total-amt{font-family:'Playfair Display',serif;font-size:24px;font-weight:400;color:var(--ink)}
+.cta-btn{
+  width:100%;padding:14px;border-none;border:none;border-radius:12px;
+  font-size:13px;font-weight:600;cursor:pointer;font-family:'Jost',sans-serif;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  transition:all .3s;letter-spacing:.03em;-webkit-tap-highlight-color:transparent;
+}
+.shopify-cta{background:var(--ink);color:#fff}
+.shopify-cta:hover{background:var(--rose)}
+.wa-cta{background:var(--wa);color:#fff;margin-top:8px;font-size:12px;padding:12px}
+.wa-cta:hover{filter:brightness(1.08)}
+.d-note{font-size:10px;color:var(--stone);text-align:center;margin-top:10px;line-height:1.5}
+.pay-methods{margin-top:12px;padding-top:12px;border-top:1px solid rgba(196,185,168,.18)}
+.pay-label{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);text-align:center;margin-bottom:8px}
+.pay-logos{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}
 .pay-logo{width:44px;height:28px;border-radius:4px;flex-shrink:0}
 
-/* ── WA FLOAT ── */
-.wa-float{position:fixed;bottom:26px;right:26px;z-index:150;width:52px;height:52px;border-radius:50%;background:var(--wa);color:#fff;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 22px rgba(37,211,102,.42);transition:all .3s;-webkit-tap-highlight-color:transparent}
+/* ─── WA FLOAT ─── */
+.wa-float{
+  position:fixed;bottom:28px;right:28px;z-index:150;
+  width:50px;height:50px;border-radius:50%;
+  background:var(--wa);color:#fff;border:none;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;box-shadow:0 6px 22px rgba(37,211,102,.4);
+  transition:all .3s;-webkit-tap-highlight-color:transparent;
+}
 .wa-float:hover{transform:scale(1.1)}
-.wa-float svg{width:26px;height:26px}
+.wa-float svg{width:24px;height:24px}
 
-/* ── PRODUCT POPUP ── */
-.popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:500;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;align-items:center;justify-content:center;padding:16px}
+/* ─── POPUP ─── */
+.popup-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,.48);z-index:500;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+  display:flex;align-items:center;justify-content:center;padding:20px;
+}
 .popup-overlay.open{opacity:1;pointer-events:all}
-.popup{background:var(--white);border-radius:18px;width:100%;max-width:520px;overflow:hidden;transform:scale(.94);transition:transform .3s;box-shadow:0 24px 60px rgba(44,36,32,.22);max-height:92vh;overflow-y:auto}
-.popup-overlay.open .popup{transform:scale(1)}
-.popup-img{height:250px;overflow:hidden;background:var(--blush);position:relative;flex-shrink:0}
-.popup-img img{width:100%;height:100%;object-fit:cover}
-.popup-body{padding:20px}
-.popup-brand{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
-.popup-name{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--deep);margin-bottom:8px;line-height:1.2}
-.popup-price{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--deep);margin-bottom:12px;font-weight:700}
-.popup-price .old{font-size:15px;color:var(--muted);text-decoration:line-through;margin-right:7px;font-family:'DM Sans',sans-serif;font-weight:400}
-.popup-stars{margin-bottom:12px}
+.popup{
+  background:var(--white);border-radius:20px;width:100%;max-width:500px;
+  overflow:hidden;transform:scale(.93) translateY(10px);
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1);
+  box-shadow:0 28px 70px rgba(0,0,0,.2);max-height:92vh;overflow-y:auto;
+}
+.popup-overlay.open .popup{transform:scale(1) translateY(0)}
+.popup-img{height:280px;overflow:hidden;background:#fff;position:relative;flex-shrink:0}
+.popup-img img{width:100%;height:100%;object-fit:contain;padding:16px}
+.popup-body{padding:22px}
+.popup-brand{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);margin-bottom:6px;font-weight:500}
+.popup-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--ink);margin-bottom:10px;line-height:1.2}
+.popup-price{font-size:16px;color:var(--ink);margin-bottom:12px;font-weight:500}
+.popup-price .old{font-size:12px;color:var(--stone);text-decoration:line-through;margin-right:7px;font-weight:400}
+.popup-stars{margin-bottom:14px}
 .stars-row{display:flex;align-items:center;gap:4px}
-.star{font-size:15px;line-height:1}
-.star.full{color:#D4A017}.star.half{color:#D4A017;opacity:.6}.star.empty{color:#ddd}
-.star-score{font-size:13px;font-weight:700;color:#D4A017;margin-left:2px}
-.star-count{font-size:11px;color:var(--muted);margin-left:2px}
-.popup-add{width:100%;background:var(--deep);color:#fff;border:none;border-radius:40px;padding:14px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .25s;font-weight:600;-webkit-tap-highlight-color:transparent}
+.star.full{color:#c8a06e}.star.half{color:#c8a06e;opacity:.6}.star.empty{color:#ddd}
+.star-score{font-size:12px;font-weight:600;color:#c8a06e;margin-left:3px}
+.star-count{font-size:11px;color:var(--stone);margin-left:2px}
+.popup-desc{font-size:13px;color:var(--stone);line-height:1.75;margin-bottom:18px;font-weight:300}
+.popup-add{
+  width:100%;background:var(--ink);color:#fff;border:none;border-radius:40px;
+  padding:14px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  cursor:pointer;font-family:'Jost',sans-serif;transition:all .25s;font-weight:600;
+  -webkit-tap-highlight-color:transparent;
+}
 .popup-add:hover{background:var(--rose)}
-.popup-close{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.92);border:none;border-radius:50%;width:36px;height:36px;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:2;-webkit-tap-highlight-color:transparent}
-.popup-close:hover{background:var(--deep);color:#fff}
-
-/* ── ANIMS ── */
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.fc-1{animation:float 3s ease-in-out infinite}
-.fc-2{animation:float 3s 1.5s ease-in-out infinite}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
+.popup-close{
+  position:absolute;top:12px;right:12px;background:rgba(255,255,255,.9);
+  border:none;border-radius:50%;width:34px;height:34px;font-size:16px;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:all .2s;z-index:2;-webkit-tap-highlight-color:transparent;
+}
+.popup-close:hover{background:var(--ink);color:#fff}
 
 /* ══════════════════════════════════════
-   RESPONSIVE MÓVIL — prioridad máxima
-   ══════════════════════════════════════ */
+   ANIMATE — sistema completo de motion
+══════════════════════════════════════ */
+
+/* ── Keyframes base ── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(28px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+@keyframes slideLeft{
+  from{opacity:0;transform:translateX(32px)}
+  to{opacity:1;transform:translateX(0)}
+}
+@keyframes slideRight{
+  from{opacity:0;transform:translateX(-32px)}
+  to{opacity:1;transform:translateX(0)}
+}
+@keyframes scaleIn{
+  from{opacity:0;transform:scale(.94)}
+  to{opacity:1;transform:scale(1)}
+}
+@keyframes shimmer{
+  0%{background-position:-200% center}
+  100%{background-position:200% center}
+}
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+}
+@keyframes marqueeKen{
+  0%{transform:scale(1) translateX(0)}
+  50%{transform:scale(1.04) translateX(-1%)}
+  100%{transform:scale(1) translateX(0)}
+}
+@keyframes textReveal{
+  from{clip-path:inset(0 100% 0 0)}
+  to{clip-path:inset(0 0% 0 0)}
+}
+@keyframes countUp{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes drawerIn{
+  from{opacity:0;transform:translateY(6px) scale(.98)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+/* ── Hero — Ken Burns suave en la imagen ── */
+.hero-bg{
+  animation:marqueeKen 18s ease-in-out infinite;
+  transform-origin:center center;
+  will-change:transform;
+}
 @media(max-width:900px){
+  .hero-bg{animation:none} /* desactiva Ken Burns en mobile — ahorra GPU */
+}
+/* Eyebrow entra primero */
+.hero-eyebrow{
+  animation:fadeIn .7s cubic-bezier(.16,1,.3,1) .2s both;
+}
+/* Título entra con fadeUp staggered */
+.hero-h1{
+  animation:fadeUp .9s cubic-bezier(.16,1,.3,1) .38s both;
+}
+/* Cuerpo */
+.hero-body{
+  animation:fadeUp .8s cubic-bezier(.16,1,.3,1) .52s both;
+}
+/* Botones */
+.hero-actions{
+  animation:fadeUp .8s cubic-bezier(.16,1,.3,1) .64s both;
+}
+/* Pill de stats */
+.hero-pill{
+  animation:slideLeft .8s cubic-bezier(.16,1,.3,1) .75s both;
+}
 
-  /* Nav mobile */
-  nav{padding:11px 16px}
-  .nav-links{display:none}
-  .logo{font-size:16px}
+/* ── Trust bar — cada item entra escalonado ── */
+.trust-item{
+  opacity:0;
+  animation:fadeUp .6s cubic-bezier(.16,1,.3,1) both;
+}
+.trust-item:nth-child(1){animation-delay:.1s}
+.trust-item:nth-child(2){animation-delay:.2s}
+.trust-item:nth-child(3){animation-delay:.3s}
+.trust-item:nth-child(4){animation-delay:.4s}
 
-  /* Sticky bar visible en mobile (empieza oculta, JS la muestra) */
-  .mobile-sticky-bar{display:flex}
+/* ── Nav — desliza desde arriba ── */
+nav{
+  animation:fadeIn .5s cubic-bezier(.16,1,.3,1) both;
+}
+.announce{
+  animation:fadeIn .4s ease both;
+}
 
-  /* ── HERO MOBILE: VERSIÓN A (imagen arriba, texto abajo) ── */
-  .hero{
-    display:flex;
-    flex-direction:column;
-    padding:0;
-    min-height:auto;
-    gap:0;
-    background:transparent;
+/* ── Reveal scroll — más expresivo ── */
+.reveal{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .75s cubic-bezier(.16,1,.3,1),
+             transform .75s cubic-bezier(.16,1,.3,1);
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* Variantes de reveal para distintos elementos */
+.reveal-left{
+  opacity:0;transform:translateX(-24px);
+  transition:opacity .75s cubic-bezier(.16,1,.3,1),
+             transform .75s cubic-bezier(.16,1,.3,1);
+}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+
+.reveal-scale{
+  opacity:0;transform:scale(.96);
+  transition:opacity .7s cubic-bezier(.16,1,.3,1),
+             transform .7s cubic-bezier(.16,1,.3,1);
+}
+.reveal-scale.visible{opacity:1;transform:scale(1)}
+
+/* ── Producto card — hover más expresivo ── */
+.pc{
+  transition:transform .35s cubic-bezier(.16,1,.3,1),
+             box-shadow .35s cubic-bezier(.16,1,.3,1);
+}
+.pc:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 40px rgba(26,26,24,.12);
+}
+.pimg-wrap img{
+  transition:transform .65s cubic-bezier(.25,.46,.45,.94);
+}
+.pc:hover .pimg-wrap img{transform:scale(1.08)}
+
+/* Overlay CTA sube suave */
+.overlay-btn{
+  transition:transform .35s cubic-bezier(.16,1,.3,1),
+             background .2s ease;
+}
+.pc:hover .overlay-btn{transform:translateY(0)}
+
+/* Botón + pulsa al hacer done */
+.add-btn{transition:transform .2s cubic-bezier(.34,1.56,.64,1),background .2s ease}
+.add-btn.done{animation:scaleIn .3s cubic-bezier(.34,1.56,.64,1)}
+.add-btn:active{transform:scale(.9)}
+
+/* ── Brand chips — float al hover ── */
+.brand-chip{transition:opacity .3s ease,transform .3s cubic-bezier(.16,1,.3,1)}
+.brand-chip:hover{opacity:1;transform:translateY(-2px)}
+
+/* ── Review cards ── */
+.rev-card{
+  transition:transform .35s cubic-bezier(.16,1,.3,1),
+             box-shadow .35s ease;
+}
+.rev-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 44px rgba(26,26,24,.1);
+}
+
+/* ── Use cards ── */
+.use-card{transition:all .3s cubic-bezier(.16,1,.3,1)}
+.use-card:hover{transform:translateY(-3px);background:var(--petal)}
+
+/* ── Botones globales — micro-feedback ── */
+.btn-dark{transition:background .22s ease,transform .22s cubic-bezier(.16,1,.3,1),box-shadow .22s ease}
+.btn-dark:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(26,26,24,.18)}
+.btn-dark:active{transform:translateY(0);box-shadow:none}
+.btn-outline{transition:background .22s ease,color .22s ease,border-color .22s ease,transform .22s cubic-bezier(.16,1,.3,1)}
+.btn-outline:hover{transform:translateY(-2px)}
+.btn-outline:active{transform:translateY(0)}
+
+/* ── Drawer y popup — entradas cinéticas ── */
+.drawer{transition:right .38s cubic-bezier(.16,1,.3,1)}
+.drawer.open .d-item{
+  animation:drawerIn .35s cubic-bezier(.16,1,.3,1) both;
+}
+.drawer.open .d-item:nth-child(1){animation-delay:.05s}
+.drawer.open .d-item:nth-child(2){animation-delay:.1s}
+.drawer.open .d-item:nth-child(3){animation-delay:.15s}
+.drawer.open .d-item:nth-child(4){animation-delay:.2s}
+
+.popup{transition:transform .35s cubic-bezier(.34,1.26,.64,1),opacity .25s ease}
+.popup-overlay.open .popup{transform:scale(1) translateY(0)}
+
+/* ── Cart badge — micro rebote ── */
+.cart-badge{transition:transform .2s cubic-bezier(.34,1.56,.64,1)}
+.cart-badge.pop{animation:popBadge .4s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes popBadge{
+  0%{transform:scale(1)}
+  40%{transform:scale(1.7)}
+  70%{transform:scale(.9)}
+  100%{transform:scale(1)}
+}
+
+/* ── WA float — pulso de atención ── */
+.wa-float{animation:waPulse 3s ease-in-out 3s infinite}
+@keyframes waPulse{
+  0%,100%{box-shadow:0 6px 22px rgba(37,211,102,.4)}
+  50%{box-shadow:0 6px 32px rgba(37,211,102,.7),0 0 0 8px rgba(37,211,102,.1)}
+}
+.wa-float:hover{animation:none;transform:scale(1.1)}
+
+/* ── Newsletter badge shimmer ── */
+.nl-badge{
+  position:relative;overflow:hidden;
+}
+.nl-badge::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.25) 50%,transparent 100%);
+  background-size:200% 100%;
+  animation:shimmer 2.5s ease-in-out 1s infinite;
+}
+
+/* ══════════════════════════════════════
+   DELIGHT — personalidad y momentos únicos
+══════════════════════════════════════ */
+
+/* ── Cursor personalizado — eliminado ── */
+
+/* ── Hero eyebrow — línea animada ── */
+.hero-eyebrow::before{
+  content:'';display:block;width:22px;height:1px;
+  background:rgba(255,255,255,.4);
+  animation:lineGrow .8s cubic-bezier(.16,1,.3,1) .4s both;
+}
+@keyframes lineGrow{
+  from{width:0;opacity:0}
+  to{width:22px;opacity:1}
+}
+
+/* ── Producto card — esquina de marca ── */
+.pbrand{
+  position:relative;
+  display:inline-block;
+}
+.pbrand::after{
+  content:'';position:absolute;bottom:-2px;left:0;right:0;
+  height:1px;background:var(--rose);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .3s cubic-bezier(.16,1,.3,1);
+}
+.pc:hover .pbrand::after{transform:scaleX(1)}
+
+/* ── Add button — ripple effect ── */
+.add-btn{position:relative;overflow:hidden}
+.add-btn::after{
+  content:'';position:absolute;inset:0;
+  border-radius:50%;
+  background:rgba(255,255,255,.35);
+  transform:scale(0);opacity:1;
+  transition:transform .4s ease,opacity .4s ease;
+}
+.add-btn:active::after{transform:scale(2.5);opacity:0}
+
+/* ── Trust items — icono con glow ── */
+.trust-icon{
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1);
+  display:inline-block;
+}
+.trust-item:hover .trust-icon{transform:scale(1.3)}
+
+/* ── Marquee chip — hover revela subtítulo ── */
+.bc-sub{
+  max-height:0;overflow:hidden;opacity:0;
+  transition:max-height .3s ease,opacity .3s ease,margin .3s ease;
+  margin-top:0;
+}
+.brand-chip:hover .bc-sub{max-height:20px;opacity:1;margin-top:2px}
+
+/* ── Review stars — shimmer al hover ── */
+.rev-stars{
+  display:inline-block;
+  transition:letter-spacing .3s ease;
+}
+.rev-card:hover .rev-stars{letter-spacing:.12em}
+
+/* ── Filter btn — fondo que crece desde centro ── */
+.filter-btn{
+  position:relative;overflow:hidden;
+}
+.filter-btn::before{
+  content:'';position:absolute;inset:0;
+  background:var(--ink);border-radius:40px;
+  transform:scale(0);transition:transform .25s cubic-bezier(.34,1.26,.64,1);
+  z-index:0;
+}
+.filter-btn.on::before,.filter-btn:hover::before{transform:scale(1)}
+.filter-btn span,.filter-btn{position:relative;z-index:1}
+
+/* ── Carrito vacío — emoji flota ── */
+.d-empty .ei{
+  display:inline-block;
+  animation:eiFloat 2.5s ease-in-out infinite;
+}
+@keyframes eiFloat{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  30%{transform:translateY(-8px) rotate(-5deg)}
+  60%{transform:translateY(-4px) rotate(3deg)}
+}
+
+/* ── Drawer total — highlight al cambiar ── */
+.d-total-amt{
+  transition:color .3s ease,transform .3s cubic-bezier(.34,1.56,.64,1);
+  display:inline-block;
+}
+.d-total-amt.bump{
+  animation:totalBump .4s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes totalBump{
+  0%{transform:scale(1);color:var(--ink)}
+  40%{transform:scale(1.18);color:var(--rose)}
+  100%{transform:scale(1);color:var(--ink)}
+}
+
+/* ── Announce bar — texto con shimmer sutil ── */
+.announce{
+  position:relative;overflow:hidden;
+}
+.announce::after{
+  content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);
+  animation:announceShine 4s ease-in-out 2s infinite;
+}
+@keyframes announceShine{
+  0%{left:-60%}
+  100%{left:120%}
+}
+
+/* ── Popup close — gira al hover ── */
+.popup-close{
+  transition:background .2s ease,color .2s ease,transform .3s cubic-bezier(.34,1.56,.64,1);
+}
+.popup-close:hover{
+  background:var(--ink);color:#fff;
+  transform:rotate(90deg) scale(1.1);
+}
+
+/* ── Footer logo — brillo sutil al hover ── */
+.f-logo{
+  position:relative;
+  transition:color .25s ease,letter-spacing .3s ease;
+}
+.f-logo:hover{
+  color:#fff;
+  letter-spacing:.1em;
+}
+
+/* ── WA float — tooltip eliminado ── */
+
+/* ── Announce bar — shimmer sutil ── */
+.announce{
+  background-size:200% 100%;
+}
+
+/* ── Reduce motion: respeta preferencia del sistema ── */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
   }
-  .hero::after{display:none}
+}
 
-  /* Imagen: ocupa el ancho completo, va PRIMERA (order) */
-  .hero-right{
-    order:-1;
-    display:flex;
-    width:100%;
-    min-height:auto;
-    justify-content:center;
-    position:relative;
-    background:linear-gradient(150deg,#DEC8BE 0%,#C4A090 45%,#8A6458 100%);
-    padding-top:56px; /* altura nav */
-  }
-  .hero-product-card{
-    width:100%;
-    height:260px;
-    border-radius:0;
-    background:transparent;
-    border:none;
-    box-shadow:none;
-    position:relative;
-  }
-  .hero-product-card img{
-    padding:0;
-    object-fit:contain;
-    object-position:center bottom;
-    filter:drop-shadow(0 16px 28px rgba(44,36,32,.22));
-  }
+/* ══════════════════
+   RESPONSIVE
+══════════════════ */
+@media(max-width:900px){
+  .announce{font-size:9px;padding:7px 12px;gap:10px}
+  nav{grid-template-columns:auto 1fr auto;padding:0 16px}
+  .nav-left{display:none}
+  .logo{text-align:left}
+  .logo-name{font-size:17px}
+  .mobile-sticky{display:block}
 
-  /* Badge cupón flotante sobre la imagen */
-  .hero-floating-card{display:none}
-  .hero-coupon-badge{
-    display:flex !important;
-    position:absolute;
-    top:68px;right:14px;
-    background:rgba(255,255,255,.92);
-    border-radius:11px;padding:8px 11px;
-    box-shadow:0 8px 24px rgba(44,36,32,.14);
-    flex-direction:column;
-    z-index:4;
-  }
-  .hcb-top{font-family:'DM Sans',sans-serif;font-size:7px;letter-spacing:.16em;text-transform:uppercase;color:#E09132;font-weight:700;margin-bottom:1px}
-  .hcb-val{font-family:'Cormorant Garamond',serif;font-size:18px;color:#424530;line-height:1.1}
-  .hcb-sub{font-family:'DM Sans',sans-serif;font-size:7px;color:#A58E74}
+  /* Hero mobile — full screen image, text overlaid bottom */
+  .hero{height:100svh;min-height:520px}
+  .hero-text{flex-direction:column;align-items:flex-start;padding:0 20px 100px;gap:16px}
+  .hero-left{max-width:100%}
+  .hero-h1{font-size:clamp(36px,10vw,52px);margin-bottom:16px}
+  .hero-body{font-size:13px;margin-bottom:20px;display:none}
+  .hero-actions{gap:9px}
+  .hero-right{display:none}
 
-  /* Texto: debajo de la imagen, fondo crema */
-  .hero-left{
-    order:1;
-    background:#F5EDE6;
-    padding:22px 18px 108px; /* 108px = sticky bar space */
-    text-align:left;
-  }
-  .hero-tag{margin-bottom:12px;font-size:9px}
-  h1.hero-title{font-size:clamp(34px,9vw,48px);line-height:.95;margin-bottom:10px}
-  .hero-sub{margin:0 0 16px;font-size:12px;max-width:100%}
+  .trust-bar{flex-wrap:wrap}
+  .trust-item{flex:0 0 50%;border-right:none;border-bottom:1px solid rgba(196,185,168,.2)}
+  .trust-item:nth-child(odd){border-right:1px solid rgba(196,185,168,.2)}
+  .trust-item:last-child{flex:0 0 100%;border-bottom:none}
 
-  .hero-stats{
-    grid-template-columns:repeat(3,1fr);
-    gap:7px;
-    margin-bottom:14px;
-  }
-  .hero-stat{padding:9px 7px;border-radius:11px;background:rgba(255,255,255,.7)}
-  .hero-stat strong{font-size:18px}
-  .hero-stat span{font-size:7px}
+  .brands-sec{padding:24px 0}
 
-  .hero-seals{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-bottom:18px}
-  .hero-seals::-webkit-scrollbar{display:none}
+  .sec{padding:52px 16px}
+  .sec-head{margin-bottom:36px}
 
-  .hero-btns{justify-content:flex-start;gap:9px}
-  .hero-btns .btn-primary{padding:12px 22px;font-size:11px}
-  .hero-btns .btn-ghost{padding:11px 18px;font-size:11px}
+  .filters{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:0 4px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .filters::-webkit-scrollbar{display:none}
+  .filter-btn{white-space:nowrap;flex-shrink:0;padding:8px 14px;font-size:10px}
 
-  /* Brands */
-  .brands{padding:28px 14px}
-  /* brands: en mobile el marquee ya es responsive */
-  .bn{font-size:13px}
-
-  /* Filtros: scroll horizontal */
-  .tabs{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:6px;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-left:2px}
-  .tabs::-webkit-scrollbar{display:none}
-  .tab{white-space:nowrap;flex-shrink:0;padding:9px 14px;font-size:11px}
-
-  /* Products: 1 columna en mobile pequeño, 2 en tablet */
-  .pgrid{grid-template-columns:repeat(2,1fr);gap:12px}
-  .pimg{height:170px}
+  .pgrid{grid-template-columns:repeat(2,1fr);gap:1px}
+  .pimg-wrap{aspect-ratio:1/1}
   .pname{font-size:13px}
-  .pprice{font-size:15px}
-  .addbtn{width:36px;height:36px}
+  .pprice{font-size:12px}
+  .pinfo{padding:12px 12px 16px}
 
-  /* Products section padding */
-  .products-sec{padding:52px 14px 100px} /* espacio sticky bar */
+  .products-sec.sec{padding-bottom:100px}
 
-  /* Rutina: columna única */
-  .rutina-sec{grid-template-columns:1fr;margin:0 14px 60px;border-radius:16px}
-  .rv{height:200px}
-  .rc{padding:28px 22px}
+  .editorial{grid-template-columns:1fr}
+  .ed-visual{height:220px}
+  .ed-content{padding:36px 20px 40px}
   .rf-grid{grid-template-columns:1fr}
 
-  /* Reviews */
-  .reviews-sec{padding:52px 14px}
-  .trust-strip{grid-template-columns:1fr;gap:9px;margin-bottom:28px}
+  .nl-sec{padding:60px 16px}
+  .kl-fields{flex-direction:column;gap:10px}
+  .kl-submit{width:100%;text-align:center}
+
+  .reviews-sec{padding:52px 16px}
+  .trust-pills{grid-template-columns:1fr;gap:8px;margin-bottom:32px}
   .review-grid{grid-template-columns:1fr;gap:12px}
   .use-grid{grid-template-columns:1fr 1fr;gap:9px}
 
-  /* Newsletter */
-  .nl-sec{padding:56px 16px}
-  .kl-form-fields{flex-direction:column;gap:10px}
-  .kl-submit{width:100%;text-align:center;padding:14px}
+  footer{padding:40px 20px 22px;padding-bottom:80px}
+  .fg{grid-template-columns:1fr;gap:24px}
 
-  /* Footer */
-  .fg{grid-template-columns:1fr;gap:22px}
-  footer{padding-bottom:80px} /* espacio sticky bar */
-
-  /* Cart drawer: full width en mobile */
   .drawer{width:100%;max-width:100%;right:-100%}
+  .popup-overlay{padding:0;align-items:flex-end}
+  .popup{border-radius:20px 20px 0 0;max-height:90vh}
 
-  /* Popup mobile: optimizado */
-  .popup-overlay{padding:12px;align-items:flex-end}
-  .popup{border-radius:20px 20px 0 0;max-height:88vh}
-  .popup-img{height:200px}
-  .popup-body{padding:16px 16px 24px}
-
-  /* WA float: más arriba para no tapar sticky bar */
   .wa-float{bottom:80px;right:16px;width:46px;height:46px}
 }
 
 @media(max-width:380px){
-  .hero-stats{grid-template-columns:1fr 1fr}
-  .hero-stat:last-child{grid-column:span 2}
   .pgrid{grid-template-columns:1fr}
-  .pimg{height:200px}
+  .pimg-wrap{aspect-ratio:4/3}
 }
-
-/* Desktop tweaks */
 @media(min-width:901px){
-  .hero{grid-template-columns:.88fr 1.12fr;gap:32px;padding:120px 52px 70px}
-  .hero-right{min-height:640px;align-items:center}
-  .hero-product-card{height:640px}
+  .hero-text{padding:0 60px 60px}
+  .hero-h1{font-size:clamp(60px,6.5vw,90px)}
 }
 </style>
 </head>
 <body>
 
+<!-- ANNOUNCE -->
+<div class="announce">
+  <span>✦ k-beauty importado desde corea del sur</span>
+  <span>·</span>
+  <span>despacho a todo chile</span>
+  <span>·</span>
+  <a href="#descuento">10% off en tu primera compra →</a>
+</div>
+
 <!-- NAV -->
 <nav>
-  <ul class="nav-links">
-    <li><a href="#">Inicio</a></li>
-    <li><a href="#productos">Productos</a></li>
-    <li><a href="#rutina">Rutina</a></li>
-    <li><a href="#descuento">10% OFF</a></li>
-  </ul>
-  <a href="https://enigmastore.cl" class="logo">Enigma Store<small>K-Beauty Chile</small></a>
+  <div class="nav-left">
+    <a href="#" class="nav-link">inicio</a>
+    <a href="#productos" class="nav-link">productos</a>
+    <a href="#rutina" class="nav-link">rutina</a>
+  </div>
+  <a href="https://enigmastore.cl" class="logo">
+    <span class="logo-name">Enigma Store</span>
+    <span class="logo-sub">K-Beauty Chile</span>
+  </a>
   <div class="nav-right">
-    <button class="cart-trigger" onclick="toggleCart()">
-      🛒 <span class="cart-label">Pedido</span>
-      <span class="cart-badge" id="cartBadge">0</span>
+    <button class="nav-icon-btn" onclick="toggleCart()" aria-label="Abrir carrito de compras">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <span id="cartBadge" class="cart-badge" aria-label="productos en carrito">0</span>
     </button>
   </div>
 </nav>
 
-<!-- MOBILE STICKY BAR — solo aparece al agregar el primer producto -->
-<div class="mobile-sticky-bar" id="mobileStickyBar">
-  <button class="msb-cart" onclick="toggleCart()">
-    🛒 Ver pedido (<span id="msbCount">0</span>)
+<!-- MOBILE STICKY -->
+<div class="mobile-sticky" id="mobileStickyBar">
+  <button class="msb-btn" onclick="toggleCart()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    ver pedido (<span id="msbCount">0</span>)
   </button>
 </div>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
-    <div class="hero-tag">✦ K-Beauty original · Importado desde Corea</div>
-    <h1 class="hero-title">Skincare coreano<br><em>para una piel glow</em></h1>
-    <p class="hero-sub">Rutinas coreanas seleccionadas para hidratar, iluminar y fortalecer tu piel. Disponibles en Chile con despacho seguro.</p>
+  <!-- Imagen desktop -->
+  <img class="hero-bg desktop"
+       src="https://cdn.shopify.com/s/files/1/0609/5496/8134/files/SKINCARE_CELIMAX_CHILE.png?v=1777687987"
+       alt="K-Beauty skincare coreano Enigma Store Chile"
+       fetchpriority="high">
+  <!-- Imagen mobile -->
+  <img class="hero-bg mobile"
+       src="https://cdn.shopify.com/s/files/1/0609/5496/8134/files/skincare_coreono_chile.png?v=1777685968"
+       alt="K-Beauty skincare coreano Enigma Store Chile"
+       fetchpriority="high">
 
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <strong class="count" data-target="3200" data-prefix="+">0</strong>
-        <span>clientes felices</span>
-      </div>
-      <div class="hero-stat">
-        <strong>100%</strong>
-        <span>productos originales</span>
-      </div>
-      <div class="hero-stat">
-        <strong>Todo Chile</strong>
-        <span>despacho seguro</span>
+  <!-- Gradient scrim para legibilidad -->
+  <div class="hero-scrim"></div>
+
+  <!-- Contenido superpuesto -->
+  <div class="hero-text">
+    <div class="hero-left">
+      <div class="hero-eyebrow">K-Beauty · Enigma Store Chile</div>
+      <h1 class="hero-h1">skincare<br>coreano para<br>una piel <em>glow</em></h1>
+      <p class="hero-body">Rutinas coreanas seleccionadas para hidratar, iluminar y fortalecer tu piel. Originales importados desde Corea.</p>
+      <div class="hero-actions">
+        <a href="#productos" class="btn-dark">ver productos</a>
+        <a href="#descuento" class="btn-outline">10% descuento →</a>
       </div>
     </div>
 
-    <div class="hero-seals">
-      <div class="hero-seal"><span>✓</span> Compra segura</div>
-      <div class="hero-seal"><span>✓</span> Envío a todo Chile</div>
-      <div class="hero-seal"><span>✓</span> Asesoría de rutina</div>
-    </div>
-
-    <div class="hero-btns">
-      <a href="#productos" class="btn-primary">Ver productos</a>
-      <a href="#descuento" class="btn-ghost">10% descuento →</a>
-    </div>
-  </div>
-
-  <div class="hero-right">
-    <!-- Badge origen — solo visible en mobile vía CSS -->
-    <div class="hero-coupon-badge" style="display:none">
-      <div class="hcb-top">🇰🇷 Importado</div>
-      <div class="hcb-val">desde Corea</div>
-      <div class="hcb-sub">100% original · K-Beauty</div>
-    </div>
-    <div class="hero-product-card">
-      <img src="https://cdn.shopify.com/s/files/1/0609/5496/8134/files/SKIncare_Coreano_original.png?v=1777427752"
-           alt="Skincare coreano original Enigma Store"
-           fetchpriority="high">
-    </div>
-    <div class="hero-floating-card hero-card-top">
-      <div class="hero-card-kicker">Garantía</div>
-      <div class="hero-card-title">Productos originales</div>
-      <div class="hero-card-sub">Importados desde Corea</div>
-    </div>
-    <div class="hero-floating-card hero-card-bottom">
-      <div class="hero-mini-chart">
-        <span style="height:42%"></span><span style="height:68%"></span><span style="height:88%"></span>
-      </div>
-      <div>
-        <div class="hero-card-title">Glow visible</div>
-        <div class="hero-card-sub">Rutinas por tipo de piel</div>
+    <div class="hero-right">
+      <div class="hero-pill">
+        <div class="hp-item">
+          <span class="hp-num"><em>+</em><span class="count" data-target="3200">0</span></span>
+          <span class="hp-label">clientes</span>
+        </div>
+        <div class="hp-divider"></div>
+        <div class="hp-item">
+          <span class="hp-num">100<em>%</em></span>
+          <span class="hp-label">originales</span>
+        </div>
+        <div class="hp-divider"></div>
+        <div class="hp-item">
+          <span class="hp-num">🇰🇷</span>
+          <span class="hp-label">importado</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <div class="trust-icon">✓</div>
+    <div class="trust-text"><strong>Compra segura</strong>Pago con Webpay · Mercadopago</div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">✦</div>
+    <div class="trust-text"><strong>100% originales</strong>Importados desde Corea</div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">🚚</div>
+    <div class="trust-text"><strong>Todo Chile</strong>Santiago y regiones</div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">💬</div>
+    <div class="trust-text"><strong>Asesoría gratis</strong>Rutina personalizada por WhatsApp</div>
+  </div>
+</div>
 
 <!-- BRANDS MARQUEE -->
-<section class="brands">
-  <div class="brands-label">Marcas disponibles en Enigma Store</div>
-  <div class="brands-track-wrap">
-    <div class="brands-track" id="brandsTrack">
-      <!-- Set 1 -->
-      <div class="brand-item" onclick="filterByBrand('SKIN1004')"><div class="bn sm">SKIN1004</div><div class="bs">The Untouched Nature</div></div>
-      <div class="brand-item" onclick="filterByBrand('Dr Althea')"><div class="bn it">Dr.Althea</div><div class="bs">Derma K-Beauty</div></div>
-      <div class="brand-item" onclick="filterByBrand('Celimax')"><div class="bn">celimax</div><div class="bs">Noni Extract</div></div>
-      <div class="brand-item" onclick="filterByBrand('Medicube')"><div class="bn" style="font-size:14px;letter-spacing:.06em">Medicube</div><div class="bs">Advanced Skincare</div></div>
-      <div class="brand-item" onclick="filterByBrand('Beauty of Joseon')"><div class="bn" style="font-size:13px">Beauty of Joseon</div><div class="bs">Traditional K-Beauty</div></div>
-      <div class="brand-item" onclick="filterByBrand('Mixsoon')"><div class="bn">Mixsoon</div><div class="bs">Bean Fermented</div></div>
-      <div class="brand-item" onclick="filterByBrand('Elizavecca')"><div class="bn" style="font-size:13px;letter-spacing:.08em">Elizavecca</div><div class="bs">K-Beauty Lab</div></div>
-      <div class="brand-item" onclick="filterByBrand('Round Lab')"><div class="bn" style="font-size:14px">Round Lab</div><div class="bs">Mineral Skincare</div></div>
-      <!-- Set 2 — clon para bucle infinito -->
-      <div class="brand-item" onclick="filterByBrand('SKIN1004')"><div class="bn sm">SKIN1004</div><div class="bs">The Untouched Nature</div></div>
-      <div class="brand-item" onclick="filterByBrand('Dr Althea')"><div class="bn it">Dr.Althea</div><div class="bs">Derma K-Beauty</div></div>
-      <div class="brand-item" onclick="filterByBrand('Celimax')"><div class="bn">celimax</div><div class="bs">Noni Extract</div></div>
-      <div class="brand-item" onclick="filterByBrand('Medicube')"><div class="bn" style="font-size:14px;letter-spacing:.06em">Medicube</div><div class="bs">Advanced Skincare</div></div>
-      <div class="brand-item" onclick="filterByBrand('Beauty of Joseon')"><div class="bn" style="font-size:13px">Beauty of Joseon</div><div class="bs">Traditional K-Beauty</div></div>
-      <div class="brand-item" onclick="filterByBrand('Mixsoon')"><div class="bn">Mixsoon</div><div class="bs">Bean Fermented</div></div>
-      <div class="brand-item" onclick="filterByBrand('Elizavecca')"><div class="bn" style="font-size:13px;letter-spacing:.08em">Elizavecca</div><div class="bs">K-Beauty Lab</div></div>
-      <div class="brand-item" onclick="filterByBrand('Round Lab')"><div class="bn" style="font-size:14px">Round Lab</div><div class="bs">Mineral Skincare</div></div>
+<section class="brands-sec">
+  <div class="brands-label">marcas disponibles en enigma store</div>
+  <div class="marquee-wrap">
+    <div class="marquee-track" id="brandsTrack">
+      <div class="brand-chip" onclick="filterByBrand('SKIN1004')"><div class="bc-name sm">SKIN1004</div><div class="bc-sub">The Untouched Nature</div></div>
+      <div class="brand-chip" onclick="filterByBrand('Dr Althea')"><div class="bc-name it">Dr.Althea</div><div class="bc-sub">Derma K-Beauty</div></div>
+      <div class="brand-chip" onclick="filterByBrand('Celimax')"><div class="bc-name">celimax</div><div class="bc-sub">Noni Extract</div></div>
+      <div class="brand-chip" onclick="filterByBrand('Medicube')"><div class="bc-name sm" style="font-size:13px;letter-spacing:.12em">Medicube</div><div class="bc-sub">Advanced Skincare</div></div>
+      <div class="brand-chip" onclick="filterByBrand('Beauty of Joseon')"><div class="bc-name" style="font-size:15px">Beauty of Joseon</div><div class="bc-sub">Traditional K-Beauty</div></div>
+      <div class="brand-chip" onclick="filterByBrand('Mixsoon')"><div class="bc-name">Mixsoon</div><div class="bc-sub">Bean Fermented</div></div>
+      <div class="brand-chip" onclick="filterByBrand('Elizavecca')"><div class="bc-name" style="font-size:14px">Elizavecca</div><div class="bc-sub">K-Beauty Lab</div></div>
+      <div class="brand-chip" onclick="filterByBrand('Round Lab')"><div class="bc-name" style="font-size:15px">Round Lab</div><div class="bc-sub">Mineral Skincare</div></div>
+      <!-- clone -->
+      <div class="brand-chip" onclick="filterByBrand('SKIN1004')"><div class="bc-name sm">SKIN1004</div><div class="bc-sub">The Untouched Nature</div></div>
+      <div class="brand-chip" onclick="filterByBrand('Dr Althea')"><div class="bc-name it">Dr.Althea</div><div class="bc-sub">Derma K-Beauty</div></div>
+      <div class="brand-chip" onclick="filterByBrand('Celimax')"><div class="bc-name">celimax</div><div class="bc-sub">Noni Extract</div></div>
+      <div class="brand-chip" onclick="filterByBrand('Medicube')"><div class="bc-name sm" style="font-size:13px;letter-spacing:.12em">Medicube</div><div class="bc-sub">Advanced Skincare</div></div>
+      <div class="brand-chip" onclick="filterByBrand('Beauty of Joseon')"><div class="bc-name" style="font-size:15px">Beauty of Joseon</div><div class="bc-sub">Traditional K-Beauty</div></div>
+      <div class="brand-chip" onclick="filterByBrand('Mixsoon')"><div class="bc-name">Mixsoon</div><div class="bc-sub">Bean Fermented</div></div>
+      <div class="brand-chip" onclick="filterByBrand('Elizavecca')"><div class="bc-name" style="font-size:14px">Elizavecca</div><div class="bc-sub">K-Beauty Lab</div></div>
+      <div class="brand-chip" onclick="filterByBrand('Round Lab')"><div class="bc-name" style="font-size:15px">Round Lab</div><div class="bc-sub">Mineral Skincare</div></div>
     </div>
   </div>
 </section>
 
-<!-- PRODUCTOS -->
-<section class="products-sec" id="productos">
-  <div class="sh reveal">
-    <span class="st">Selección K-Beauty · Enigma Store</span>
-    <h2 class="stitle">Elige tus productos y<br><em>arma tu pedido</em></h2>
-    <p class="ssub">Agrega al carrito y ve directo al checkout seguro en enigmastore.cl 🛒</p>
+<!-- PRODUCTS -->
+<section class="products-sec sec" id="productos">
+  <div class="sec-head reveal">
+    <span class="sec-eyebrow">selección k-beauty · enigma store</span>
+    <h2 class="sec-title">elige tus productos y<br><em>arma tu rutina</em></h2>
+    <p class="sec-sub">Agrega al carrito y ve directo al checkout seguro en enigmastore.cl</p>
   </div>
-  <div class="tabs reveal" id="tabsContainer"></div>
+  <div class="filters reveal" id="filtersContainer"></div>
   <div class="pgrid" id="pgrid"></div>
-  <div class="view-more-wrap reveal">
-    <a href="https://enigmastore.cl/collections/belleza" target="_blank" class="btn-ghost" style="margin-top:8px">Ver los 57 productos →</a>
+  <div class="view-more reveal">
+    <a href="https://enigmastore.cl/collections/belleza" target="_blank" class="btn-outline" style="margin-top:12px">ver todos los productos →</a>
   </div>
 </section>
 
-<!-- RUTINA -->
+<!-- EDITORIAL / RUTINA -->
 <section id="rutina">
-  <div class="rutina-sec reveal">
-    <div class="rv">
-      <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=700&q=80"
-           alt="K-Beauty skincare routine"
-           loading="lazy">
+  <div class="editorial reveal-scale">
+    <div class="ed-visual">
+      <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=900&q=80"
+           alt="K-Beauty skincare routine" loading="lazy">
     </div>
-    <div class="rc">
-      <span class="st">Rutina K-Beauty</span>
-      <h2>Tu <em>glow</em><br>en 4 pasos</h2>
-      <p>La rutina coreana nutre cada capa de tu piel. Resultados visibles desde la primera semana.</p>
-      <div class="rutina-form">
+    <div class="ed-content">
+      <div class="ed-eyebrow">rutina k-beauty</div>
+      <h2 class="ed-title">tu <em>glow</em><br>en 4 pasos</h2>
+      <p class="ed-body">La rutina coreana nutre cada capa de tu piel. Resultados visibles desde la primera semana.</p>
+      <div class="rf-wrap">
         <div class="rf-title">Recomienda mi rutina</div>
-        <p class="rf-desc">Completa tus datos y te mostramos productos recomendados para una rutina de 4 pasos.</p>
+        <p class="rf-desc">Completa tus datos y te mostramos los productos exactos para tu piel.</p>
         <div class="rf-grid">
-          <input id="clientName" class="rf-input" type="text" placeholder="Tu nombre">
-          <select id="skinType" class="rf-input">
+          <input id="clientName" class="rf-input" type="text" placeholder="Tu nombre" aria-label="Tu nombre">
+          <select id="skinType" class="rf-input" aria-label="Tipo de piel">
             <option value="">Tipo de piel</option>
             <option value="grasa">Grasa</option>
             <option value="seca">Seca</option>
@@ -663,14 +1240,14 @@ footer{background:#1A1210;color:rgba(255,255,255,.42);padding:44px 24px 26px}
             <option value="acne">Acneica</option>
             <option value="manchas">Manchas / tono apagado</option>
           </select>
-          <select id="ageRange" class="rf-input">
+          <select id="ageRange" class="rf-input" aria-label="Rango de edad">
             <option value="">Edad</option>
-            <option value="18-25">18-25</option>
-            <option value="26-35">26-35</option>
-            <option value="36-45">36-45</option>
+            <option value="18-25">18–25</option>
+            <option value="26-35">26–35</option>
+            <option value="36-45">36–45</option>
             <option value="45+">45+</option>
           </select>
-          <select id="skinGoal" class="rf-input">
+          <select id="skinGoal" class="rf-input" aria-label="Objetivo de skincare">
             <option value="">Objetivo</option>
             <option value="hidratacion">Hidratación</option>
             <option value="glow">Glow / luminosidad</option>
@@ -679,86 +1256,76 @@ footer{background:#1A1210;color:rgba(255,255,255,.42);padding:44px 24px 26px}
             <option value="antiage">Firmeza / líneas finas</option>
           </select>
         </div>
-        <button class="btn-primary rf-btn" onclick="getRoutine()">Ver productos recomendados</button>
+        <button class="btn-dark rf-btn" onclick="getRoutine()">ver mi rutina recomendada</button>
         <div id="resultadoRutina" class="routine-result"></div>
       </div>
-      <button class="btn-primary" style="margin-top:14px" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Ver catálogo</button>
+      <button class="btn-outline" style="margin-top:14px;color:rgba(255,255,255,.65);border-color:rgba(255,255,255,.25)" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">ver catálogo completo</button>
     </div>
   </div>
 </section>
 
-<!-- NEWSLETTER + KLAVIYO  -->
+<!-- NEWSLETTER -->
 <section class="nl-sec" id="descuento">
-  <div class="nl-inner">
-    <span class="st">Solo para suscriptoras</span>
-    <div class="nl-discount-badge">
-      <span class="pct">10%</span> de descuento en tu primera compra
+  <span class="sec-eyebrow">solo para suscriptoras</span>
+  <div class="nl-badge"><span class="pct">10%</span> de descuento en tu primera compra</div>
+  <h2 class="nl-title">eleva tu skincare con<br><em>Enigma Store</em></h2>
+  <p class="nl-sub">Suscríbete, recibe tu cupón al instante y accede a tips de rutinas coreanas exclusivos.</p>
+  <div class="kl-form" id="klForm">
+    <div class="kl-fields">
+      <input type="email" id="klEmail" placeholder="tu correo electrónico" autocomplete="email" inputmode="email">
+      <button class="kl-submit" onclick="submitKlaviyo()">quiero mi 10% →</button>
     </div>
-    <h2>Eleva tu skincare con<br><em>Enigma Store</em></h2>
-    <p>Suscríbete, recibe tu cupón al instante y accede a tips de rutinas coreanas exclusivos.</p>
-
-    <div class="kl-form" id="klForm">
-      <div class="kl-form-fields">
-        <input type="email" id="klEmail" placeholder="Tu correo electrónico" autocomplete="email" inputmode="email">
-        <button class="kl-submit" onclick="submitKlaviyo()">Quiero mi 10% →</button>
-      </div>
-      <p class="kl-privacy">Sin spam. Solo lo mejor del K-Beauty para ti.</p>
+    <p class="kl-note">sin spam · solo lo mejor del k-beauty para ti</p>
+  </div>
+  <div class="kl-success" id="klSuccess">
+    <div class="kl-success-icon">🎉</div>
+    <h3>¡Listo, <span id="klSuccessName">amiga</span>!</h3>
+    <p>Tu cupón de 10% está listo. Úsalo en tu próxima compra en enigmastore.cl</p>
+    <div class="coupon-box">
+      <div class="coupon-code" id="klCouponCode">BESTORE</div>
+      <div class="coupon-label">código de descuento · primera compra</div>
     </div>
-
-    <!-- Estado de éxito con cupón -->
-    <div class="kl-success" id="klSuccess">
-      <div class="kl-success-icon">🎉</div>
-      <h3>¡Listo, <span id="klSuccessName">amiga</span>!</h3>
-      <p>Tu cupón de 10% está listo. Úsalo en tu próxima compra en enigmastore.cl</p>
-      <div class="kl-coupon-box">
-        <div class="kl-coupon-code" id="klCouponCode">BESTORE</div>
-        <div class="kl-coupon-label">Código de descuento · Primera compra</div>
-      </div>
-      <button class="kl-copy-btn" onclick="copyCoupon()">📋 Copiar código</button>
-      <p style="font-size:11px;color:rgba(255,255,255,.36);margin-top:10px">Revisa tu correo: también te enviamos el cupón para que no lo pierdas.</p>
-    </div>
+    <button class="copy-btn" onclick="copyCoupon()">📋 copiar código</button>
+    <p style="font-size:11px;color:var(--stone);margin-top:10px">Revisa tu correo: también te enviamos el cupón.</p>
   </div>
 </section>
 
 <!-- REVIEWS -->
 <section class="reviews-sec" id="reviews">
-  <div class="reviews-wrap">
-    <div class="sh reveal">
-      <span class="st">Confianza real · Uso diario</span>
-      <h2 class="stitle">Rutinas que se adaptan<br><em>a cada piel</em></h2>
-      <p class="ssub">Referencias de uso para orientar tu compra.</p>
-    </div>
-    <div class="trust-strip reveal">
-      <div class="trust-pill"><div class="trust-ico">✓</div><div><div class="trust-title">Compra segura</div><div class="trust-sub">Pedido online con atención por WhatsApp.</div></div></div>
-      <div class="trust-pill"><div class="trust-ico">✦</div><div><div class="trust-title">Productos originales</div><div class="trust-sub">K-Beauty seleccionado para tu rutina.</div></div></div>
-      <div class="trust-pill"><div class="trust-ico">🚚</div><div><div class="trust-title">Despacho a todo Chile</div><div class="trust-sub">Envíos a Santiago y regiones.</div></div></div>
-    </div>
-    <div class="review-grid reveal">
-      <article class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-product">SKIN1004 · Madagascar Centella Ampoule</div>
-        <p class="review-text">"Lo incorporé después de la limpieza y se siente liviano. Me ayudó a dejar la piel más calmada y cómoda durante el día."</p>
-        <div class="review-person"><div class="review-avatar">CS</div><div><div class="review-name">Camila S.</div><div class="review-meta">Verificada · Piel sensible</div></div></div>
-      </article>
-      <article class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-product">CELIMAX · PORE+DARK SPOT Brightening Serum</div>
-        <p class="review-text">"Lo uso en mi rutina de noche para manchas y textura. La piel queda con mejor apariencia y un glow más uniforme."</p>
-        <div class="review-person"><div class="review-avatar">GL</div><div><div class="review-name">Gabriela L.</div><div class="review-meta">Verificada · Manchas y glow</div></div></div>
-      </article>
-      <article class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-product">Dr Althea · 345 Relief Cream</div>
-        <p class="review-text">"La aplico como último paso. Me deja la piel hidratada, sin sensación pesada y con mejor confort durante todo el día."</p>
-        <div class="review-person"><div class="review-avatar">HB</div><div><div class="review-name">Hernán B.</div><div class="review-meta">Verificado · Hidratación y barrera</div></div></div>
-      </article>
-    </div>
-    <div class="use-grid reveal">
-      <div class="use-card"><div class="use-num">01</div><div class="use-title">Piel grasa</div><div class="use-desc">Limpieza suave, control de brillo, sérum ligero y solar mate.</div></div>
-      <div class="use-card"><div class="use-num">02</div><div class="use-title">Piel seca</div><div class="use-desc">Tónico hidratante, sérum humectante y crema nutritiva.</div></div>
-      <div class="use-card"><div class="use-num">03</div><div class="use-title">Piel sensible</div><div class="use-desc">Centella, fórmulas calmantes y crema barrera.</div></div>
-      <div class="use-card"><div class="use-num">04</div><div class="use-title">Manchas / glow</div><div class="use-desc">Luminosidad, tono uniforme y textura más suave.</div></div>
-    </div>
+  <div class="sec-head reveal">
+    <span class="sec-eyebrow">confianza real · uso diario</span>
+    <h2 class="sec-title">rutinas que se adaptan<br><em>a cada piel</em></h2>
+  </div>
+  <div class="trust-pills reveal">
+    <div class="t-pill"><div class="t-ico">✓</div><div><div class="t-title">Compra segura</div><div class="t-body">Pedido online con atención por WhatsApp.</div></div></div>
+    <div class="t-pill"><div class="t-ico">✦</div><div><div class="t-title">Productos originales</div><div class="t-body">K-Beauty seleccionado para tu rutina.</div></div></div>
+    <div class="t-pill"><div class="t-ico">🚚</div><div><div class="t-title">Despacho a todo Chile</div><div class="t-body">Envíos a Santiago y regiones.</div></div></div>
+  </div>
+  <div class="review-grid reveal">
+    <article class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <div class="rev-product">SKIN1004 · Centella Ampoule</div>
+      <p class="rev-text">"Lo incorporé después de la limpieza y se siente liviano. Me ayudó a dejar la piel más calmada y cómoda durante el día."</p>
+      <div class="rev-person"><div class="rev-avatar">CS</div><div><div class="rev-name">Camila S.</div><div class="rev-meta">Verificada · Piel sensible</div></div></div>
+    </article>
+    <article class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <div class="rev-product">Celimax · PORE+DARK SPOT Serum</div>
+      <p class="rev-text">"Lo uso en mi rutina de noche para manchas y textura. La piel queda con mejor apariencia y un glow más uniforme."</p>
+      <div class="rev-person"><div class="rev-avatar">GL</div><div><div class="rev-name">Gabriela L.</div><div class="rev-meta">Verificada · Manchas y glow</div></div></div>
+    </article>
+    <article class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <div class="rev-product">Dr Althea · 345 Relief Cream</div>
+      <p class="rev-text">"La aplico como último paso. Me deja la piel hidratada, sin sensación pesada y con mejor confort durante todo el día."</p>
+      <div class="rev-person"><div class="rev-avatar">HB</div><div><div class="rev-name">Hernán B.</div><div class="rev-meta">Verificado · Hidratación</div></div></div>
+    </article>
+  </div>
+  <div class="use-grid reveal">
+    <div class="use-card"><div class="use-num">01</div><div class="use-t">Piel grasa</div><div class="use-d">Limpieza suave, control de brillo, sérum ligero y solar mate.</div></div>
+    <div class="use-card"><div class="use-num">02</div><div class="use-t">Piel seca</div><div class="use-d">Tónico hidratante, sérum humectante y crema nutritiva.</div></div>
+    <div class="use-card"><div class="use-num">03</div><div class="use-t">Piel sensible</div><div class="use-d">Centella, fórmulas calmantes y crema barrera.</div></div>
+    <div class="use-card"><div class="use-num">04</div><div class="use-t">Manchas / glow</div><div class="use-d">Luminosidad, tono uniforme y textura más suave.</div></div>
   </div>
 </section>
 
@@ -766,12 +1333,12 @@ footer{background:#1A1210;color:rgba(255,255,255,.42);padding:44px 24px 26px}
 <footer>
   <div class="fg">
     <div>
-      <a href="https://enigmastore.cl" class="flogo">Enigma Store<small>K-Beauty Chile</small></a>
-      <p class="fdesc">Tu tienda K-Beauty en Chile. Productos originales importados desde Corea del Sur.</p>
+      <a href="https://enigmastore.cl" class="f-logo">Enigma Store</a>
+      <p class="f-desc">Tu tienda K-Beauty en Chile. Productos originales importados desde Corea del Sur.</p>
     </div>
     <div>
-      <div class="ftitle">Marcas</div>
-      <ul class="flinks">
+      <div class="f-col-title">Marcas</div>
+      <ul class="f-links">
         <li><a href="#productos" onclick="filterByBrand('Celimax')">Celimax</a></li>
         <li><a href="#productos" onclick="filterByBrand('Mixsoon')">Mixsoon</a></li>
         <li><a href="#productos" onclick="filterByBrand('SKIN1004')">Skin1004</a></li>
@@ -781,8 +1348,8 @@ footer{background:#1A1210;color:rgba(255,255,255,.42);padding:44px 24px 26px}
       </ul>
     </div>
     <div>
-      <div class="ftitle">Contacto</div>
-      <ul class="flinks">
+      <div class="f-col-title">Contacto</div>
+      <ul class="f-links">
         <li><a href="https://wa.me/56928775107">WhatsApp +56 9 2877 5107</a></li>
         <li><a href="mailto:ventas@enigmastore.cl">ventas@enigmastore.cl</a></li>
         <li><a href="https://enigmastore.cl/pages/politicas-de-envio" target="_blank">Política de envíos</a></li>
@@ -790,7 +1357,7 @@ footer{background:#1A1210;color:rgba(255,255,255,.42);padding:44px 24px 26px}
       </ul>
     </div>
   </div>
-  <div class="fbot">
+  <div class="f-bot">
     <span>© 2025 Enigma Store Chile SpA · RUT 77.397.268-0</span>
     <a href="https://enigmastore.cl">www.enigmastore.cl</a>
   </div>
@@ -799,29 +1366,29 @@ footer{background:#1A1210;color:rgba(255,255,255,.42);padding:44px 24px 26px}
 <!-- OVERLAY + DRAWER -->
 <div class="overlay" id="overlay" onclick="toggleCart()"></div>
 <div class="drawer" id="drawer">
-  <div class="dhead">
-    <h3>🛒 Mi Pedido</h3>
-    <button class="dclose" onclick="toggleCart()">✕</button>
+  <div class="d-head">
+    <h3>mi pedido</h3>
+    <button class="d-close" onclick="toggleCart()">✕</button>
   </div>
-  <div class="ditems" id="ditems">
-    <div class="dempty"><div class="ei">🌿</div><p>Tu carrito está vacío.<br>¡Agrega productos para armar tu rutina!</p></div>
+  <div class="d-items" id="ditems">
+    <div class="d-empty"><div class="ei">🌿</div><p>Tu carrito está vacío.<br>¡Agrega productos para armar tu rutina!</p></div>
   </div>
-  <div class="dfoot" id="dfoot" style="display:none">
-    <div class="dtotal-row">
-      <span class="dtotal-label">Total estimado</span>
-      <span class="dtotal-amt" id="dtotal">$0</span>
+  <div class="d-foot" id="dfoot" style="display:none">
+    <div class="d-total-row">
+      <span class="d-total-label">Total estimado</span>
+      <span class="d-total-amt" id="dtotal">$0</span>
     </div>
-    <button class="wa-btn shopify-btn" onclick="goToShopify()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-      Ir a Pago →
+    <button class="cta-btn shopify-cta" onclick="goToShopify()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      ir a pago →
     </button>
-    <button class="wa-btn wa-btn-secondary" onclick="sendWA()">
-      <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Consultar por WhatsApp
+    <button class="cta-btn wa-cta" onclick="sendWA()">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      consultar por WhatsApp
     </button>
-    <div class="payment-methods">
-      <p class="payment-label">🔒 Pago 100% seguro</p>
-      <div class="payment-logos">
+    <div class="pay-methods">
+      <p class="pay-label">🔒 Pago 100% seguro</p>
+      <div class="pay-logos">
         <svg class="pay-logo" viewBox="0 0 60 38" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="38" rx="4" fill="#fff" stroke="#e0d8d0" stroke-width="1"/><path d="M22 26L25.5 12h3.5L25.5 26H22zm13.5-14c-.7-.3-1.8-.6-3.1-.6-3.4 0-5.8 1.8-5.8 4.4 0 1.9 1.7 3 3 3.6 1.3.6 1.8 1 1.8 1.6 0 .9-1.1 1.3-2.1 1.3-1.4 0-2.2-.2-3.3-.7l-.5-.2-.5 3c.8.4 2.4.7 4 .7 3.6 0 6-1.8 6-4.6 0-1.5-.9-2.7-3-3.7-1.2-.6-2-.9-2-1.6 0-.5.6-1.1 2-1.1 1.1 0 1.9.2 2.5.5l.3.1.5-2.7zm9.5-.1h-2.6c-.8 0-1.4.2-1.7 1L36 26h3.6s.6-1.6.7-2h4.4c.1.5.4 2 .4 2H48l-3-14.1zm-4.2 9c.3-.7 1.4-3.7 1.4-3.7s.3-.8.5-1.3l.2 1.2s.7 3.2.8 3.8h-2.9zM20 12l-3.4 9.5-.4-1.8C15.5 17.4 13.6 15 11.5 14l3.1 12H18l4.6-14h-3.1z" fill="#1A1F71"/><path d="M13.5 12H8l-.1.4c4.2 1.1 7 3.7 8.2 6.8L15 13c-.2-.8-.8-1-1.5-1z" fill="#F9A533"/></svg>
         <svg class="pay-logo" viewBox="0 0 60 38" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="38" rx="4" fill="#fff" stroke="#e0d8d0" stroke-width="1"/><circle cx="23" cy="19" r="8" fill="#EB001B"/><circle cx="37" cy="19" r="8" fill="#F79E1B"/><path d="M30 12.7a8 8 0 0 1 0 12.6A8 8 0 0 1 30 12.7z" fill="#FF5F00"/></svg>
         <svg class="pay-logo" viewBox="0 0 60 38" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="38" rx="4" fill="#fff" stroke="#e0d8d0" stroke-width="1"/><text x="7" y="23" font-family="Arial,sans-serif" font-weight="700" font-size="9" fill="#004B87">web</text><text x="25" y="23" font-family="Arial,sans-serif" font-weight="700" font-size="9" fill="#E30613">pay</text><text x="7" y="31" font-family="Arial,sans-serif" font-size="6" fill="#666">TRANSBANK</text></svg>
@@ -829,12 +1396,12 @@ footer{background:#1A1210;color:rgba(255,255,255,.42);padding:44px 24px 26px}
         <svg class="pay-logo" viewBox="0 0 60 38" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="38" rx="4" fill="#fff" stroke="#e0d8d0" stroke-width="1"/><text x="8" y="24" font-family="Arial,sans-serif" font-weight="900" font-size="16" letter-spacing="-1" fill="#1A1A2E">FLOW</text><rect x="8" y="26" width="44" height="2" rx="1" fill="#00B4FF"/></svg>
       </div>
     </div>
-    <p class="dnote">También puedes consultarnos por WhatsApp 🌿</p>
+    <p class="d-note">También puedes consultarnos por WhatsApp 🌿</p>
   </div>
 </div>
 
-<!-- PRODUCT POPUP -->
-<div class="popup-overlay" id="popupOverlay" onclick="closePopup(event)">
+<!-- POPUP -->
+<div class="popup-overlay" id="popupOverlay" onclick="closePopup(event)" role="dialog" aria-modal="true" aria-labelledby="popupName">
   <div class="popup" id="popupBox">
     <div class="popup-img" id="popupImg">
       <img id="popupImgSrc" src="" alt="" loading="lazy">
@@ -845,8 +1412,8 @@ footer{background:#1A1210;color:rgba(255,255,255,.42);padding:44px 24px 26px}
       <div class="popup-name" id="popupName"></div>
       <div class="popup-price" id="popupPrice"></div>
       <div class="popup-stars" id="popupStars"></div>
-      <div id="popupDesc" style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px;font-weight:300"></div>
-      <button class="popup-add" id="popupAddBtn" onclick="popupAdd()">🛒 Agregar al pedido</button>
+      <div class="popup-desc" id="popupDesc"></div>
+      <button class="popup-add" id="popupAddBtn" onclick="popupAdd()">agregar al pedido</button>
     </div>
   </div>
 </div>
@@ -857,8 +1424,10 @@ footer{background:#1A1210;color:rgba(255,255,255,.42);padding:44px 24px 26px}
 </button>
 
 <script>
-/* ── PRODUCTOS ── */
-const PRODUCTS = [
+/* ══════════════════════════════
+   PRODUCTOS (57 variantes)
+══════════════════════════════ */
+const PRODUCTS=[
   {id:1,vid:'44946867683398',name:'CELIMAX PORE+DARK SPOT Brightening Serum 30ml',brand:'Celimax',price:21990,old:26990,cat:'serum',badge:'sale',bl:'−19%',img:'https://cdn.shopify.com/s/files/1/0609/5496/8134/files/CELIMAXPORE_DARKSPOT.png?v=1777051955',desc:'Sérum iluminador con Noni que reduce manchas y poros, unifica el tono en 7 días.',rat:4.3},
   {id:2,vid:'44946836521030',name:'CELIMAX THE VITA A RETINOL SHOT TIGHTENING SERUM 30ML',brand:'Celimax',price:23990,old:29990,cat:'serum',badge:'sale',bl:'−20%',img:'https://cdn.shopify.com/s/files/1/0609/5496/8134/files/celimax_retinol_botella_original.png?v=1777049883',desc:'Sérum antiedad con retinol que mejora la firmeza, reduce líneas finas y renueva la textura.',rat:4.5},
   {id:3,vid:'44946827247686',name:'CELIMAX VITA-A RETINAL SHOT BOOSTER 15ML',brand:'Celimax',price:22990,old:24990,cat:'serum',badge:'sale',bl:'−8%',img:'https://cdn.shopify.com/s/files/1/0609/5496/8134/files/1_066ba8b7-236c-4a60-9a58-9d35c943c437.png?v=1777049025',desc:'Booster concentrado de retinal para combatir el envejecimiento y mejorar la elasticidad.',rat:4.4},
@@ -918,363 +1487,237 @@ const PRODUCTS = [
   {id:57,vid:'44894124867654',name:'Elizavecca - CER-100 Collagen Ceramide Treatment 100ml',brand:'Elizavecca',price:11990,old:13900,cat:'cabello',badge:'sale',bl:'−14%',img:'https://cdn.shopify.com/s/files/1/0609/5496/8134/files/1_7f91d4ae-f562-4c41-a8eb-4d1d3ecd2ef8.png?v=1776113402',desc:'Tratamiento capilar con colágeno y ceramidas.',rat:4.2},
 ];
 
-const WA_NUM = '56928775107';
-let cart = [];
+const WA_NUM='56928775107';
+let cart=[];
 
-/* ── KLAVIYO CONFIG ─────────────────────────────
-   Reemplaza LIST_ID con tu list ID real de Klaviyo
-   y COMPANY_ID con tu Public API Key (pk_...)
-   ─────────────────────────────────────────────── */
-const KL_LIST_ID    = 'Tb7x9k';   // Email List — Enigma Store
-const KL_COMPANY_ID = 'SCmJRc';   // Clave pública Enigma Store Chile SpA
-const KL_COUPON     = 'BESTORE';           // cupón que ya tienes creado en Shopify
+/* ── KLAVIYO ── */
+const KL_LIST_ID='Tb7x9k';
+const KL_COMPANY_ID='SCmJRc';
+const KL_COUPON='BESTORE';
 
 async function submitKlaviyo(){
-  const emailEl = document.getElementById('klEmail');
-  const btn     = document.querySelector('.kl-submit');
-  const email   = emailEl.value.trim();
-
-  if(!email || !email.includes('@')){
-    emailEl.style.borderColor = '#e74c3c';
-    emailEl.focus();
-    setTimeout(()=>emailEl.style.borderColor='', 2000);
-    return;
-  }
-
-  btn.disabled = true;
-  btn.textContent = 'Enviando...';
-
-  try {
-    // ── Opción A: Klaviyo Subscribe API v3 (client-side) ──
-    // Requiere tu Public API Key. Suscribe y agrega a la lista.
-    const payload = {
-      data: {
-        type: 'subscription',
-        attributes: {
-          list_id: KL_LIST_ID,
-          email: email,
-          properties: {
-            source: 'landing-kbeauty',
-            coupon: KL_COUPON
-          }
-        }
-      }
-    };
-
-    const res = await fetch('https://a.klaviyo.com/client/subscriptions/?company_id=' + KL_COMPANY_ID, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'revision': '2023-12-15'
-      },
-      body: JSON.stringify(payload)
+  const emailEl=document.getElementById('klEmail');
+  const btn=document.querySelector('.kl-submit');
+  const email=emailEl.value.trim();
+  if(!email||!email.includes('@')){emailEl.style.borderColor='#c0392b';emailEl.focus();setTimeout(()=>emailEl.style.borderColor='',2000);return}
+  btn.disabled=true;btn.textContent='enviando...';
+  try{
+    const res=await fetch('https://a.klaviyo.com/client/subscriptions/?company_id='+KL_COMPANY_ID,{
+      method:'POST',headers:{'Content-Type':'application/json','revision':'2023-12-15'},
+      body:JSON.stringify({data:{type:'subscription',attributes:{list_id:KL_LIST_ID,email,properties:{source:'landing-kbeauty',coupon:KL_COUPON}}}})
     });
-
-    // Klaviyo devuelve 202 en éxito (accepted)
-    if(res.ok || res.status === 202){
-      showKlaviyoSuccess(email);
-    } else {
-      // Intento fallback: igual mostramos éxito para no perder el lead
-      // (el error puede ser CORS en localhost — en producción funciona)
-      showKlaviyoSuccess(email);
-      console.warn('Klaviyo status:', res.status);
-    }
-  } catch(err) {
-    // En localhost puede fallar por CORS. En producción OK.
-    // Mostramos éxito igual para no perder conversiones.
     showKlaviyoSuccess(email);
-    console.warn('Klaviyo error (puede ser CORS en local):', err);
-  }
+  }catch(err){showKlaviyoSuccess(email);console.warn('Klaviyo:',err)}
 }
-
 function showKlaviyoSuccess(email){
-  document.getElementById('klForm').style.opacity = '0';
+  document.getElementById('klForm').style.opacity='0';
   setTimeout(()=>{
-    document.getElementById('klForm').style.display = 'none';
-    document.getElementById('klSuccess').style.display  = 'block';
-    document.getElementById('klCouponCode').textContent = KL_COUPON;
-    // Extraer nombre del email como fallback
-    const name = email.split('@')[0].split('.')[0];
-    document.getElementById('klSuccessName').textContent = name.charAt(0).toUpperCase() + name.slice(1);
-  }, 300);
+    document.getElementById('klForm').style.display='none';
+    document.getElementById('klSuccess').style.display='block';
+    document.getElementById('klCouponCode').textContent=KL_COUPON;
+    const name=email.split('@')[0].split('.')[0];
+    document.getElementById('klSuccessName').textContent=name.charAt(0).toUpperCase()+name.slice(1);
+  },300);
 }
-
 function copyCoupon(){
-  const code = document.getElementById('klCouponCode').textContent;
+  const code=document.getElementById('klCouponCode').textContent;
   navigator.clipboard.writeText(code).then(()=>{
-    const btn = document.querySelector('.kl-copy-btn');
-    btn.textContent = '✓ ¡Copiado!';
-    setTimeout(()=>btn.textContent='📋 Copiar código', 2000);
+    const btn=document.querySelector('.copy-btn');btn.textContent='✓ copiado';setTimeout(()=>btn.textContent='📋 copiar código',2000);
   }).catch(()=>{
-    // Fallback para Safari
-    const ta = document.createElement('textarea');
-    ta.value = code;
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    ta.remove();
-    const btn = document.querySelector('.kl-copy-btn');
-    btn.textContent = '✓ ¡Copiado!';
-    setTimeout(()=>btn.textContent='📋 Copiar código', 2000);
+    const ta=document.createElement('textarea');ta.value=code;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();
+    const btn=document.querySelector('.copy-btn');btn.textContent='✓ copiado';setTimeout(()=>btn.textContent='📋 copiar código',2000);
   });
 }
 
 /* ── UTILS ── */
-function fmt(n){return '$'+n.toLocaleString('es-CL')}
-function escapeHtml(s){return String(s||'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+const fmt=n=>'$'+n.toLocaleString('es-CL');
+const esc=s=>String(s||'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":"&#39;",'"':'&quot;'}[c]));
 
 /* ── RENDER PRODUCTS ── */
-function renderProds(filter='all'){
-  const grid = document.getElementById('pgrid');
-  const list = filter==='all' ? PRODUCTS : PRODUCTS.filter(p=>p.cat===filter);
-  grid.innerHTML = list.map(p=>`
+function renderProds(list){
+  document.getElementById('pgrid').innerHTML=list.map(p=>`
     <div class="pc">
-      <div class="pimg" onclick="openPopup(${p.id})" role="button" aria-label="Ver ${escapeHtml(p.name)}">
-        <img src="${p.img}" alt="${escapeHtml(p.name)}" loading="lazy" decoding="async">
+      <div class="pimg-wrap" onclick="openPopup(${p.id})">
+        <img src="${p.img}" alt="${esc(p.name)}" loading="lazy" decoding="async">
         ${p.badge?`<span class="pbadge b-${p.badge}">${p.bl}</span>`:''}
+        <div class="pc-overlay">
+          <button class="overlay-btn" onclick="event.stopPropagation();openPopup(${p.id})">ver producto</button>
+        </div>
       </div>
       <div class="pinfo">
         <div class="pbrand">${p.brand}</div>
-        <div class="pname">${escapeHtml(p.name)}</div>
+        <div class="pname">${esc(p.name)}</div>
         <div class="pfoot">
-          <div class="pprice">${p.old?`<span class="old">${fmt(p.old)}</span>`:''}${fmt(p.price)}</div>
-          <button class="addbtn" id="ab${p.id}" onclick="esAddToCart(${p.id},this)" aria-label="Agregar al pedido">+</button>
+          <div class="pprice">${p.old?`<span class="old">${fmt(p.old)}</span>`:''} ${fmt(p.price)}</div>
+          <button class="add-btn" id="ab${p.id}" onclick="esAddToCart(${p.id},this)" aria-label="Agregar">+</button>
         </div>
       </div>
     </div>
   `).join('');
-}
-
-/* ── RENDER TABS ── */
-function renderTabs(){
-  const cats = [
-    {k:'all',l:'Todos'},{k:'serum',l:'Sérum'},{k:'tonico',l:'Tónico'},
-    {k:'hidratante',l:'Hidratante'},{k:'limpieza',l:'Limpieza'},
-    {k:'solar',l:'Solar'},{k:'kit',l:'Kits'},{k:'cabello',l:'Cabello'}
-  ];
-  const container = document.getElementById('tabsContainer');
-  container.innerHTML = cats.map((c,i)=>
-    `<button class="tab${i===0?' active':''}" onclick="filterProds('${c.k}',this)">${c.l}</button>`
-  ).join('');
 }
 
 /* ── FILTERS ── */
-function filterProds(cat,btn){
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  btn.classList.add('active');
-  renderProds(cat);
-}
+const CATS=[{k:'all',l:'Todos'},{k:'serum',l:'Sérum'},{k:'tonico',l:'Tónico'},{k:'hidratante',l:'Hidratante'},{k:'limpieza',l:'Limpieza'},{k:'solar',l:'Solar'},{k:'kit',l:'Kits'},{k:'cabello',l:'Cabello'}];
 
+function renderFilters(){
+  document.getElementById('filtersContainer').innerHTML=CATS.map((c,i)=>
+    `<button class="filter-btn${i===0?' on':''}" onclick="filterProds('${c.k}',this)">${c.l}</button>`
+  ).join('');
+}
+function filterProds(cat,btn){
+  document.querySelectorAll('.filter-btn').forEach(t=>t.classList.remove('on'));
+  btn.classList.add('on');
+  renderProds(cat==='all'?PRODUCTS:PRODUCTS.filter(p=>p.cat===cat));
+}
 function filterByBrand(brand){
-  const grid = document.getElementById('pgrid');
-  const list = PRODUCTS.filter(p=>p.brand.toLowerCase()===brand.toLowerCase());
-  grid.innerHTML = list.map(p=>`
-    <div class="pc">
-      <div class="pimg" onclick="openPopup(${p.id})" role="button">
-        <img src="${p.img}" alt="${escapeHtml(p.name)}" loading="lazy" decoding="async">
-        ${p.badge?`<span class="pbadge b-${p.badge}">${p.bl}</span>`:''}
-      </div>
-      <div class="pinfo">
-        <div class="pbrand">${p.brand}</div>
-        <div class="pname">${escapeHtml(p.name)}</div>
-        <div class="pfoot">
-          <div class="pprice">${p.old?`<span class="old">${fmt(p.old)}</span>`:''}${fmt(p.price)}</div>
-          <button class="addbtn" id="ab${p.id}" onclick="esAddToCart(${p.id},this)">+</button>
-        </div>
-      </div>
-    </div>
-  `).join('');
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  renderProds(PRODUCTS.filter(p=>p.brand.toLowerCase()===brand.toLowerCase()));
+  document.querySelectorAll('.filter-btn').forEach(t=>t.classList.remove('on'));
   document.getElementById('productos').scrollIntoView({behavior:'smooth'});
 }
 
 /* ── POPUP ── */
-var currentPopupId = null;
-
+let currentPopupId=null;
 function openPopup(id){
-  const p = PRODUCTS.find(x=>x.id===id);
-  if(!p) return;
-  currentPopupId = id;
-  document.getElementById('popupImgSrc').src    = p.img;
-  document.getElementById('popupBrand').textContent = p.brand;
-  document.getElementById('popupName').textContent  = p.name;
-  document.getElementById('popupDesc').textContent  = p.desc||'';
-  document.getElementById('popupPrice').innerHTML   =
-    (p.old?`<span class="old">${fmt(p.old)}</span>`:'') + fmt(p.price);
-  document.getElementById('popupAddBtn').textContent = '🛒 Agregar al pedido';
-  const starsEl = document.getElementById('popupStars');
-  if(starsEl && p.rat){
-    const full=Math.floor(p.rat), half=(p.rat-full)>=.3?1:0, empty=5-full-half;
-    const reviews=Math.floor(60+(p.id*17)%140);
+  const p=PRODUCTS.find(x=>x.id===id);if(!p)return;
+  currentPopupId=id;
+  document.getElementById('popupImgSrc').src=p.img;
+  document.getElementById('popupBrand').textContent=p.brand;
+  document.getElementById('popupName').textContent=p.name;
+  document.getElementById('popupDesc').textContent=p.desc||'';
+  document.getElementById('popupPrice').innerHTML=(p.old?`<span class="old">${fmt(p.old)}</span> `:'')+fmt(p.price);
+  document.getElementById('popupAddBtn').textContent='agregar al pedido';
+  const starsEl=document.getElementById('popupStars');
+  if(starsEl&&p.rat){
+    const full=Math.floor(p.rat),half=(p.rat-full)>=.3?1:0,empty=5-full-half;
+    const rev=Math.floor(60+(p.id*17)%140);
     let h='<div class="stars-row">';
-    for(let i=0;i<full;i++) h+='<span class="star full">★</span>';
-    if(half) h+='<span class="star half">★</span>';
-    for(let i=0;i<empty;i++) h+='<span class="star empty">★</span>';
-    h+=`<span class="star-score">${p.rat.toFixed(1)}</span><span class="star-count">(${reviews} reseñas)</span></div>`;
+    for(let i=0;i<full;i++)h+='<span class="star full">★</span>';
+    if(half)h+='<span class="star half">★</span>';
+    for(let i=0;i<empty;i++)h+='<span class="star empty">★</span>';
+    h+=`<span class="star-score">${p.rat.toFixed(1)}</span><span class="star-count">(${rev} reseñas)</span></div>`;
     starsEl.innerHTML=h;
   }
   document.getElementById('popupOverlay').classList.add('open');
   document.body.style.overflow='hidden';
 }
-
-function closePopup(e){
-  if(e.target===document.getElementById('popupOverlay')) closePopupDirect();
-}
-function closePopupDirect(){
-  document.getElementById('popupOverlay').classList.remove('open');
-  document.body.style.overflow='';
-  currentPopupId=null;
-}
-
+function closePopup(e){if(e.target===document.getElementById('popupOverlay'))closePopupDirect()}
+function closePopupDirect(){document.getElementById('popupOverlay').classList.remove('open');document.body.style.overflow='';currentPopupId=null}
 function popupAdd(){
-  if(!currentPopupId) return;
-  const id=currentPopupId;
-  const p=PRODUCTS.find(x=>x.id===id);
-  const popupImg=document.getElementById('popupImgSrc');
+  if(!currentPopupId)return;
+  const id=currentPopupId;const p=PRODUCTS.find(x=>x.id===id);
+  const src=document.getElementById('popupImgSrc').src;
   closePopupDirect();
   setTimeout(()=>{
     const ex=cart.find(x=>x.id===id);
-    if(ex) ex.qty++; else if(p) cart.push({...p,qty:1});
-    updateCartUI();
-    if(p) flyToCart(p.img, popupImg);
-  }, 80);
+    if(ex)ex.qty++;else if(p)cart.push({...p,qty:1});
+    updateCartUI();flyToCart(src,null);
+  },80);
 }
 
 /* ── CART ── */
-function addToCart(id){ esAddToCart(id, document.getElementById('ab'+id)) }
-function removeItem(id){ cart=cart.filter(x=>x.id!==id); updateCartUI() }
-function changeQty(id,d){
-  const it=cart.find(x=>x.id===id);
-  if(!it) return;
-  it.qty+=d;
-  if(it.qty<=0) removeItem(id); else updateCartUI();
-}
+function addToCart(id){esAddToCart(id,document.getElementById('ab'+id))}
+function removeItem(id){cart=cart.filter(x=>x.id!==id);updateCartUI()}
+function changeQty(id,d){const it=cart.find(x=>x.id===id);if(!it)return;it.qty+=d;if(it.qty<=0)removeItem(id);else updateCartUI()}
 
-function esAddToCart(id, btnEl){
-  const p=PRODUCTS.find(x=>x.id===id);
-  if(!p) return;
+function esAddToCart(id,btnEl){
+  const p=PRODUCTS.find(x=>x.id===id);if(!p)return;
   const ex=cart.find(x=>x.id===id);
-  if(ex) ex.qty++; else cart.push({...p,qty:1});
+  if(ex)ex.qty++;else cart.push({...p,qty:1});
   updateCartUI();
-  if(btnEl){ btnEl.textContent='✓'; btnEl.classList.add('done'); setTimeout(()=>{btnEl.textContent='+';btnEl.classList.remove('done')},900) }
+  if(btnEl){btnEl.textContent='✓';btnEl.classList.add('done');setTimeout(()=>{btnEl.textContent='+';btnEl.classList.remove('done')},900)}
   const card=btnEl?btnEl.closest('.pc'):null;
-  const originEl=card?(card.querySelector('.pimg img')||card.querySelector('.pimg')||btnEl):btnEl;
-  flyToCart(p.img, originEl||btnEl);
+  const originEl=card?(card.querySelector('.pimg-wrap img')||btnEl):btnEl;
+  flyToCart(p.img,originEl||btnEl);
 }
-
 function addRoutineToCart(ids){
-  ids.forEach(id=>{
-    const p=PRODUCTS.find(x=>x.id===id);
-    if(!p) return;
-    const ex=cart.find(x=>x.id===id);
-    if(ex) ex.qty++; else cart.push({...p,qty:1});
-  });
-  updateCartUI();
-  toggleCart();
+  ids.forEach(id=>{const p=PRODUCTS.find(x=>x.id===id);if(!p)return;const ex=cart.find(x=>x.id===id);if(ex)ex.qty++;else cart.push({...p,qty:1})});
+  updateCartUI();toggleCart();
 }
 
 function updateCartUI(){
   const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
   const count=cart.reduce((s,i)=>s+i.qty,0);
   document.getElementById('cartBadge').textContent=count;
-  // Sticky bar: mostrar solo cuando hay items
   const bar=document.getElementById('mobileStickyBar');
-  if(bar){
-    if(count>0){ bar.classList.add('visible') }
-    else { bar.classList.remove('visible') }
-  }
-  // Actualizar contador sticky
+  if(bar){count>0?bar.classList.add('show'):bar.classList.remove('show')}
   const msbCount=document.getElementById('msbCount');
-  if(msbCount) msbCount.textContent=count;
+  if(msbCount)msbCount.textContent=count;
   const items=document.getElementById('ditems');
   const foot=document.getElementById('dfoot');
   if(!cart.length){
-    items.innerHTML='<div class="dempty"><div class="ei">🌿</div><p>Tu carrito está vacío.<br>¡Agrega productos para armar tu rutina!</p></div>';
+    items.innerHTML='<div class="d-empty"><div class="ei">🌿</div><p>Tu carrito está vacío.<br>¡Agrega productos para armar tu rutina!</p></div>';
     foot.style.display='none';
-  } else {
+  }else{
     items.innerHTML=cart.map(i=>`
-      <div class="ditem">
-        <div class="ditem-img"><img src="${i.img}" alt="${escapeHtml(i.name)}" loading="lazy"></div>
-        <div class="ditem-info">
-          <div class="ditem-brand">${i.brand}</div>
-          <div class="ditem-name">${escapeHtml(i.name)}</div>
-          <div class="dctrl">
+      <div class="d-item">
+        <div class="d-item-img"><img src="${i.img}" alt="${esc(i.name)}" loading="lazy"></div>
+        <div class="d-item-info">
+          <div class="d-brand">${i.brand}</div>
+          <div class="d-name">${esc(i.name)}</div>
+          <div class="d-ctrl">
             <button class="qb" onclick="changeQty(${i.id},-1)">−</button>
             <span class="qn">${i.qty}</span>
             <button class="qb" onclick="changeQty(${i.id},1)">+</button>
-            <button class="drm" onclick="removeItem(${i.id})">🗑</button>
+            <button class="d-rm" onclick="removeItem(${i.id})">🗑</button>
           </div>
         </div>
-        <div class="ditem-price">${fmt(i.price*i.qty)}</div>
+        <div class="d-price">${fmt(i.price*i.qty)}</div>
       </div>
     `).join('');
     foot.style.display='block';
     document.getElementById('dtotal').textContent=fmt(total);
+    /* delight — total hace bump al cambiar */
+    const totalEl=document.getElementById('dtotal');
+    totalEl.classList.remove('bump');
+    void totalEl.offsetWidth;
+    totalEl.classList.add('bump');
+    setTimeout(()=>totalEl.classList.remove('bump'),400);
   }
 }
-
 function toggleCart(){
   const drawer=document.getElementById('drawer');
   const overlay=document.getElementById('overlay');
   const isOpen=drawer.classList.contains('open');
-  drawer.classList.toggle('open');
-  overlay.classList.toggle('open');
+  drawer.classList.toggle('open');overlay.classList.toggle('open');
   document.body.style.overflow=isOpen?'':'hidden';
 }
-
 function goToShopify(){
-  if(!cart.length) return;
-  const items=cart.map(i=>`${i.vid}:${i.qty}`).join(',');
-  window.open(`https://enigmastore.cl/cart/${items}`,'_blank');
+  if(!cart.length)return;
+  window.open(`https://enigmastore.cl/cart/${cart.map(i=>`${i.vid}:${i.qty}`).join(',')}`,'_blank');
 }
-
 function sendWA(){
-  if(!cart.length) return;
+  if(!cart.length)return;
   const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
   let msg='¡Hola Enigma Store! 👋 Me gustaría hacer el siguiente pedido:\n\n';
-  cart.forEach(i=>{ msg+=`• ${i.qty}x ${i.brand} - ${i.name}\n  Precio: ${fmt(i.price*i.qty)}\n\n` });
+  cart.forEach(i=>{msg+=`• ${i.qty}x ${i.brand} - ${i.name}\n  Precio: ${fmt(i.price*i.qty)}\n\n`});
   msg+=`━━━━━━━━━\n💰 *TOTAL: ${fmt(total)}*\n\n¿Pueden confirmar disponibilidad y coordinar el pago? 🌿 ¡Gracias!`;
   window.open(`https://wa.me/${WA_NUM}?text=${encodeURIComponent(msg)}`,'_blank');
 }
 
 /* ── FLY TO CART ── */
-function flyToCart(imgSrc, originEl){
-  const size=68;
-  let startX, startY;
-  if(originEl){
-    const r=originEl.getBoundingClientRect();
-    startX=Math.max(0,Math.min(r.left,window.innerWidth))+Math.max(r.width,size)/2-size/2;
-    startY=Math.max(0,Math.min(r.top,window.innerHeight))+Math.max(r.height,size)/2-size/2;
-  } else { startX=window.innerWidth/2-size/2; startY=window.innerHeight/2-size/2 }
+function flyToCart(imgSrc,originEl){
+  const size=62;let startX,startY;
+  if(originEl){const r=originEl.getBoundingClientRect();startX=r.left+r.width/2-size/2;startY=r.top+r.height/2-size/2}
+  else{startX=window.innerWidth/2-size/2;startY=window.innerHeight/3}
   const cartEl=document.getElementById('cartBadge');
   const cartR=cartEl.getBoundingClientRect();
-  const endX=cartR.left+cartR.width/2-size/2;
-  const endY=cartR.top+cartR.height/2-size/2;
+  const endX=cartR.left+cartR.width/2-size/2;const endY=cartR.top+cartR.height/2-size/2;
   const fly=document.createElement('img');
   fly.src=imgSrc;
-  fly.style.cssText=`position:fixed;width:${size}px;height:${size}px;left:${startX}px;top:${startY}px;border-radius:50%;object-fit:cover;pointer-events:none;z-index:9999;box-shadow:0 4px 20px rgba(44,36,32,.3)`;
+  fly.style.cssText=`position:fixed;width:${size}px;height:${size}px;left:${startX}px;top:${startY}px;border-radius:50%;object-fit:cover;pointer-events:none;z-index:9999;box-shadow:0 4px 20px rgba(26,26,24,.25);transition:none`;
   document.body.appendChild(fly);
-  const cpX=startX+(endX-startX)*.15;
-  const cpY=Math.min(startY,endY)-Math.abs(endX-startX)*.5;
-  const dur=800, steps=50, dt=dur/steps;
-  let step=0;
+  const cpX=startX+(endX-startX)*.1;const cpY=Math.min(startY,endY)-Math.abs(endX-startX)*.5;
+  const dur=750,steps=45,dt=dur/steps;let step=0;
   const iv=setInterval(()=>{
-    step++;
-    const t=step/steps;
-    const te=t<.5?2*t*t:-1+(4-2*t)*t;
+    step++;const t=step/steps;const te=t<.5?2*t*t:-1+(4-2*t)*t;
     const bx=Math.pow(1-te,2)*startX+2*(1-te)*te*cpX+Math.pow(te,2)*endX;
     const by=Math.pow(1-te,2)*startY+2*(1-te)*te*cpY+Math.pow(te,2)*endY;
-    const sc=Math.max(.15,1-te*.85);
-    const op=te>.7?1-(te-.7)/.3:1;
-    fly.style.left=bx+'px'; fly.style.top=by+'px';
-    fly.style.width=(size*sc)+'px'; fly.style.height=(size*sc)+'px';
-    fly.style.opacity=op;
+    const sc=Math.max(.14,1-te*.86);const op=te>.7?1-(te-.7)/.3:1;
+    fly.style.left=bx+'px';fly.style.top=by+'px';fly.style.width=(size*sc)+'px';fly.style.height=(size*sc)+'px';fly.style.opacity=op;
     if(step>=steps){
-      clearInterval(iv); fly.remove();
+      clearInterval(iv);fly.remove();
       const b=document.getElementById('cartBadge');
       if(b){b.classList.remove('pop');void b.offsetWidth;b.classList.add('pop');setTimeout(()=>b.classList.remove('pop'),400)}
-      const cb=document.querySelector('.cart-trigger');
-      if(cb){cb.classList.add('bounce');setTimeout(()=>cb.classList.remove('bounce'),500)}
     }
   },dt);
 }
@@ -1285,75 +1728,108 @@ function getRoutine(){
   const skin=document.getElementById('skinType')?.value||'';
   const age=document.getElementById('ageRange')?.value||'';
   const goal=document.getElementById('skinGoal')?.value||'';
-  const result=document.getElementById('resultadoRutina');
-  if(!result) return;
-  const clientName=nameRaw?escapeHtml(nameRaw):'Hola';
-  if(!skin){ result.classList.add('open'); result.innerHTML='<div class="rr-head">Selecciona tu tipo de piel</div>'; return }
+  const result=document.getElementById('resultadoRutina');if(!result)return;
+  const clientName=nameRaw?esc(nameRaw):'Hola';
+  if(!skin){result.classList.add('open');result.innerHTML='<div class="rr-head">Selecciona tu tipo de piel</div>';return}
   const routines={
-    grasa:{title:'Rutina piel grasa',copy:'Limpieza, control de sebo, poros y protección ligera.',ids:[5,27,29,4],steps:['Limpieza','Sérum poros','Hidratante ligera','Solar']},
+    grasa:{title:'Rutina piel grasa',copy:'Limpieza, control de sebo, poros y protección ligera.',ids:[5,27,29,4],steps:['Limpieza','Sérum poros','Hidratante','Solar']},
     seca:{title:'Rutina piel seca',copy:'Hidratación, nutrición y barrera cutánea.',ids:[25,21,12,8],steps:['Limpieza','Ampoule','Crema barrera','Mascarilla']},
     mixta:{title:'Rutina piel mixta',copy:'Balance entre hidratación y luminosidad.',ids:[25,24,13,11],steps:['Limpieza','Tónico','Sérum glow','Crema']},
     sensible:{title:'Rutina piel sensible',copy:'Calmar, hidratar y proteger la barrera.',ids:[25,24,51,11],steps:['Limpieza','Tónico','Centella','Crema alivio']},
-    acne:{title:'Rutina piel acneica',copy:'Limpieza, sebo, manchas post-acné.',ids:[5,6,1,29],steps:['Limpieza','Tónico Noni','Sérum manchas','Gel hidratante']},
-    manchas:{title:'Rutina manchas y glow',copy:'Luminosidad, tono uniforme e hidratación.',ids:[33,32,34,18],steps:['Limpieza','Tónico glow','Ampoule','Solar']}
+    acne:{title:'Rutina piel acneica',copy:'Limpieza, sebo, manchas post-acné.',ids:[5,6,1,29],steps:['Limpieza','Tónico Noni','Sérum manchas','Gel']},
+    manchas:{title:'Rutina manchas y glow',copy:'Luminosidad, tono uniforme e hidratación.',ids:[33,32,34,18],steps:['Limpieza','Tónico glow','Ampoule','Solar']},
   };
   const r=routines[skin];
   const selected=r.ids.map(id=>PRODUCTS.find(p=>p.id===id)).filter(Boolean);
-  const extra=age||goal?`<div class="rr-copy">${age?'Edad '+escapeHtml(age):''}${age&&goal?' · ':''}${goal?escapeHtml(goal):''}</div>`:'';
+  const extra=age||goal?`<div class="rr-copy">${age?'Edad '+esc(age):''}${age&&goal?' · ':''}${goal?esc(goal):''}</div>`:'';
   result.classList.add('open');
   result.innerHTML=`
     <div class="rr-head">${clientName}, productos recomendados para ti</div>
     <div class="rr-copy"><strong>${r.title}</strong> — ${r.copy}</div>${extra}
     <div class="rr-list">${selected.map((p,i)=>`
       <div class="rr-item">
-        <img src="${p.img}" alt="${escapeHtml(p.name)}" loading="lazy">
+        <img src="${p.img}" alt="${esc(p.name)}" loading="lazy">
         <div class="rr-info">
           <div class="rr-step">Paso ${i+1} · ${r.steps[i]||p.cat}</div>
-          <div class="rr-name">${escapeHtml(p.name)}</div>
+          <div class="rr-name">${esc(p.name)}</div>
           <div class="rr-price">${fmt(p.price)}</div>
         </div>
-        <button class="rr-add" onclick="addToCart(${p.id})">Agregar</button>
+        <button class="rr-add" onclick="addToCart(${p.id})">agregar</button>
       </div>`).join('')}
     </div>
     <div class="rr-actions">
-      <button class="btn-primary" onclick="addRoutineToCart([${selected.map(p=>p.id).join(',')}])">Agregar rutina completa</button>
-      <button class="btn-primary" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Ver catálogo</button>
+      <button class="btn-dark" onclick="addRoutineToCart([${selected.map(p=>p.id).join(',')}])">agregar rutina completa</button>
+      <button class="btn-dark" style="background:transparent;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.7)" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">ver catálogo</button>
     </div>`;
 }
 
-/* ── COUNTER ANIM ── */
+/* ── COUNTERS ── */
 function initCounters(){
   document.querySelectorAll('.count[data-target]').forEach(el=>{
-    if(el.dataset.done==='1') return;
-    el.dataset.done='1';
+    if(el.dataset.done==='1')return;el.dataset.done='1';
     const target=Number(el.getAttribute('data-target'))||0;
     const prefix=el.getAttribute('data-prefix')||'';
-    let cur=0; const inc=target/60;
-    const tick=()=>{ cur+=inc; if(cur<target){el.textContent=prefix+Math.ceil(cur).toLocaleString('es-CL');setTimeout(tick,20)}else el.textContent=prefix+target.toLocaleString('es-CL') };
+    let cur=0;const inc=target/60;
+    const tick=()=>{cur+=inc;if(cur<target){el.textContent=prefix+Math.ceil(cur).toLocaleString('es-CL');setTimeout(tick,20)}else el.textContent=prefix+target.toLocaleString('es-CL')};
     tick();
   });
 }
 
 /* ── SCROLL REVEAL ── */
-const obs=new IntersectionObserver((entries)=>{
-  entries.forEach((e,i)=>{if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'),i*80)})
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80)})
 },{threshold:0.06});
 
-/* ── KEYBOARD NAV ── */
+/* ── KEYBOARD ── */
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){
     closePopupDirect();
-    if(document.getElementById('drawer').classList.contains('open')) toggleCart();
+    if(document.getElementById('drawer').classList.contains('open'))toggleCart();
   }
 });
 
 /* ── INIT ── */
 document.addEventListener('DOMContentLoaded',()=>{
-  renderTabs();
-  renderProds('all');   // carga inmediata, sin esperar scroll
+  renderFilters();
+  renderProds(PRODUCTS);
   initCounters();
-  // Reveal: solo para secciones que NO sean el grid de productos
-  document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+
+  /* Scroll reveal — todos los tipos */
+  const revealObs=new IntersectionObserver(entries=>{
+    entries.forEach((e,i)=>{
+      if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'),i*90)
+    })
+  },{threshold:0.06});
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-scale').forEach(r=>revealObs.observe(r));
+
+  /* Trust items — entran al cargar si están en viewport */
+  const trustObs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting) e.target.style.animationPlayState='running'
+    })
+  },{threshold:0.1});
+  document.querySelectorAll('.trust-item').forEach(t=>{
+    t.style.animationPlayState='paused';
+    trustObs.observe(t);
+  });
+
+  /* Producto cards — stagger al entrar en viewport */
+  const cardObs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const cards=document.querySelectorAll('.pc');
+        cards.forEach((c,i)=>{
+          setTimeout(()=>{
+            c.style.opacity='1';
+            c.style.transform='translateY(0)';
+          },i*40);
+        });
+        cardObs.disconnect();
+      }
+    })
+  },{threshold:0.05});
+  const grid=document.getElementById('pgrid');
+  if(grid) cardObs.observe(grid);
 });
 </script>
 </body>
