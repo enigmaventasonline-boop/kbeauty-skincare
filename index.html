@@ -1836,11 +1836,15 @@ function toggleCart(){
 function goToShopify(){
   if(!cart.length) return;
   const items=cart.map(i=>`${i.vid}:${i.qty}`).join(',');
-  /* Pre-fill email si el usuario se suscribió */
   const email=window._subscriberEmail||'';
-  const emailParam=email?`&checkout[email]=${encodeURIComponent(email)}`:'';
-  const couponParam=email?`/discount/${KL_COUPON}?redirect=/cart/${items}${emailParam}`:`/cart/${items}`;
-  window.open(`https://enigmastore.cl${couponParam}`,'_blank');
+  /* Shopify acepta email pre-fill solo via atributos en /cart, no en /discount */
+  if(email){
+    /* Con cupón: discount URL + redirect al cart */
+    window.open(`https://enigmastore.cl/discount/${KL_COUPON}?redirect=/cart/${items}`,'_blank');
+  } else {
+    /* Sin cupón: directo al cart */
+    window.open(`https://enigmastore.cl/cart/${items}`,'_blank');
+  }
 }
 function sendWA(){
   if(!cart.length)return;
