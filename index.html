@@ -1513,10 +1513,25 @@ nav{
     <div class="d-empty"><div class="ei">🌿</div><p>Tu carrito está vacío.<br>¡Agrega productos para armar tu rutina!</p></div>
   </div>
   <div class="d-foot" id="dfoot" style="display:none">
+
+    <!-- Mensaje urgencia / envío -->
+    <div id="shippingMsg" style="
+      background:var(--petal);border-radius:10px;
+      padding:10px 14px;margin-bottom:12px;
+      display:flex;align-items:center;gap:9px;
+    ">
+      <span style="font-size:18px;flex-shrink:0">🚚</span>
+      <div>
+        <div style="font-size:11px;font-weight:600;color:var(--ink)" id="shippingMsgText">Envío a todo Chile · $3.990</div>
+        <div style="font-size:10px;color:var(--stone);margin-top:1px">Retiro gratis en Tienda Recoleta</div>
+      </div>
+    </div>
+
     <div class="d-total-row">
       <span class="d-total-label">Total estimado</span>
       <span class="d-total-amt" id="dtotal">$0</span>
     </div>
+
     <button class="cta-btn shopify-cta" onclick="goToShopify()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
       ir a pago →
@@ -1525,17 +1540,35 @@ nav{
       <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       consultar por WhatsApp
     </button>
+
+    <!-- Medios de pago mejorados -->
     <div class="pay-methods">
       <p class="pay-label">🔒 Pago 100% seguro</p>
-      <div class="pay-logos">
-        <svg class="pay-logo" viewBox="0 0 60 38" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="38" rx="4" fill="#fff" stroke="#e0d8d0" stroke-width="1"/><path d="M22 26L25.5 12h3.5L25.5 26H22zm13.5-14c-.7-.3-1.8-.6-3.1-.6-3.4 0-5.8 1.8-5.8 4.4 0 1.9 1.7 3 3 3.6 1.3.6 1.8 1 1.8 1.6 0 .9-1.1 1.3-2.1 1.3-1.4 0-2.2-.2-3.3-.7l-.5-.2-.5 3c.8.4 2.4.7 4 .7 3.6 0 6-1.8 6-4.6 0-1.5-.9-2.7-3-3.7-1.2-.6-2-.9-2-1.6 0-.5.6-1.1 2-1.1 1.1 0 1.9.2 2.5.5l.3.1.5-2.7zm9.5-.1h-2.6c-.8 0-1.4.2-1.7 1L36 26h3.6s.6-1.6.7-2h4.4c.1.5.4 2 .4 2H48l-3-14.1zm-4.2 9c.3-.7 1.4-3.7 1.4-3.7s.3-.8.5-1.3l.2 1.2s.7 3.2.8 3.8h-2.9zM20 12l-3.4 9.5-.4-1.8C15.5 17.4 13.6 15 11.5 14l3.1 12H18l4.6-14h-3.1z" fill="#1A1F71"/><path d="M13.5 12H8l-.1.4c4.2 1.1 7 3.7 8.2 6.8L15 13c-.2-.8-.8-1-1.5-1z" fill="#F9A533"/></svg>
-        <svg class="pay-logo" viewBox="0 0 60 38" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="38" rx="4" fill="#fff" stroke="#e0d8d0" stroke-width="1"/><circle cx="23" cy="19" r="8" fill="#EB001B"/><circle cx="37" cy="19" r="8" fill="#F79E1B"/><path d="M30 12.7a8 8 0 0 1 0 12.6A8 8 0 0 1 30 12.7z" fill="#FF5F00"/></svg>
-        <svg class="pay-logo" viewBox="0 0 60 38" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="38" rx="4" fill="#fff" stroke="#e0d8d0" stroke-width="1"/><text x="7" y="23" font-family="Arial,sans-serif" font-weight="700" font-size="9" fill="#004B87">web</text><text x="25" y="23" font-family="Arial,sans-serif" font-weight="700" font-size="9" fill="#E30613">pay</text><text x="7" y="31" font-family="Arial,sans-serif" font-size="6" fill="#666">TRANSBANK</text></svg>
-        <svg class="pay-logo" viewBox="0 0 60 38" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="38" rx="4" fill="#fff" stroke="#e0d8d0" stroke-width="1"/><text x="4" y="17" font-family="Arial,sans-serif" font-weight="700" font-size="7.5" fill="#009EE3">mercado</text><text x="4" y="27" font-family="Arial,sans-serif" font-weight="700" font-size="7.5" fill="#009EE3">pago</text></svg>
-        <svg class="pay-logo" viewBox="0 0 60 38" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="38" rx="4" fill="#fff" stroke="#e0d8d0" stroke-width="1"/><text x="8" y="24" font-family="Arial,sans-serif" font-weight="900" font-size="16" letter-spacing="-1" fill="#1A1A2E">FLOW</text><rect x="8" y="26" width="44" height="2" rx="1" fill="#00B4FF"/></svg>
+      <div style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:6px">
+        <!-- Visa -->
+        <svg width="48" height="30" viewBox="0 0 48 30" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="30" rx="4" fill="#fff" stroke="#e0d8d0" stroke-width="1"/><path d="M17 21L19.8 9h2.8L19.8 21H17zm10.8-11.2c-.56-.24-1.44-.48-2.48-.48-2.72 0-4.64 1.44-4.64 3.52 0 1.52 1.36 2.4 2.4 2.88 1.04.48 1.44.8 1.44 1.28 0 .72-.88 1.04-1.68 1.04-1.12 0-1.76-.16-2.64-.56l-.4-.16-.4 2.4c.64.32 1.92.56 3.2.56 2.88 0 4.8-1.44 4.8-3.68 0-1.2-.72-2.16-2.4-2.96-.96-.48-1.6-.72-1.6-1.2 0-.4.48-.88 1.6-.88.88 0 1.52.16 2 .4l.24.08.4-2.24zM33 9h-2.16c-.64 0-1.12.16-1.36.8L25.4 21h2.88s.48-1.28.56-1.6h3.52c.08.4.32 1.6.32 1.6H35L33 9zm-3.36 8l1.12-2.96.32-.8.16.96.56 2.8h-2.16zM16 9l-2.72 8.24-.32-1.44C12.4 13.6 10.48 11.36 8.4 10.4L10.88 21h2.96L18 9H16z" fill="#1A1F71"/><path d="M10 9H5.68L5.6 9.32c3.36.88 5.6 2.96 6.56 5.44L11.12 9.8C10.88 9.16 10.48 9 10 9z" fill="#F9A533"/></svg>
+        <!-- Mastercard -->
+        <svg width="48" height="30" viewBox="0 0 48 30" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="30" rx="4" fill="#fff" stroke="#e0d8d0" stroke-width="1"/><circle cx="18" cy="15" r="8" fill="#EB001B"/><circle cx="30" cy="15" r="8" fill="#F79E1B"/><path d="M24 8.54a8 8 0 0 1 0 12.92A8 8 0 0 1 24 8.54z" fill="#FF5F00"/></svg>
+        <!-- Webpay -->
+        <svg width="54" height="30" viewBox="0 0 54 30" xmlns="http://www.w3.org/2000/svg"><rect width="54" height="30" rx="4" fill="#fff" stroke="#e0d8d0" stroke-width="1"/><text x="6" y="17" font-family="Arial,sans-serif" font-weight="700" font-size="8" fill="#004B87">web</text><text x="22" y="17" font-family="Arial,sans-serif" font-weight="700" font-size="8" fill="#E30613">pay</text><text x="6" y="25" font-family="Arial,sans-serif" font-size="5.5" fill="#555">TRANSBANK</text></svg>
+        <!-- MercadoPago -->
+        <svg width="54" height="30" viewBox="0 0 54 30" xmlns="http://www.w3.org/2000/svg"><rect width="54" height="30" rx="4" fill="#fff" stroke="#e0d8d0" stroke-width="1"/><text x="4" y="14" font-family="Arial,sans-serif" font-weight="700" font-size="6.5" fill="#009EE3">mercado</text><text x="4" y="23" font-family="Arial,sans-serif" font-weight="700" font-size="6.5" fill="#009EE3">pago</text></svg>
+        <!-- Flow -->
+        <svg width="44" height="30" viewBox="0 0 44 30" xmlns="http://www.w3.org/2000/svg"><rect width="44" height="30" rx="4" fill="#fff" stroke="#e0d8d0" stroke-width="1"/><text x="5" y="20" font-family="Arial,sans-serif" font-weight="900" font-size="14" letter-spacing="-1" fill="#1A1A2E">FLOW</text><rect x="5" y="22" width="34" height="2" rx="1" fill="#00B4FF"/></svg>
+      </div>
+      <!-- Retiro gratis -->
+      <div style="
+        margin-top:10px;padding:8px 12px;
+        background:var(--cream);border-radius:8px;
+        display:flex;align-items:center;gap:7px;
+      ">
+        <span style="font-size:14px">📍</span>
+        <div style="font-size:10px;color:var(--stone);line-height:1.4">
+          <strong style="color:var(--ink);font-size:11px">Retiro gratis</strong> · Dardignac 461, Recoleta<br>
+          Lunes a viernes · Coordina por WhatsApp
+        </div>
       </div>
     </div>
-    <p class="d-note">También puedes consultarnos por WhatsApp 🌿</p>
   </div>
 </div>
 
@@ -1818,6 +1851,13 @@ function updateCartUI(){
     `).join('');
     foot.style.display='block';
     document.getElementById('dtotal').textContent=fmt(total);
+    /* Mensaje envío dinámico */
+    const msgEl=document.getElementById('shippingMsgText');
+    if(msgEl){
+      if(total>=50000) msgEl.innerHTML='🎉 ¡Envío gratis desbloqueado!';
+      else if(total>=30000) msgEl.innerHTML=`Te faltan ${fmt(50000-total)} para envío gratis`;
+      else msgEl.innerHTML='Envío a todo Chile · $3.990';
+    }
     /* delight — total hace bump al cambiar */
     const totalEl=document.getElementById('dtotal');
     totalEl.classList.remove('bump');
@@ -2053,6 +2093,22 @@ document.addEventListener('DOMContentLoaded',()=>{
   },{threshold:0.05});
   const grid=document.getElementById('pgrid');
   if(grid) cardObs.observe(grid);
+
+  /* ── AUTO-FILTER desde URL hash ──
+     Menú Shopify → Cuidado del Cabello → skincare.enigmastore.cl#cabello
+     Activa el filtro automáticamente y hace scroll a productos */
+  const hash=window.location.hash.replace('#','').toLowerCase();
+  const validCats=CATS.map(c=>c.k);
+  if(hash && validCats.includes(hash)){
+    setTimeout(()=>{
+      const btn=document.querySelector(`.filter-btn[data-cat="${hash}"]`);
+      if(btn){
+        filterProds(hash,btn);
+        const sec=document.getElementById('productos');
+        if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+      }
+    },450);
+  }
 });
 </script>
 </body>
